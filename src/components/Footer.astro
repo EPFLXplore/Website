@@ -1,0 +1,100 @@
+---
+import MakeIcon from "./icons/make";
+import { XploreSmallIcon } from "./icons/xplore-small";
+import {
+  MailIcon,
+  LinkedinIcon,
+  InstagramIcon,
+  GithubIcon,
+  YoutubeIcon,
+} from "lucide-react";
+---
+
+<footer class="w-full pt-10 pb-4 text-foreground text-center mt-16">
+  <div class="mx-5 flex flex-col md:flex-row gap-8 justify-between items-end">
+    <!-- Left: Address and Socials -->
+    <div class="flex-1 flex flex-col items-start gap-4 text-left">
+      <div class="flex flex-row items-center gap-8">
+        <XploreSmallIcon className="h-20 w-auto align-baseline" />
+        <div>
+          <div class="font-semibold text-lg mb-1 flex items-center gap-2">
+            EPFL Xplore
+          </div>
+          <address class="not-italic text-sm leading-relaxed">
+            EPFL PPH 335<br />
+            Station 13<br />
+            1015 Lausanne, Switzerland
+          </address>
+        </div>
+      </div>
+    </div>
+    <!-- Center: Navigation Links -->
+    <div class="flex-1 flex flex-col items-center gap-4">
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/about" class="hover:underline">About Us</a>
+        <a href="/contact" class="hover:underline">Contact</a>
+        <a href="/partnerships" class="hover:underline">Partnerships</a>
+        <a
+          href="https://drive.google.com/file/d/10l9gB5Jh5Zn8GBvWbEB6WTggNpsiCvXt/view?usp=sharing"
+          class="hover:underline">Statutes</a
+        >
+      </div>
+      <div class="flex gap-4">
+        <a
+          href="https://www.linkedin.com/company/epfl-xplore/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="hover:text-blue-400"
+          ><LinkedinIcon className="size-5 align-baseline" /></a
+        >
+        <a
+          href="https://www.instagram.com/epfl_xplore/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          class="hover:text-pink-400"
+          ><InstagramIcon className="size-5 align-baseline" /></a
+        >
+        <a
+          href="https://www.youtube.com/channel/UCk4bLR9y4DpRkcHnTi1Upfg"
+          target="_blank"
+          rel="noopener"
+          aria-label="Youtube"
+          class="hover:text-red-400"
+          ><YoutubeIcon className="size-5 align-baseline" /></a
+        >
+        <a
+          href="https://github.com/EPFLXplore"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="hover:text-gray-100"
+          ><GithubIcon className="size-5 align-baseline" /></a
+        >
+        <a
+          href="mailto:contact@epfl-xplore.ch"
+          aria-label="Email"
+          class="hover:text-green-400"
+          ><MailIcon className="size-5 align-baseline" /></a
+        >
+      </div>
+    </div>
+    <!-- Right: Make Initiative -->
+    <div class="flex-1 flex flex-col items-end gap-2">
+      <p class="text-sm flex items-center gap-1">
+        Part of the
+        <a
+          href="https://make.epfl.ch/"
+          class="hover:underline inline-block mx-1 align-baseline"
+        >
+          <MakeIcon className="size-4 w-auto align-baseline" />
+        </a>
+        initiative
+      </p>
+    </div>
+  </div>
+  <div class="text-xs text-gray-400 mt-8">
+    &copy; 2025 Xplore. All rights reserved.
+  </div>
+</footer>

@@ -1,0 +1,75 @@
+<canvas id="noiseCanvas" class="noise-canvas"></canvas>
+<div class="static-background"></div>
+
+<script>
+  function generateNoise() {
+    const canvas = document.getElementById("noiseCanvas");
+    if (!canvas) return;
+
+    // @ts-ignore
+    const ctx = canvas.getContext("2d");
+    const width = window.innerWidth || 1920;
+    const height = window.innerHeight || 1080;
+
+    if (width <= 0 || height <= 0) return;
+
+    // @ts-ignore
+    canvas.width = width;
+    // @ts-ignore
+    canvas.height = height;
+
+    const imageData = ctx.createImageData(width, height);
+    const data = imageData.data;
+
+    for (let i = 0; i < data.length; i += 4) {
+      const noise = Math.random() * 255;
+      data[i] = noise;
+      data[i + 1] = noise;
+      data[i + 2] = noise;
+      data[i + 3] = Math.random() * 120 + 40;
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(generateNoise, 50);
+    window.addEventListener("resize", function () {
+      setTimeout(generateNoise, 10);
+    });
+  });
+</script>
+
+<style>
+  .noise-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.25;
+    z-index: -1;
+    mix-blend-mode: overlay;
+  }
+  .static-background {
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(
+        circle at 65% 0%,
+        rgba(100, 150, 255, 0.2) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle at 85% 85%,
+        rgba(255, 80, 80, 0.2) 0%,
+        transparent 70%
+      ),
+      var(--background);
+  }
+</style>
