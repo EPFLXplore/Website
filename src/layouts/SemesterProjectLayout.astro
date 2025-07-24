@@ -1,0 +1,14 @@
+---
+const { title, major, pole, contact, applyLink } = Astro.props;
+---
+
+<article>
+  <h1>{title}</h1>
+  <p><strong>Related Major:</strong> {major}</p>
+  <p><strong>Pole:</strong> {pole}</p>
+  <p><strong>Contact:</strong> {contact}</p>
+  <p>
+    <a href={applyLink} target="_blank" rel="noopener">Apply Here</a>
+  </p>
+  <slot />
+</article>
