@@ -1,7 +1,39 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const articles = await getCollection("blog-articles");
+const typedArticles = articles as CollectionEntry<"blog-articles">[];
+
+const base = import.meta.env.BASE_URL;
 ---
 
-<MainLayout title="Blog | EPFL Xplore" theme="light">
-  <h1>Blog</h1>
+<MainLayout title="Blog | EPFL Xplore">
+  <h1>Blog Articles</h1>
+  <ul>
+    {
+      typedArticles.map((article) => (
+        <li>
+          <a href={`${base}/blog/${article.slug}/`}>
+            <img
+              src={article.data.image}
+              alt={article.data.title}
+              style="max-width:200px;height:auto;"
+            />
+            <h2>{article.data.title}</h2>
+          </a>
+          <p>
+            <strong>Category:</strong> {article.data.category}
+          </p>
+          <p>
+            <strong>Author:</strong> {article.data.author}
+          </p>
+          <p>
+            <strong>Date:</strong> {article.data.date}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
 </MainLayout>

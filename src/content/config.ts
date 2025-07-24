@@ -10,6 +10,17 @@ const semesterProjects = defineCollection({
   }),
 });
 
+const blogArticles = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    category: z.string(),
+    image: z.string().url(),
+    author: z.string(),
+    date: z.string(),
+  }),
+});
+
 export const collections = {
   "semester-projects": semesterProjects,
+  "blog-articles": blogArticles,
 };

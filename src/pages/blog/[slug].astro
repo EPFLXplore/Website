@@ -1,0 +1,28 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection, render } from "astro:content";
+import BlogArticleLayout from "../../layouts/BlogArticleLayout.astro";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("blog-articles");
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<MainLayout title={article.data.title + " | EPFL Xplore"}>
+  <BlogArticleLayout
+    title={article.data.title}
+    category={article.data.category}
+    image={article.data.image}
+    author={article.data.author}
+    date={article.data.date}
+  >
+    <Content />
+  </BlogArticleLayout>
+</MainLayout>
