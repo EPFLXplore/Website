@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import SemesterProjectsGrid from "../../components/SemesterProjectsGrid";
 
 const projects = await getCollection("semester-projects");
 const typedProjects = projects as CollectionEntry<"semester-projects">[];
@@ -9,27 +10,15 @@ const typedProjects = projects as CollectionEntry<"semester-projects">[];
 
 <MainLayout title="Semester Projects | EPFL Xplore">
   <h1>Semester Projects</h1>
-  <ul>
-    {
-      typedProjects.map((project) => (
-        <li>
-          <a href={`/semester-projects/${project.slug}/`}>
-            {project.data.title}
-          </a>
-          <p>
-            <strong>Major:</strong> {project.data.major}
-          </p>
-          <p>
-            <strong>Pole:</strong> {project.data.pole}
-          </p>
-          <p>
-            <strong>Contact:</strong> {project.data.contact}
-          </p>
-          <a href={project.data.applyLink} target="_blank" rel="noopener">
-            Apply
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <SemesterProjectsGrid
+    client:load
+    projects={typedProjects.map((project) => ({
+      title: project.data.title,
+      major: project.data.major,
+      pole: project.data.pole,
+      contact: project.data.contact,
+      applyLink: project.data.applyLink,
+      slug: project.slug,
+    }))}
+  />
 </MainLayout>

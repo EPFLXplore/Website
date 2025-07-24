@@ -14,7 +14,7 @@ export const MakeIcon: React.FC<MakeIconProps> = ({ className = "" }) => {
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_136_9)">
+      <g clipPath="url(#clip0_136_9)">
         <path
           d="M336.19 391.688L338.292 114.518H336.709L240.347 391.688H177.516L83.775 114.518H82.1919L84.294 391.688H0V0H127.401L211.825 251.156H213.927L294.64 0H424.143V391.688H336.164H336.19Z"
           fill="#FF0400"

@@ -9,21 +9,24 @@ import {
 } from "./ui/navigation-menu";
 import { XploreFullIcon } from "./icons/xplore-full";
 import { LinkedinIcon, InstagramIcon, GithubIcon } from "lucide-react";
+
+const base = import.meta.env.BASE_URL;
+
 const projectFolders = [
   {
     name: "Xplore Rover Challenge",
-    path: "/projects/xplore-rover-challenge",
+    path: `${base}/projects/xplore-rover-challenge`,
     description:
       "Our flagship competition entry, building a Mars rover from scratch.",
   },
   {
     name: "European Rover Challenge",
-    path: "/projects/european-rover-challenge",
+    path: `${base}/projects/european-rover-challenge`,
     description: "Competing in Europe's premier Mars rover competition.",
   },
   {
     name: "Xplore Research",
-    path: "/projects/xplore-research",
+    path: `${base}/projects/xplore-research`,
     description:
       "Innovative research projects in robotics, AI, and planetary exploration.",
   },
@@ -31,7 +34,7 @@ const projectFolders = [
 
 const Menu: React.FC = () => (
   <div className="flex items-center justify-between w-full py-6 px-8">
-    <a href="/" className="flex items-center">
+    <a href={base} className="flex items-center">
       <XploreFullIcon className="h-12 w-auto" />
     </a>
     <nav className="flex items-center">
@@ -39,7 +42,7 @@ const Menu: React.FC = () => (
         <NavigationMenuList className="flex items-center gap-3">
           <NavigationMenuItem>
             <NavigationMenuTrigger
-              onClick={() => (window.location.href = "/projects")}
+              onClick={() => (window.location.href = `${base}/projects`)}
               className="cursor-pointer"
             >
               Projects
@@ -68,7 +71,7 @@ const Menu: React.FC = () => (
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="/team"
+              href={`${base}/team`}
               className="px-4 rounded-md py-2 text-base font-medium"
             >
               Team
@@ -76,7 +79,7 @@ const Menu: React.FC = () => (
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="/blog"
+              href={`${base}/blog`}
               className="px-4 rounded-md py-2 text-base font-medium"
             >
               Blog
@@ -84,7 +87,7 @@ const Menu: React.FC = () => (
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="/contact-us"
+              href={`${base}/contact-us`}
               className="bg-foreground text-background rounded-md px-4 py-2 hover:bg-accent hover:text-accent-foreground transition font-semibold ml-2"
             >
               Contact Us
