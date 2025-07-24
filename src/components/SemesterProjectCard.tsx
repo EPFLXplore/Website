@@ -17,6 +17,8 @@ interface SemesterProjectCardProps {
   slug: string;
 }
 
+const base = import.meta.env.BASE_URL;
+
 const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
   title,
   major,
@@ -26,7 +28,7 @@ const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
   slug,
 }) => (
   <a
-    href={`semester-projects/${slug}/`}
+    href={`${base}/semester-projects/${slug}/`}
     className="block group focus:outline-none focus:ring-primary/60 rounded-xl"
     tabIndex={0}
     aria-label={`View details for ${title}`}
