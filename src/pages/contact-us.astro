@@ -13,7 +13,7 @@ const baseUrl = import.meta.env.BASE_URL;
 <MainLayout title="Contact Us | EPFL Xplore">
   <h1>Contact Us</h1>
   <div class="flex flex-row gap-8 w-full justify-center mt-5">
-    <a href="partnerships" class="no-underline">
+    <a href={`${baseUrl}/partnerships`} class="no-underline">
       <Card
         className="relative h-100 w-80 cursor-pointer group overflow-hidden"
       >
@@ -39,7 +39,10 @@ const baseUrl = import.meta.env.BASE_URL;
       </Card>
     </a>
     {/* Pole 2 Card */}
-    <a href="projects/european-rover-challenge" class="no-underline">
+    <a
+      href={`${baseUrl}/projects/european-rover-challenge`}
+      class="no-underline"
+    >
       <Card
         className="relative h-100 w-80 cursor-pointer group overflow-hidden"
       >
@@ -65,7 +68,7 @@ const baseUrl = import.meta.env.BASE_URL;
       </Card>
     </a>
     {/* Pole 3 Card */}
-    <a href="projects/xplore-research" class="no-underline">
+    <a href={`${baseUrl}/projects/xplore-research`} class="no-underline">
       <Card
         className="relative h-100 w-80 cursor-pointer group overflow-hidden"
       >
