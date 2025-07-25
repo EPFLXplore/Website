@@ -9,15 +9,16 @@ applyLink: "https://apply.example.com/yolov8"
 # Motivation
 
 EPFL Xplore is a student-led swiss robotics association, part of the MAKE Initiative at EPFL. It primary builds a
-Martian-like Rover each year to compete in the European Rover Challenge (ERC) in Krakow, against other univer-
-sities. The team is composed of around 50 students (management & engineering). In its rank, the software team
+Martian-like Rover each year to compete in the European Rover Challenge (ERC) in Krakow, against other universities. The team is composed of around 50 students (management & engineering). In its rank, the software team
 of EPFL Xplore is composed of navigation, robotic arm and control station teams, each one developing efficient
 solutions to bring the Rover alive.
+
 
 The ERC imposes autonomous manipulation of different objects, for example cables and rocks. This autonomous
 processes always incorporate a 6D pose estimation to be able to first locate the object in a reference frame, and
 then move our manipulator to grab it. The manipulator is a gripper located at the end of a 6-DoF custom robotic
 arm.
+
 
 EPFL Xplore has successfully been able to identify and grab rocks, switches, probes, but lacks of modularity.
 We are actually using YoloV8 for enhacing our models. The computations that are done after to compute the
