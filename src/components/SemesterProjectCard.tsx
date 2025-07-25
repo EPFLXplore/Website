@@ -53,7 +53,7 @@ const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
           href={applyLink}
           target="_blank"
           rel="noopener"
-          className="bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium hover:bg-primary/90 transition"
+          className="bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium hover:bg-red-500/90 transition"
           onClick={(e) => e.stopPropagation()}
           tabIndex={-1}
         >
