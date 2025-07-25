@@ -8,13 +8,13 @@ applyLink: ""
 
 # Motivation
 
-EPFL Xplore is a student-led swiss robotics association, part of the MAKE Initiative at EPFL. It primarly build a
+EPFL Xplore is a student-led swiss robotics association, part of the MAKE Initiative at EPFL. It primary builds a
 Martian-like Rover each year to compete in the European Rover Challenge (ERC) in Krakow, against other univer-
 sities. The team is composed of around 50 students (management & engineering). In its rank, the software team
 of EPFL Xplore is composed of navigation, robotic arm and control station teams, each one developing efficient
 solutions to bring the Rover alive.
 
-The Rover is composed of a 6DOF robotic arm communicating over EtherCAT using 3-axis Maxon controllers. To
+The Rover is composed of a 6-DoF robotic arm communicating over EtherCAT using 3-axis Maxon controllers. To
 manipulate objects and perform autonomous trajectories, EPFL Xplore uses the MoveIt path planner framework,
 widely maintained and used in industry for complex autonomous tasks, implementing many inverse kinematics
 frameworks and providing C++ APIs. MoveIt allows the developer to choose from a variety of planners, each with

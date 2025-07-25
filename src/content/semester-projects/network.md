@@ -8,7 +8,7 @@ applyLink: ""
 
 # Motivation
 
-EPFL Xplore is a student-led swiss robotics association, part of the MAKE Initiative at EPFL. It primarly build a
+EPFL Xplore is a student-led swiss robotics association, part of the MAKE Initiative at EPFL. It primary builds a
 Martian-like Rover each year to compete in the European Rover Challenge (ERC) in Krakow, against other univer-
 sities. The team is composed of around 50 students (management & engineering). In its rank, the software team
 of EPFL Xplore is composed of navigation, robotic arm and control station teams, each one developing efficient
