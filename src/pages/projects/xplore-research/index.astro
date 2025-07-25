@@ -1,7 +1,39 @@
 ---
 import MainLayout from "../../../layouts/MainLayout.astro";
+import SemesterProjectLayout from "@/layouts/SemesterProjectLayout.astro";
 ---
 
 <MainLayout title="Xplore Research | EPFL Xplore">
   <h1>Xplore Research</h1>
+
+  <SemesterProjectLayout
+    title="Comparative Analysis of MoveIt Planners on a 6-DoF Robotic Arm"
+    major="Computer Science, Robotics"
+    pole="European Rover Challenge"
+    contact="arno.laurie@epfl-xplore.ch">
+    <p>
+      As part of EPFL Xplore’s robotics platform, this project aims to benchmark and optimize different motion planning algorithms provided by MoveIt for a 6-DoF robotic arm used on our Rover. By testing planners in simulation and on real hardware, we evaluate their speed, smoothness, and reliability under realistic payloads. The best-performing configuration will be integrated into the Rover’s manipulation system to ensure safe and efficient autonomous tasks.
+    </p>
+  </SemesterProjectLayout>
+
+  <SemesterProjectLayout
+    title="Evaluating and Optimizing Rover–Control Station Wireless Links"
+    major="Communication Systems, Computer Science"
+    pole="European Rover Challenge"
+    contact="arno.laurie@epfl-xplore.ch">
+    <p>
+      This project focuses on improving the reliability and performance of the wireless communication between EPFL Xplore’s Mars Rover and its Control Station. By analyzing network performance under realistic conditions and building a dedicated testbench (both physical and simulated), the goal is to identify communication bottlenecks and test alternative solutions. The final outcome will guide the deployment of a robust, low-latency wireless setup for use during the European Rover Challenge.
+    </p>
+  </SemesterProjectLayout>
+
+  <SemesterProjectLayout
+    title="Modular 6D Pose Estimation for Real-Time Rover Manipulation"
+    major="Computer Science, Robotics, Data Science"
+    pole="European Rover Challenge"
+    contact="arno.laurie@epfl-xplore.ch">
+    <p>
+      To enable fast and accurate object grasping during autonomous tasks, this project focuses on redesigning the 6D pose estimation pipeline used by EPFL Xplore’s Mars Rover. The goal is to modularize and optimize the current YOLOv8-based system, benchmark alternative methods like ZebraPose, and improve both detection speed and pose precision. The final pipeline will be integrated into the Rover’s manipulation stack for enhanced real-time performance during ERC missions.
+    </p>
+  </SemesterProjectLayout>
+
 </MainLayout>
