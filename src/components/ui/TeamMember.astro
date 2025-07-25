@@ -1,0 +1,86 @@
+---
+import { Linkedin, Github, Twitter } from "lucide-react";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "./card.tsx";
+export interface Props {
+  member: {
+    name: string;
+    role: string;
+    photo?: string | null;
+    socials?: Record<string, string> | null;
+  };
+  defaultPhoto: string;
+}
+const { member, defaultPhoto } = Astro.props;
+---
+
+<Card
+  style={{
+    width: "240px",
+    minHeight: "320px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+  }}
+>
+  <CardHeader className="flex flex-col items-center p-0 border-b-0 w-full">
+    <img
+      src={member.photo || defaultPhoto}
+      alt={member.name}
+      class="rounded-full object-cover bg-gray-200 mb-2 size-35"
+    />
+  </CardHeader>
+  <CardContent className="flex flex-col items-center p-0 w-full">
+    <CardTitle className="text-center">{member.name}</CardTitle>
+    <div class="text-sm text-gray-500 mb-1 text-center">
+      {member.role}
+    </div>
+  </CardContent>
+  <CardFooter className="mt-auto flex justify-center gap-2 border-t-0 p-0">
+    {
+      member.socials?.linkedin && (
+        <a
+          href={member.socials.linkedin}
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          style="color: #0077b5;"
+        >
+          <Linkedin size={22} />
+        </a>
+      )
+    }
+    {
+      member.socials?.github && (
+        <a
+          href={member.socials.github}
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          style="color: var(--color-foreground);"
+        >
+          <Github size={22} />
+        </a>
+      )
+    }
+    {
+      member.socials?.twitter && (
+        <a
+          href={member.socials.twitter}
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          style="color: #1da1f2;"
+        >
+          <Twitter size={22} />
+        </a>
+      )
+    }
+  </CardFooter>
+</Card>

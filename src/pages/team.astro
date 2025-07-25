@@ -1,7 +1,29 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import teamData from "../data/team.js";
+import TeamMember from "../components/ui/TeamMember.astro";
+
+const defaultPhoto =
+  "https://idea410.digital.uic.edu/wp-content/themes/koji/assets/images/default-fallback-image.png"; // Place a default.jpg in public/team
 ---
 
 <MainLayout title="Meet the Team | EPFL Xplore">
   <h1>Meet the Team</h1>
+  {
+    teamData.map((pole) => (
+      <section class="mt-5 mb-10">
+        <h2>{pole.name}</h2>
+        {pole.teams.map((team) => (
+          <div style="margin-bottom: 1.5rem;">
+            <h3>{team.name}</h3>
+            <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding: 0;">
+              {team.members.map((member) => (
+                <TeamMember member={member} defaultPhoto={defaultPhoto} />
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    ))
+  }
 </MainLayout>

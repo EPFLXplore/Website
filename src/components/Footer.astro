@@ -8,9 +8,11 @@ import {
   GithubIcon,
   YoutubeIcon,
 } from "lucide-react";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<footer class="w-full pt-10 pb-4 text-foreground text-center mt-16">
+<footer class="w-full pt-10 pb-4 text-foreground text-center mt-10">
   <div class="mx-5 flex flex-col md:flex-row gap-8 justify-between items-end">
     <!-- Left: Address and Socials -->
     <div class="flex-1 flex flex-col items-start gap-4 text-left">
@@ -31,13 +33,12 @@ import {
     <!-- Center: Navigation Links -->
     <div class="flex-1 flex flex-col items-center gap-4">
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="about-us" class="hover:underline">About Us</a>
-        <a href="contact-us" class="hover:underline">Contact</a>
-        <a href="partnerships" class="hover:underline">Partnerships</a>
-        <a
-          href="https://drive.google.com/file/d/10l9gB5Jh5Zn8GBvWbEB6WTggNpsiCvXt/view?usp=sharing"
-          class="hover:underline">Statutes</a
+        <a href={`${baseUrl}#about-us`} class="hover:underline">About Us</a>
+        <a href={`${baseUrl}/contact-us`} class="hover:underline">Contact</a>
+        <a href={`${baseUrl}/partnerships`} class="hover:underline"
+          >Partnerships</a
         >
+        <a href={`${baseUrl}/statuses`} class="hover:underline">Statuses</a>
       </div>
       <div class="flex gap-4">
         <a

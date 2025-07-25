@@ -32,6 +32,23 @@ const projectFolders = [
   },
 ];
 
+const getCurrentPath = () => {
+  if (typeof window !== "undefined") {
+    return window.location.pathname;
+  }
+  return "";
+};
+
+const isActive = (path: string) => {
+  const current = getCurrentPath();
+  // Remove base from path for comparison if base is not "/"
+  const normalize = (p: string) => p.replace(/\/+$/, "");
+  return (
+    normalize(current) === normalize(path) ||
+    normalize(current).startsWith(normalize(path) + "/")
+  );
+};
+
 const Menu: React.FC = () => (
   <div className="flex items-center justify-between w-full py-6 px-8">
     <a href={base} className="flex items-center">
@@ -43,7 +60,7 @@ const Menu: React.FC = () => (
           <NavigationMenuItem>
             <NavigationMenuTrigger
               onClick={() => (window.location.href = `${base}/projects`)}
-              className="cursor-pointer"
+              className={`cursor-pointer ${isActive(`${base}/projects`) ? "text-secondary" : ""}`}
             >
               Projects
             </NavigationMenuTrigger>
@@ -54,7 +71,7 @@ const Menu: React.FC = () => (
                     <NavigationMenuLink asChild>
                       <a
                         href={project.path}
-                        className="flex flex-col justify-end rounded-md bg-muted/50 p-4 w-full no-underline outline-none hover:bg-accent hover:text-accent-foreground transition focus:shadow-md"
+                        className={`flex flex-col justify-end rounded-md bg-muted/50 p-4 w-full no-underline outline-none hover:bg-accent hover:text-accent-foreground transition focus:shadow-md ${isActive(project.path) ? "text-secondary" : ""}`}
                       >
                         <div className="text-base font-medium mb-1 leading-none">
                           {project.name}
@@ -72,7 +89,7 @@ const Menu: React.FC = () => (
           <NavigationMenuItem>
             <NavigationMenuLink
               href={`${base}/team`}
-              className="px-4 rounded-md py-2 text-base font-medium"
+              className={`px-4 rounded-md py-2 text-base font-medium ${isActive(`${base}/team`) ? "text-secondary" : ""}`}
             >
               Team
             </NavigationMenuLink>
@@ -80,7 +97,7 @@ const Menu: React.FC = () => (
           <NavigationMenuItem>
             <NavigationMenuLink
               href={`${base}/blog`}
-              className="px-4 rounded-md py-2 text-base font-medium"
+              className={`px-4 rounded-md py-2 text-base font-medium ${isActive(`${base}/blog`) ? "text-secondary" : ""}`}
             >
               Blog
             </NavigationMenuLink>
@@ -88,7 +105,7 @@ const Menu: React.FC = () => (
           <NavigationMenuItem>
             <NavigationMenuLink
               href={`${base}/contact-us`}
-              className="bg-foreground text-background rounded-md px-4 py-2 hover:bg-accent hover:text-accent-foreground transition font-semibold ml-2"
+              className={`bg-foreground text-background rounded-md px-4 py-2 hover:bg-accent hover:text-accent-foreground transition font-semibold ml-2 ${isActive(`${base}/contact-us`) ? "text-secondary" : ""}`}
             >
               Contact Us
             </NavigationMenuLink>

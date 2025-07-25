@@ -1,7 +1,41 @@
 ---
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import MainLayout from "../layouts/MainLayout.astro";
+import { ArrowRight, MessageSquareWarning } from "lucide-react";
+import { Button } from "@/components/ui/button";
 ---
 
 <MainLayout title="Join Us | EPFL Xplore">
   <h1>Join Us</h1>
+  <Alert
+    className="my-5 max-w-2xl mx-auto bg-amber-700 text-secondary-foreground"
+  >
+    <MessageSquareWarning />
+    <AlertTitle className="text-base font-semibold">
+      Semester Projects Are Out
+    </AlertTitle>
+    <AlertDescription className="flex flex-col gap-2 text-sm text-foreground">
+      If you are interested in pursuing a semester project with us, please check
+      out this page and contact the person in charge of the project.
+      <a
+        href="semester-projects"
+        class="text-sm flex flex-row items-center gap-1 ml-auto text-foreground"
+      >
+        <Button variant="link" className="cursor-pointer">
+          Check out our projects
+          <ArrowRight className="size-3" />
+        </Button>
+      </a>
+    </AlertDescription>
+  </Alert>
+  <div class="w-full flex justify-center">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSed4U8FYSrjUYA6L38pA3EAhHXEUW-YM9NOSwpodN6W3x8tVQ/viewform?embedded=true"
+      width="1000"
+      height="1900"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">Loading…</iframe
+    >
+  </div>
 </MainLayout>

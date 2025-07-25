@@ -1,7 +1,94 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "../components/ui/card";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="Contact Us | EPFL Xplore">
   <h1>Contact Us</h1>
+  <div class="flex flex-row gap-8 w-full justify-center mt-5">
+    <a href="partnerships" class="no-underline">
+      <Card
+        className="relative h-100 w-80 cursor-pointer group overflow-hidden"
+      >
+        <img
+          src={`${baseUrl}/images/projects/IMG_5992.JPG`}
+          alt="Pole 1"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle className="text-white text-5xl"
+              >Become a Sponsor</CardTitle
+            >
+            <CardDescription className="text-white/80"
+              >Subtitle for Pole 1</CardDescription
+            >
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+    {/* Pole 2 Card */}
+    <a href="projects/european-rover-challenge" class="no-underline">
+      <Card
+        className="relative h-100 w-80 cursor-pointer group overflow-hidden"
+      >
+        <img
+          src={`${baseUrl}/images/projects/IMG_0513.jpg`}
+          alt="Pole 2"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle className="text-white text-5xl">
+              Join the Team
+            </CardTitle>
+            <CardDescription className="text-white/80"
+              >Subtitle for Pole 2</CardDescription
+            >
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+    {/* Pole 3 Card */}
+    <a href="projects/xplore-research" class="no-underline">
+      <Card
+        className="relative h-100 w-80 cursor-pointer group overflow-hidden"
+      >
+        <img
+          src={`${baseUrl}/images/projects/Xplore_20-03-25_-29.jpg`}
+          alt="Pole 3"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle className="text-white text-5xl">
+              Collaborate with Us
+            </CardTitle>
+            <CardDescription className="text-white/80"
+              >Subtitle for Pole 3</CardDescription
+            >
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+  </div>
 </MainLayout>
