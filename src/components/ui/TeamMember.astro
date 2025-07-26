@@ -1,5 +1,5 @@
 ---
-import { Linkedin, Github, Twitter } from "lucide-react";
+import { Linkedin, Github, Twitter, Mail } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -12,7 +12,7 @@ export interface Props {
     name: string;
     role: string;
     photo?: string | null;
-    socials?: Record<string, string> | null;
+    socials?: Record<string, string | undefined> | null;
   };
   defaultPhoto: string;
 }
@@ -21,7 +21,7 @@ const { member, defaultPhoto } = Astro.props;
 
 <Card
   style={{
-    width: "240px",
+    width: "280px",
     minHeight: "320px",
     display: "flex",
     flexDirection: "column",
@@ -36,13 +36,13 @@ const { member, defaultPhoto } = Astro.props;
       class="rounded-full object-cover bg-gray-200 mb-2 size-35"
     />
   </CardHeader>
-  <CardContent className="flex flex-col items-center p-0 w-full">
-    <CardTitle className="text-center">{member.name}</CardTitle>
+  <CardContent className="flex flex-col items-center px-2 py-0 w-full">
+    <CardTitle className="text-center mb-1">{member.name}</CardTitle>
     <div class="text-sm text-gray-500 mb-1 text-center">
       {member.role}
     </div>
   </CardContent>
-  <CardFooter className="mt-auto flex justify-center gap-2 border-t-0 p-0">
+  <CardFooter className="mt-auto flex justify-center gap-4 border-t-0 p-0">
     {
       member.socials?.linkedin && (
         <a
@@ -79,6 +79,13 @@ const { member, defaultPhoto } = Astro.props;
           style="color: #1da1f2;"
         >
           <Twitter size={22} />
+        </a>
+      )
+    }
+    {
+      member.socials?.email && (
+        <a href={`mailto:${member.socials.email}`} aria-label="Email">
+          <Mail size={22} />
         </a>
       )
     }

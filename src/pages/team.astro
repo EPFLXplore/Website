@@ -3,20 +3,26 @@ import MainLayout from "../layouts/MainLayout.astro";
 import teamData from "../data/team.js";
 import TeamMember from "../components/ui/TeamMember.astro";
 
-const defaultPhoto =
-  "https://idea410.digital.uic.edu/wp-content/themes/koji/assets/images/default-fallback-image.png"; // Place a default.jpg in public/team
+const baseUrl = import.meta.env.BASE_URL;
+const defaultPhoto = `${baseUrl}/images/team/default.jpg`;
 ---
 
 <MainLayout title="Meet the Team | EPFL Xplore">
   <h1>Meet the Team</h1>
+  <p class="font-light max-w-prose">
+    EPFL Xplore is a student-run organization composed each year of 100+ members
+    from diverse backgrounds. We are all volunteers contributing outside our
+    studies to make challenging technologies a reality.
+  </p>
+
   {
     teamData.map((pole) => (
-      <section class="mt-5 mb-10">
+      <section class="my-10">
         <h2>{pole.name}</h2>
         {pole.teams.map((team) => (
-          <div style="margin-bottom: 1.5rem;">
-            <h3>{team.name}</h3>
-            <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding: 0;">
+          <div class="my-6">
+            <h3 class="my-2">{team.name}</h3>
+            <ul class="flex flex-wrap gap-4">
               {team.members.map((member) => (
                 <TeamMember member={member} defaultPhoto={defaultPhoto} />
               ))}

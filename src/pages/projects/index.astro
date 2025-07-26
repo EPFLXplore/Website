@@ -12,28 +12,31 @@ const baseUrl = import.meta.env.BASE_URL;
 
 <MainLayout title="Projects | EPFL Xplore">
   <h1>Projects</h1>
-  <div class="flex flex-row gap-8 w-full justify-center mt-5">
+  <div class="flex flex-row gap-4 w-full justify-center mt-5 h-[450px] group">
     {/* Pole 1 Card */}
     <a href={`${baseUrl}/projects/xplore-rover-challenge`} class="no-underline">
       <Card
-        className="relative h-100 w-80 cursor-pointer group overflow-hidden"
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
       >
         <img
           src={`${baseUrl}/images/projects/IMG_5992.JPG`}
           alt="Pole 1"
-          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
         />
         <div
-          class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
         >
         </div>
         <div class="relative z-10 flex flex-col h-full justify-end p-6">
           <CardHeader className="p-0">
-            <CardTitle className="text-white text-5xl"
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
               >Xplore Rover Challenge</CardTitle
             >
-            <CardDescription className="text-white/80"
-              >Subtitle for Pole 1</CardDescription
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+              >One year to make your mini-rover with your team, and battle it
+              out with other teams in our annual competition</CardDescription
             >
           </CardHeader>
         </div>
@@ -45,24 +48,28 @@ const baseUrl = import.meta.env.BASE_URL;
       class="no-underline"
     >
       <Card
-        className="relative h-100 w-80 cursor-pointer group overflow-hidden"
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
       >
         <img
           src={`${baseUrl}/images/projects/IMG_0513.jpg`}
           alt="Pole 2"
-          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
         />
         <div
-          class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
         >
         </div>
         <div class="relative z-10 flex flex-col h-full justify-end p-6">
           <CardHeader className="p-0">
-            <CardTitle className="text-white text-5xl">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+            >
               European Rover Challenge
             </CardTitle>
-            <CardDescription className="text-white/80"
-              >Subtitle for Pole 2</CardDescription
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+              >The heart of our projects, where we compete against teams from
+              all over Europe to build the best rover</CardDescription
             >
           </CardHeader>
         </div>
@@ -71,25 +78,29 @@ const baseUrl = import.meta.env.BASE_URL;
     {/* Pole 3 Card */}
     <a href={`${baseUrl}/projects/xplore-research`} class="no-underline">
       <Card
-        className="relative h-100 w-80 cursor-pointer group overflow-hidden"
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
       >
         <img
           src={`${baseUrl}/images/projects/Xplore_20-03-25_-29.jpg`}
           alt="Pole 3"
-          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
         />
         <div
-          class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
         >
         </div>
         <div class="relative z-10 flex flex-col h-full justify-end p-6">
           <CardHeader className="p-0">
-            <CardTitle className="text-white text-5xl">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+            >
               Xplore Research
             </CardTitle>
-            <CardDescription className="text-white/80"
-              >Subtitle for Pole 3</CardDescription
-            >
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+              >Xploring the latest innovations in robotics and space exploration
+              through cutting-edge research with labs and industry
+            </CardDescription>
           </CardHeader>
         </div>
       </Card>

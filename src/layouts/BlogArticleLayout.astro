@@ -2,11 +2,30 @@
 const { title, category, image, author, date } = Astro.props;
 ---
 
-<article>
-  <h1>{title}</h1>
-  <p><strong>Category:</strong> {category}</p>
-  <img src={image} alt={title} style="max-width:100%;height:auto;" />
-  <p><strong>Author:</strong> {author}</p>
-  <p><strong>Date:</strong> {date}</p>
-  <slot />
+<article class="max-w-4xl mx-auto">
+  <div class="flex flex-col items-center my-10">
+    <div class="flex flex-col gap-4">
+      <span
+        class="text-sm text-gray-500 flex flex-wrap gap-2 items-center font-light mx-auto mb-4"
+      >
+        <span>{author}</span>
+        <span>&ndash;</span>
+        <span>{date}</span>
+      </span>
+    </div>
+    <h1 class="text-4xl font-bold text-center">{title}</h1>
+    <span
+      class="inline-block bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-0.5 rounded-full mt-4 mb-2 align-middle whitespace-nowrap"
+    >
+      {category}
+    </span>
+  </div>
+  <img
+    src={image}
+    alt={title}
+    class="w-full rounded-xl mb-20 max-h-120 object-cover"
+  />
+  <div class="prose prose-lg max-w-prose mx-auto">
+    <slot />
+  </div>
 </article>

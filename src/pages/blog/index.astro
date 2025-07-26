@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { BlogListItem } from "../../components/ui/BlogListItem";
 
 const articles = await getCollection("blog-articles");
 const typedArticles = articles as CollectionEntry<"blog-articles">[];
@@ -10,30 +11,59 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="Blog | EPFL Xplore" theme="light">
-  <h1>Blog Articles</h1>
-  <ul>
-    {
-      typedArticles.map((article) => (
-        <li>
-          <a href={`${base}/blog/${article.slug}/`}>
-            <img
-              src={article.data.image}
-              alt={article.data.title}
-              style="max-width:200px;height:auto;"
-            />
-            <h2>{article.data.title}</h2>
+  <div class="flex flex-col max-w-4xl mx-auto">
+    <h1>Articles</h1>
+    <div class="flex flex-col gap-8 mt-5">
+      {/* Featured first article */}
+      {
+        typedArticles.length > 0 && (
+          <a
+            href={`${base}/blog/${typedArticles[0].slug}/`}
+            class="block w-full mb-10 group focus:outline-none focus:ring-2 focus:ring-orange-400 transition-shadow"
+          >
+            <div class="block w-full overflow-hidden rounded-xl bg-gray-100">
+              <img
+                src={typedArticles[0].data.image}
+                alt={typedArticles[0].data.title}
+                class="object-cover w-full h-64 md:h-96 transition-transform duration-200 group-hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-col items-start p-4">
+              <span class="inline-block bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-0.5 rounded-full mt-4 mb-2 align-middle whitespace-nowrap">
+                {typedArticles[0].data.category}
+              </span>
+              <span class="group-hover:underline text-3xl font-bold mb-2">
+                {typedArticles[0].data.title}
+              </span>
+              <div class="mb-2 text-base text-gray-600">
+                {
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur."
+                }
+              </div>
+              <div class="text-sm text-gray-500 flex flex-wrap gap-2 items-center mb-2 font-light">
+                <span>{typedArticles[0].data.author}</span>
+                <span>&ndash;</span>
+                <span>{typedArticles[0].data.date}</span>
+              </div>
+            </div>
           </a>
-          <p>
-            <strong>Category:</strong> {article.data.category}
-          </p>
-          <p>
-            <strong>Author:</strong> {article.data.author}
-          </p>
-          <p>
-            <strong>Date:</strong> {article.data.date}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
+        )
+      }
+      {/* Rest of the articles */}
+      {
+        typedArticles
+          .slice(1)
+          .map((article) => (
+            <BlogListItem
+              image={article.data.image}
+              title={article.data.title}
+              category={article.data.category}
+              author={article.data.author}
+              date={article.data.date}
+              link={`${base}/blog/${article.slug}/`}
+            />
+          ))
+      }
+    </div>
+  </div>
 </MainLayout>

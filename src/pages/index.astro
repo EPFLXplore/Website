@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/MainLayout.astro";
 import NewsLink from "../components/NewsLink";
-
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -26,7 +25,7 @@ const base = import.meta.env.BASE_URL;
     <h1 class="text-5xl md:text-7xl font-bold text-center mb-8">
       Welcome to Xplore
     </h1>
-    <p class="text-xl md:text-2xl text-center mb-10 max-w-2xl">
+    <p class="text-xl md:text-2xl text-center mb-10 max-w-2xl font-thin">
       Discover our projects, read our blog, or get in touch. We are building the
       future, together.
     </p>
@@ -36,4 +35,14 @@ const base = import.meta.env.BASE_URL;
       >Join us</a
     >
   </main>
+  <div class="flex flex-col items-center justify-center min-h-[60vh] py-24">
+    <h2 class="text-4xl font-bold text-center mb-8">The story of Xplore</h2>
+    <p class="text-xl md:text-2xl text-center mb-10 max-w-2xl font-thin">
+      Discover our projects, read our blog, or get in touch. We are building the
+      future, together.
+    </p>
+  </div>
+  <div class="flex flex-col items-center justify-center min-h-[60vh] py-24">
+    <h2 class="text-4xl font-bold text-center mb-8">Sponsors</h2>
+  </div>
 </Layout>
