@@ -1,75 +1,91 @@
 ---
+import NewsLink from "@/components/NewsLink";
+import { base } from "astro:config/server";
 import MainLayout from "../../../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Xplore Research | EPFL Xplore">
-  <h1>Xplore Research</h1>
+  <section class="max-w-5xl mx-auto py-16 text-center">
+    <h1 class="text-5xl font-extrabold mb-4 text-primary">Xplore Research</h1>
+    <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+      The third pole of EPFL Xplore, dedicated to the future of space robotics through innovation, experimentation, and student-led engineering.
+    </p>
+  </section>
 
-  Xplore Research (XRE) is the third pole of EPFL Xplore, focusing on the development of innovative prototypes/solutions for space robotics.
-  
-  history:
-  EPFL Xplore introduced the Research pole XRE in 2023. The primary goal of XRE was to provide a new platform for students who
-  already worked on the European Rover Challenge (ERC) pole and wanted to tackle new engineering challenges. 
+  <section class="max-w-4xl mx-auto py-10 space-y-6">
+    <h2 class="text-3xl font-bold text-left">Our Origins</h2>
+    <p>
+      Founded in <strong>2023</strong>, Xplore Research (XRE) was launched to extend the mission of EPFL Xplore beyond the European Rover Challenge (ERC).
+      It became a platform for students—especially Master's students—who wanted to continue building, innovating, and experimenting in new areas of space robotics.
+    </p>
 
-  During the fast 2 years students, most often enrolled in master’s programs, have been able to work on cutting-edge topics and develop proof-of-concept prototypes.
-  The first one was a Recycling Plastic Project (WALL-E) that focused on recycling plastic waste into 3D printing filament.
-  The second one was a legged robot project.
-  The last one introduced is a full AI division that focuses on the development of AI-based solutions useful for the ERC. 
+    <div class="bg-muted rounded-xl p-6">
+      <h3 class="text-xl font-semibold mb-2">🚀 Milestones</h3>
+      <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+        <li>Launched the <em>Recycling Plastic Project (WALL-E)</em> – turning obselete 3D printed parts into new filament</li>
+        <li>Developed our first prototype of a <em> Robot Leg</em> for Legged Robots</li>
+        <li>Introduced <em>AI Division</em> for ERC and beyond</li>
+      </ul>
+    </div>
+  </section>
 
-  ---
-
-  Are you a Bachelor’s or Master’s student at EPFL with a passion for space robotics?
+  <section class="max-w-4xl mx-auto py-14 space-y-10">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold">Are you ready to join?</h2>
+      <p class="text-lg text-muted-foreground mt-2">
+        Are you a Bachelor’s or Master’s student at EPFL with a passion for space robotics?
   Ready to take on real-world engineering challenges and build cutting-edge prototypes alongside your studies?
   Or are you interested in joining the EPFL Xplore for a semester project related to space engineering?
+      </p>
+    </div>
 
-  Join Xplore Research (XRE) this September 
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex flex-col border rounded-lg p-6 bg-card shadow">
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-primary">🧠 Propose Your Vision</h3>
+          <ul class="list-disc pl-5 text-muted-foreground space-y-2">
+            <li>Form a team with peers</li>
+            <li>Submit your abstract and objectives</li>
+            <li>Define a clear timeline and budget</li>
+            <li>Compete for access to labs, gear & funding</li>
+          </ul>
+        </div>
+        <div class="mt-auto pt-6">
+          <NewsLink
+            type="recruitment"
+            href={`${base}/propose-project`}
+            title="Submit your project idea"
+            icon="https://cdn3d.iconscout.com/3d/premium/thumb/project-management-3d-icon-download-in-png-blend-fbx-gltf-file-formats--teamwork-work-planning-business-pack-icons-9291049.png?f=webp"
+          />
+        </div>
+      </div>
 
-  • Propose Your Vision: Form a team, submit your project abstract, technical objectives, timeline and budget.
-  • Secure Funding & Resources: Compete for XRE’s resources—lab space, equipment, and sponsorship—to turn your idea into reality.
-  Take the leap. Shape the future of space robotics—together.
+      <div class="flex flex-col border rounded-lg p-6 bg-card shadow">
+        <div>
+          <h3 class="text-xl font-semibold mb-3">📚 Semester Projects</h3>
+          <p class="text-muted-foreground">
+            XRE lets you propose EPFL semester projects that integrate with ongoing work—like ERC Rover development—and let you solve real-world problems.
+          </p>
+        </div>
+        <div class="mt-auto pt-6">
+          <NewsLink
+            type="recruitment"
+            href={`${base}/propose-semester-projects`}
+            title="Propose a semester project"
+            icon="https://cdn3d.iconscout.com/3d/premium/thumb/project-management-3d-icon-download-in-png-blend-fbx-gltf-file-formats--teamwork-work-planning-business-pack-icons-9291049.png?f=webp"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-  or...
 
-  Xplore Research (XRE) offers an opportunity for EPFL students to engage in semester projects. 
-  These projects are designed to provide hands-on experience in engineering challenges and to be integrated into the EPFL Xplore ecosystem such as the Rover of the ERC.
-  
-  ---
-
-  XRE complements the existing poles. It provides a platform for students to engage in research and development with 
-  more advanced projects, leaving students - most often enrolled in master’s programs - explore cutting-edge topics and develop 
-  proof-of-concept prototypes.
-
-
-
-
-  <!-- <SemesterProjectLayout
-    title="Comparative Analysis of MoveIt Planners on a 6-DoF Robotic Arm"
-    major="Computer Science, Robotics"
-    pole="European Rover Challenge"
-    contact="arno.laurie@epfl-xplore.ch">
-    <p>
-      As part of EPFL Xplore’s robotics platform, this project aims to benchmark and optimize different motion planning algorithms provided by MoveIt for a 6-DoF robotic arm used on our Rover. By testing planners in simulation and on real hardware, we evaluate their speed, smoothness, and reliability under realistic payloads. The best-performing configuration will be integrated into the Rover’s manipulation system to ensure safe and efficient autonomous tasks.
+  <section class="max-w-4xl mx-auto py-10 space-y-4">
+    <h2 class="text-2xl font-bold">Why XRE Matters</h2>
+    <p class="text-muted-foreground">
+      Xplore Research complements the ERC and XRC poles by enabling more exploratory and advanced projects.
+      It's a space where students can focus on proof-of-concept engineering and groundbreaking ideas.
     </p>
-  </SemesterProjectLayout>
-
-  <SemesterProjectLayout
-    title="Evaluating and Optimizing Rover–Control Station Wireless Links"
-    major="Communication Systems, Computer Science"
-    pole="European Rover Challenge"
-    contact="arno.laurie@epfl-xplore.ch">
-    <p>
-      This project focuses on improving the reliability and performance of the wireless communication between EPFL Xplore’s Mars Rover and its Control Station. By analyzing network performance under realistic conditions and building a dedicated testbench (both physical and simulated), the goal is to identify communication bottlenecks and test alternative solutions. The final outcome will guide the deployment of a robust, low-latency wireless setup for use during the European Rover Challenge.
-    </p>
-  </SemesterProjectLayout>
-
-  <SemesterProjectLayout
-    title="Modular 6D Pose Estimation for Real-Time Rover Manipulation"
-    major="Computer Science, Robotics, Data Science"
-    pole="European Rover Challenge"
-    contact="arno.laurie@epfl-xplore.ch">
-    <p>
-      To enable fast and accurate object grasping during autonomous tasks, this project focuses on redesigning the 6D pose estimation pipeline used by EPFL Xplore’s Mars Rover. The goal is to modularize and optimize the current YOLOv8-based system, benchmark alternative methods like ZebraPose, and improve both detection speed and pose precision. The final pipeline will be integrated into the Rover’s manipulation stack for enhanced real-time performance during ERC missions.
-    </p>
-  </SemesterProjectLayout> -->
-
+  </section>
 </MainLayout>
+
