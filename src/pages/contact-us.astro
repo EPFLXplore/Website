@@ -1,7 +1,106 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "../components/ui/card";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="Contact Us | EPFL Xplore">
   <h1>Contact Us</h1>
+  <div class="flex flex-row gap-4 w-full justify-center mt-5 h-[450px] group">
+    <a href={`${baseUrl}/partnerships`} class="no-underline">
+      <Card
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
+      >
+        <img
+          src={`https://media.licdn.com/dms/image/v2/D4E22AQEfRNldjY5B5g/feedshare-shrink_800/feedshare-shrink_800/0/1732019223626?e=1756339200&v=beta&t=UKBEda_W6nEXny29E7HAlGVVZ1hm_MLOn3XSjTegzH4`}
+          alt="Become a Sponsor"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+              >Become a Sponsor</CardTitle
+            >
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+              >Partner with us to support the next generation of ambitious
+              engineers</CardDescription
+            >
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+    {/* Join the Team Card */}
+    <a href={`${baseUrl}/join-us`} class="no-underline">
+      <Card
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
+      >
+        <img
+          src={`${baseUrl}/images/team.jpeg`}
+          alt="Join the Team"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+            >
+              Join the Team
+            </CardTitle>
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+            >
+              Join a dynamic community of ambitious students eager to conquer
+              challenges together
+            </CardDescription>
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+    {/* Collaborate with Us Card */}
+    <a href={`${baseUrl}/collaboration`} class="no-underline">
+      <Card
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
+      >
+        <img
+          src={`https://scontent-sjc3-1.cdninstagram.com/v/t51.71878-15/503375144_1425307278893776_6632843155125760272_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=100&ig_cache_key=MzM4NzM5MDEyMTEzOTYzODAyMw%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjExNzB4MjA4MC5zZHIuQzMifQ%3D%3D&_nc_ohc=Kc_oJdq8pQ4Q7kNvwFlbPZ-&_nc_oc=AdnHtfNNziK9R-tuWHElGcRqf6J1FQTSH77dvTHSy5_q9L3eYfnhP5fC11Et2TIjwYC-vvkzKtmr1Hxd0LHj6j7a&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_gid=DyBcn1_umgwU2FNNxPoYiA&oh=00_AfRtyhUp-rtf-C_Q4AIjH17DjwKI0JbTq3wx4C8xQ-Nliw&oe=688A64A8`}
+          alt="Collaborate with Us"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+            >
+              Collaborate with Us
+            </CardTitle>
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+            >
+              We love to share our projects and knowledge with the community.
+            </CardDescription>
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+  </div>
 </MainLayout>

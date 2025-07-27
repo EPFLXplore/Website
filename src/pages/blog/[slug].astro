@@ -15,7 +15,7 @@ const { article } = Astro.props;
 const { Content } = await render(article);
 ---
 
-<MainLayout title={article.data.title + " | EPFL Xplore"}>
+<MainLayout title={article.data.title + " | EPFL Xplore"} theme="light">
   <BlogArticleLayout
     title={article.data.title}
     category={article.data.category}
