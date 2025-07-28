@@ -4,6 +4,7 @@ major: "Computer Science, Robotics"
 pole: "European Rover Challenge"
 contact: "Arno Laurie (arno.laurie@epfl-xplore.ch)"
 applyLink: "https://apply.example.com/moveit"
+pdf_name: "moveit"
 ---
 
 # Motivation

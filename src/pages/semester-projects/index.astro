@@ -6,10 +6,16 @@ import SemesterProjectsGrid from "../../components/SemesterProjectsGrid";
 
 const projects = await getCollection("semester-projects");
 const typedProjects = projects as CollectionEntry<"semester-projects">[];
+const base = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="Semester Projects | EPFL Xplore">
-  <h1>Semester Projects</h1>
+  <h1 class="mb-8">Semester Projects</h1>
+  <p class="text-lg text-muted-foreground mb-6">
+    EPFL Xplore offers a unique opportunity for students to engage in semester projects that align with the vision of the association.
+    These projects allow students to work on either ongoing work, such as the European Rover Challenge (ERC) development, 
+    or to propose new ideas that can be integrated into the Xplore Research (XRE) pole.
+  </p>
   <SemesterProjectsGrid
     client:load
     projects={typedProjects.map((project) => ({
@@ -21,4 +27,10 @@ const typedProjects = projects as CollectionEntry<"semester-projects">[];
       slug: project.slug,
     }))}
   />
+
+  <h2 class="text-2xl font-bold mb-6">Propose your project!</h2>
+  <p class="text-lg text-muted-foreground mb-6">
+    If you are interested in proposing a semester project, please visit our 
+    <a href=`${base}/projects/xplore-research` class="text-blue-500 hover:underline">Propose Semester Projects</a> page for more information.
+
 </MainLayout>
