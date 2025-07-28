@@ -7,6 +7,7 @@ const semesterProjects = defineCollection({
     pole: z.string(),
     contact: z.string(),
     applyLink: z.string().url(),
+    pdf_name: z.string()
   }),
 });
 
