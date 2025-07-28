@@ -88,6 +88,14 @@ const Menu: React.FC = () => (
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
+              href={`${base}/semester-projects`}
+              className={`px-4 rounded-md py-2 text-base font-medium ${isActive(`${base}/semester-projects`) ? "text-secondary" : ""}`}
+            >
+              Semester Projects
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
               href={`${base}/team`}
               className={`px-4 rounded-md py-2 text-base font-medium ${isActive(`${base}/team`) ? "text-secondary" : ""}`}
             >

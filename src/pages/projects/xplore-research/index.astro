@@ -2,6 +2,17 @@
 import NewsLink from "@/components/NewsLink";
 import { base } from "astro:config/server";
 import MainLayout from "../../../layouts/MainLayout.astro";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "../../../components/ui/card";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const baseUrl = import.meta.env.BASE_URL;
+
 ---
 
 <MainLayout title="Xplore Research | EPFL Xplore">
@@ -12,7 +23,7 @@ import MainLayout from "../../../layouts/MainLayout.astro";
     </p>
   </section>
 
-  <section class="max-w-4xl mx-auto py-10 space-y-6">
+  <section class="max-w-5xl mx-auto py-20 space-y-8">
     <h2 class="text-3xl font-bold text-left">Our Origins</h2>
     <p>
       Founded in <strong>2023</strong>, Xplore Research (XRE) was launched to extend the mission of EPFL Xplore beyond the European Rover Challenge (ERC).
@@ -23,19 +34,50 @@ import MainLayout from "../../../layouts/MainLayout.astro";
       <h3 class="text-xl font-semibold mb-2">🚀 Milestones</h3>
       <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
         <li>Launched the <em>Recycling Plastic Project (WALL-E)</em> – turning obselete 3D printed parts into new filament</li>
-        <li>Developed our first prototype of a <em> Robot Leg</em> for Legged Robots</li>
+        <li>Developed our first prototype of a <em> Robot Leg (Chienpanzé)</em> for Legged Robots</li>
         <li>Introduced <em>AI Division</em> for ERC and beyond</li>
       </ul>
     </div>
   </section>
 
-  <section class="max-w-4xl mx-auto py-14 space-y-10">
+  <section class="max-w-5xl mx-auto py-20 space-y-8">
+    <h2 class="text-4xl font-bold tracking-tight text-white">A New Vision, New Objectives</h2>
+    <p class="text-lg leading-relaxed text-gray-300">
+      Starting from <strong>September 2025</strong>, Xplore Research will be restructured, giving students the opportunity
+      to <strong>launch their own projects</strong> focused on innovation and space robotics. This initiative aims to support
+      independent thinking and broaden the frontier of student-led engineering at EPFL.
+    </p>
+
+    <div class="rounded-2xl px-8 py-6 shadow-xl bg-gray-800/80 backdrop-blur-md border border-gray-700">
+      <h3 class="text-2xl font-semibold mb-6 text-white">🔍 Focus Areas</h3>
+      <div class="flex flex-wrap gap-x-6 gap-y-4">
+        <span class="bg-blue-700/70 text-white px-5 py-2 rounded-full text-base font-semibold shadow-sm hover:bg-blue-600 transition">
+          Student-led Innovation
+        </span>
+        <span class="bg-purple-700/70 text-white px-5 py-2 rounded-full text-base font-semibold shadow-sm hover:bg-purple-600 transition">
+          Interdisciplinary Thinking
+        </span>
+        <span class="bg-pink-700/70 text-white px-5 py-2 rounded-full text-base font-semibold shadow-sm hover:bg-pink-600 transition">
+          Open-source
+        </span>
+        <span class="bg-teal-700/70 text-white px-5 py-2 rounded-full text-base font-semibold shadow-sm hover:bg-teal-600 transition">
+          Prototyping & Testing
+        </span>
+        <span class="bg-yellow-600/80 text-black px-5 py-2 rounded-full text-base font-semibold shadow-sm hover:bg-yellow-500 transition">
+          Space Robotics
+        </span>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="max-w-5xl mx-auto py-20 space-y-8">
     <div class="text-center">
       <h2 class="text-3xl font-bold">Are you ready to join?</h2>
       <p class="text-lg text-muted-foreground mt-2">
         Are you a Bachelor’s or Master’s student at EPFL with a passion for space robotics?
-  Ready to take on real-world engineering challenges and build cutting-edge prototypes alongside your studies?
-  Or are you interested in joining the EPFL Xplore for a semester project related to space engineering?
+        Ready to take on real-world engineering challenges and build cutting-edge prototypes alongside your studies?
+        Or are you interested in joining the EPFL Xplore for a semester project related to space engineering?
       </p>
     </div>
 
@@ -50,13 +92,23 @@ import MainLayout from "../../../layouts/MainLayout.astro";
             <li>Compete for access to labs, gear & funding</li>
           </ul>
         </div>
-        <div class="mt-auto pt-6">
-          <NewsLink
-            type="recruitment"
-            href={`${base}/propose-project`}
-            title="Submit your project idea"
-            icon="https://cdn3d.iconscout.com/3d/premium/thumb/project-management-3d-icon-download-in-png-blend-fbx-gltf-file-formats--teamwork-work-planning-business-pack-icons-9291049.png?f=webp"
-          />
+        <div class="mt-auto pt-6 text-center">
+          <a
+            href={""}
+            class="text-sm flex flex-row items-center gap-1 ml-auto text-foreground"
+          >
+          <Button variant={"link"} className="cursor-pointer">
+            Download the Xplore Research Proposal Form
+            <ArrowRight className="size-3" />
+          </Button></a>
+          <a
+            href={""}
+            class="text-sm flex flex-row items-center gap-1 ml-auto text-foreground"
+          >
+          <Button variant={"link"} className="cursor-pointer">
+            Submit Your Proposal Form
+            <ArrowRight className="size-3" />
+          </Button></a>
         </div>
       </div>
 
@@ -80,12 +132,105 @@ import MainLayout from "../../../layouts/MainLayout.astro";
   </section>
 
 
-  <section class="max-w-4xl mx-auto py-10 space-y-4">
+  <section class="max-w-5xl mx-auto py-20 space-y-8">
     <h2 class="text-2xl font-bold">Why XRE Matters</h2>
-    <p class="text-muted-foreground">
+    <p class="text-muted-foreground mb-8">
       Xplore Research complements the ERC and XRC poles by enabling more exploratory and advanced projects.
       It's a space where students can focus on proof-of-concept engineering and groundbreaking ideas.
     </p>
+
+    <div class="flex flex-row gap-4 w-full justify-center mt-5 h-[450px] group">
+    {/* CHIENPANZÉ */}
+    <a href={`${baseUrl}/projects/xplore-research/past-projects/chienpanze`} class="no-underline">
+      <Card
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
+      >
+        <img
+          src={`${baseUrl}/images/projects/IMG_5992.JPG`}
+          alt="Pole 1"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+              >Chienpanzé</CardTitle
+            >
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+              >Legged Robot Project</CardDescription
+            >
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+    {/* WALL-E */}
+    <a
+      href={`${baseUrl}/projects/xplore-research/past-projects/walle`}
+      class="no-underline"
+    >
+      <Card
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
+      >
+        <img
+          src={`${baseUrl}/images/projects/IMG_0513.jpg`}
+          alt="Pole 2"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+            >
+              WALL-E
+            </CardTitle>
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+              >Recycling Plastic Project</CardDescription
+            >
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+    {/* AI */}
+    <a href={`${baseUrl}/projects/xplore-research/past-projects/ai`} class="no-underline">
+      <Card
+        className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
+      >
+        <img
+          src={`${baseUrl}/images/projects/Xplore_20-03-25_-29.jpg`}
+          alt="Pole 3"
+          class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
+        />
+        <div
+          class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col h-full justify-end p-6">
+          <CardHeader className="p-0">
+            <CardTitle
+              className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300"
+            >
+              AI Division
+            </CardTitle>
+            <CardDescription
+              className="text-white/80 group-hover/card:text-white/90 transition-all duration-300"
+              >describe projects
+            </CardDescription>
+          </CardHeader>
+        </div>
+      </Card>
+    </a>
+  </div>
+
   </section>
 </MainLayout>
 
