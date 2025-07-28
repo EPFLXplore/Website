@@ -4,7 +4,7 @@ major: "Computer Science, Robotics, Data Science"
 pole: "European Rover Challenge"
 contact: "Arno Laurie (arno.laurie@epfl-xplore.ch)"
 applyLink: "https://apply.example.com/yolov8"
-pdf_name: "yolov8"
+pdf_name: "yolo_models"
 ---
 
 # Motivation
