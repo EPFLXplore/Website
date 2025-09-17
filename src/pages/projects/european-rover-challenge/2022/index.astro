@@ -1,0 +1,31 @@
+---
+import ERCPage from "../../../../layouts/ERC.astro"
+
+const results = [
+  {
+    title: "🥈 2nd Place Overall",
+    text: "Astra and it's team achieved an incredible performance even in the night!",
+    gradient: "from-yellow-400 via-orange-400 to-red-400",
+  },
+  {
+    title: "⭐ Navigation Excellency",
+    text: "Special award Navigation Task",
+    gradient: "from-blue-500 via-indigo-500 to-purple-600",
+  },
+];
+---
+
+<ERCPage
+  rover="Astra"
+  drone=""
+  sentence_intro=""
+  year="2022"
+  title="European Rover Challenge 2022"
+  heroImage="11.jpg"
+  roverImage="astra.jpg"
+  droneImage="7.jpg"
+  results={results}
+  videoId="UUAIprJ8epM"
+  teamImage="Team_Photo.jpg"
+  galleryCount={22}
+/>

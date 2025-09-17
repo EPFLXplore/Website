@@ -1,7 +1,132 @@
 ---
 import MainLayout from "../../../layouts/MainLayout.astro";
+import { base } from "astro:config/server";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="Xplore Rover Challenge | EPFL Xplore">
-  <h1>Xplore Rover Challenge</h1>
+  <!-- Hero Section -->
+  <section class="max-w-5xl mx-auto py-16 text-center">
+    <h1 class="text-5xl font-extrabold mb-4 text-primary">Xplore Rover Challenge</h1>
+    <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+      The <strong>Education Pole</strong> of EPFL Xplore.  
+      Our main goal: turning students into <strong>ERC engineers</strong> — from no prior knowledge to makers.
+    </p>
+    <img 
+      src={`${baseUrl}/images/xrc/hero.jpg`} 
+      alt="Xplore Rover Challenge Students" 
+      class="rounded-xl shadow-lg w-full object-cover max-h-[500px] mt-10"
+    />
+  </section>
+
+  <!-- A New Start -->
+  <section class="max-w-6xl mx-auto py-20 space-y-8">
+    <div class="bg-gray-800/80 rounded-2xl p-8 shadow-xl text-center">
+      <h2 class="text-3xl font-bold mb-4">📚 A New Start 📚</h2>
+      <p class="text-lg text-gray-300">
+        New to robotics? Wanna learn the basics? <br />
+        <strong>We are made for you!</strong>
+      </p>
+      <p class="mt-4 text-muted-foreground">
+        <strong>Work in teams</strong> to build mini-rovers for a fun competition at EPFL.  
+        The perfect way to learn before joining the European Rover Challenge!
+      </p>
+      <img 
+        src={`${baseUrl}/images/xrc/students.jpg`} 
+        alt="Students building mini rovers" 
+        class="rounded-lg shadow-lg w-full max-h-[400px] object-cover mt-8"
+      />
+    </div>
+  </section>
+
+  <!-- Team Setup -->
+  <section class="max-w-6xl mx-auto py-20 space-y-8">
+    <h2 class="text-3xl font-bold">👥 An Ambitious First Project</h2>
+    <p class="text-muted-foreground">
+      Each team is composed of:
+    </p>
+    <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+      <li>⚙️ <strong>2 Mechanical Engineers</strong></li>
+      <li>⚡ <strong>1 Electrical Engineer</strong></li>
+      <li>💻 <strong>1 Software Engineer</strong></li>
+    </ul>
+    <p class="mt-4 text-muted-foreground">
+      One of them takes the role of <strong>Project Manager</strong>, and everyone works hard to win the competition!
+    </p>
+  </section>
+
+  <!-- Workshops -->
+  <section class="max-w-6xl mx-auto py-20 space-y-12">
+    <h2 class="text-3xl font-bold">🔧 From Workshops to Makers</h2>
+    <p class="text-muted-foreground">
+      Students follow a series of workshops throughout the year to gain the skills needed to design, build, and operate their rovers.
+    </p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">Soldering</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-soldering.jpg`} alt="Soldering" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">Raspberry Pi & Linux</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-raspberry.jpg`} alt="Raspberry Pi" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">CAD & 3D Printing</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-cad.jpg`} alt="CAD and 3D printing" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">PCB Design</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-pcb.jpg`} alt="PCB" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">ROS2</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-ros2.jpg`} alt="ROS2" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">Robust ME Systems</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-me.jpg`} alt="Mechanical Systems" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">Batteries</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-batteries.jpg`} alt="Batteries" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">Arduinos</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-arduino.jpg`} alt="Arduino" class="rounded-lg shadow" />
+      </div>
+      <div class="text-center">
+        <h3 class="font-semibold mb-2">Project Management</h3>
+        <img src={`${baseUrl}/images/xrc/workshop-project.jpg`} alt="Project Management" class="rounded-lg shadow" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Bringing It To Life -->
+  <section class="max-w-6xl mx-auto py-20 space-y-8">
+    <h2 class="text-3xl font-bold">⚡ Bringing Everything to Life</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <img src={`${baseUrl}/images/xrc/build1.jpg`} alt="Students building rovers" class="rounded-lg shadow" />
+      <img src={`${baseUrl}/images/xrc/build2.jpg`} alt="Teamwork" class="rounded-lg shadow" />
+    </div>
+  </section>
+
+  <!-- Presenting Work -->
+  <section class="max-w-6xl mx-auto py-20 space-y-8">
+    <h2 class="text-3xl font-bold">🎤 Presenting Their Work</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <img src={`${baseUrl}/images/xrc/presentation1.jpg`} alt="Student Presentation" class="rounded-lg shadow" />
+      <img src={`${baseUrl}/images/xrc/presentation2.jpg`} alt="Project Presentation" class="rounded-lg shadow" />
+    </div>
+  </section>
+
+  <!-- Competition -->
+  <section class="max-w-6xl mx-auto py-20 space-y-8">
+    <h2 class="text-3xl font-bold">🏁 The Grand Finale</h2>
+    <p class="text-muted-foreground">
+      After a year of learning, designing, and building, the teams compete in the Xplore Rover Challenge at EPFL.  
+      It’s the perfect stepping stone before joining the European Rover Challenge.
+    </p>
+    <img src={`${baseUrl}/images/xrc/finale.jpg`} alt="Competition Finale" class="rounded-lg shadow-lg w-full" />
+  </section>
 </MainLayout>

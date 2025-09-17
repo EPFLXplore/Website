@@ -1,0 +1,31 @@
+---
+import ERCPage from "../../../../layouts/ERC.astro"
+
+const results = [
+  {
+    title: "🥉 3rd Place Overall",
+    text: "EPFL Xplore achieves podium with it's first participation!",
+    gradient: "from-yellow-400 via-orange-400 to-red-400",
+  },
+  {
+    title: "⭐ Probing & Science Excellencies",
+    text: "Special awards 2 Tasks",
+    gradient: "from-blue-500 via-indigo-500 to-purple-600",
+  },
+];
+---
+
+<ERCPage
+  rover="Argos"
+  drone=""
+  sentence_intro=""
+  year="2021"
+  title="European Rover Challenge 2021"
+  heroImage="11.jpg"
+  roverImage="argos.jpg"
+  droneImage="7.jpg"
+  results={results}
+  videoId="zbsS0uqnrJQ"
+  teamImage="Team_Photo.jpg"
+  galleryCount={22}
+/>

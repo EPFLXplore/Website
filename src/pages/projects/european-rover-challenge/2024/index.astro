@@ -1,0 +1,31 @@
+---
+import ERCPage from "../../../../layouts/ERC.astro"
+
+const results = [
+  {
+    title: "13st Place Overall",
+    text: "",
+    gradient: "from-yellow-400 via-orange-400 to-red-400",
+  },
+  {
+    title: "⭐ Presentation Excellency",
+    text: "Special award for the presentation of the association to the jury",
+    gradient: "from-blue-500 via-indigo-500 to-purple-600",
+  },
+];
+---
+
+<ERCPage
+  rover="Onyx"
+  drone="DragonFly"
+  sentence_intro=""
+  year="2024"
+  title="European Rover Challenge 2024"
+  heroImage="11.jpg"
+  roverImage="onyx.jpg"
+  droneImage="7.jpg"
+  results={results}
+  videoId="5fp4Bc179I0"
+  teamImage="Team_Photo.jpg"
+  galleryCount={22}
+/>
