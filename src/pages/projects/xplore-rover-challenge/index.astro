@@ -6,7 +6,7 @@ import { base } from "astro:config/server";
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<MainLayout title="Xplore Rover Challenge | EPFL Xplore">$
+<MainLayout title="Xplore Rover Challenge | EPFL Xplore">
 
    <!-- Header -->
   <div class="absolute top-0 left-0 w-full">
@@ -29,111 +29,135 @@ const baseUrl = import.meta.env.BASE_URL;
 
   <!-- A New Start -->
   <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <div class="bg-gray-800/80 rounded-2xl p-8 shadow-xl text-center">
-      <h2 class="text-3xl font-bold mb-4">📚 A New Start 📚</h2>
+    <div class="p-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
       <p class="text-lg text-gray-300">
-        New to robotics? Wanna learn the basics? <br />
-        <strong>We are made for you!</strong>
-      </p>
-      <p class="mt-4 text-muted-foreground">
-        <strong>Work in teams</strong> to build mini-rovers for a fun competition at EPFL.  
-        The perfect way to learn before joining the European Rover Challenge!
+        The Xplore Rover Challenge (XRC) is a student-centered robotics competition designed to introduce bachelor-level students to the world of robotics, teamwork, and engineering through the creation of a mini-rover.
+        Organized Xplore, XRC challenges participants to design, build, and program a rover capable of completing a variety of technical tasks in a collaborative and competitive environment.
       </p>
       <img 
-        src={`${baseUrl}/images/xrc/students.jpg`} 
+        src={`${baseUrl}/images/xrc/finale.jpg`} 
         alt="Students building mini rovers" 
-        class="rounded-lg shadow-lg w-full max-h-[400px] object-cover mt-8"
+        class="rounded-lg shadow-lg mx-auto max-h-[600px] object-cover mt-8"
       />
     </div>
   </section>
 
-  <!-- Team Setup -->
-  <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <h2 class="text-3xl font-bold">👥 An Ambitious First Project</h2>
-    <p class="text-muted-foreground">
-      Each team is composed of:
-    </p>
-    <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
-      <li>⚙️ <strong>2 Mechanical Engineers</strong></li>
-      <li>⚡ <strong>1 Electrical Engineer</strong></li>
-      <li>💻 <strong>1 Software Engineer</strong></li>
-    </ul>
-    <p class="mt-4 text-muted-foreground">
-      One of them takes the role of <strong>Project Manager</strong>, and everyone works hard to win the competition!
-    </p>
-  </section>
-
-  <!-- Workshops -->
+    <!-- Timeline -->
   <section class="max-w-6xl mx-auto py-20 space-y-12">
-    <h2 class="text-3xl font-bold">🔧 From Workshops to Makers</h2>
-    <p class="text-muted-foreground">
-      Students follow a series of workshops throughout the year to gain the skills needed to design, build, and operate their rovers.
-    </p>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">Soldering</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-soldering.jpg`} alt="Soldering" class="rounded-lg shadow" />
+    <h2 class="text-3xl font-bold text-center">The Road to XRC</h2>
+
+    <div class="relative border-l border-gray-600 dark:border-gray-500 ml-4">
+      
+      <!-- Kick-off -->
+      <div class="mb-10 ml-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
+        </span>
+        <time class="mb-1 text-sm font-medium text-gray-400">Early Oct</time>
+        <h3 class="text-lg font-semibold text-white">Kick-off & Workshops</h3>
+        <p class="text-gray-300">
+          Intro to mechanical construction, soldering, Linux, and robotics concepts like differentials, PCB, and ROS2 with Docker
+        </p>
       </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">Raspberry Pi & Linux</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-raspberry.jpg`} alt="Raspberry Pi" class="rounded-lg shadow" />
+
+      <!-- IDR -->
+      <div class="mb-10 ml-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
+        </span>
+        <time class="mb-1 text-sm font-medium text-gray-400">Late Oct</time>
+        <h3 class="text-lg font-semibold text-white">IDR (Initial Design Review)</h3>
+        <p class="text-gray-300">
+          Early project planning, team role distribution, and validation of concept understanding
+        </p>
       </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">CAD & 3D Printing</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-cad.jpg`} alt="CAD and 3D printing" class="rounded-lg shadow" />
+
+      <!-- PDR -->
+      <div class="mb-10 ml-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
+        </span>
+        <time class="mb-1 text-sm font-medium text-gray-400">Nov</time>
+        <h3 class="text-lg font-semibold text-white">PDR (Preliminary Design Review)</h3>
+        <p class="text-gray-300"> robotics concepts like dif
+          Mechanical design progress, component choices, and first prototypes of a test bench
+        </p>
       </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">PCB Design</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-pcb.jpg`} alt="PCB" class="rounded-lg shadow" />
+
+      <!-- CDR -->
+      <div class="mb-10 ml-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
+        </span>
+        <time class="mb-1 text-sm font-medium text-gray-400">Early Dec</time>
+        <h3 class="text-lg font-semibold text-white">CDR (Critical Design Review)</h3>
+        <p class="text-gray-300">
+          Full rover architecture validation, integration planning, risk analysis ⚠️, and prototype test bench demo.
+        </p>
       </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">ROS2</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-ros2.jpg`} alt="ROS2" class="rounded-lg shadow" />
+
+      <!-- Final Sprint -->
+      <div class="mb-10 ml-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
+        </span>
+        <time class="mb-1 text-sm font-medium text-gray-400">2nd Sem</time>
+        <h3 class="text-lg font-semibold text-white">Final Sprint</h3>
+        <p class="text-gray-300">
+          Debugging, testing, and refining. Getting ready for the big day
+        </p>
       </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">Robust ME Systems</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-me.jpg`} alt="Mechanical Systems" class="rounded-lg shadow" />
+
+      <!-- Final Event -->
+      <div class="ml-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
+        </span>
+        <time class="mb-1 text-sm font-medium text-gray-400">May</time>
+        <h3 class="text-lg font-semibold text-white">🚀 XRC Final Event</h3>
+        <p class="text-gray-300">
+          Competition day: the ultimate test of your rover!
+        </p>
       </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">Batteries</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-batteries.jpg`} alt="Batteries" class="rounded-lg shadow" />
+
+    </div>
+  </section>
+
+  <!-- Where It Happens -->
+  <section class="max-w-5xl mx-auto py-16">
+    <div class="bg-[#1b2540] rounded-xl p-8 text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">📍 Where It Happens</h2>
+      <p class="text-muted-foreground mb-6">
+        The XRC final takes place across various iconic EPFL venues such as:
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+        <button class="px-6 py-2 bg-primary-foreground text-white rounded-md shadow hover:opacity-90">
+          Voutes Rolex
+        </button>
+        <button class="px-6 py-2 bg-primary-foreground text-white rounded-md shadow hover:opacity-90">
+          Agora
+        </button>
       </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">Arduinos</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-arduino.jpg`} alt="Arduino" class="rounded-lg shadow" />
-      </div>
-      <div class="text-center">
-        <h3 class="font-semibold mb-2">Project Management</h3>
-        <img src={`${baseUrl}/images/xrc/workshop-project.jpg`} alt="Project Management" class="rounded-lg shadow" />
+      <p class="text-muted-foreground">
+        This event is open to students, families, and the public, aiming to spark curiosity in robotics.
+      </p>
+    </div>
+  </section>
+
+  <!-- Memories -->
+  <section class="max-w-6xl mx-auto py-16">
+    <div class="bg-[#1b2540] rounded-xl p-8 shadow-lg">
+      <h2 class="text-2xl font-bold text-center mb-6">📸 Memories from XRC</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <img src={`${baseUrl}/images/xrc/build1.jpg`} alt="XRC memory 1" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/build2.jpg`} alt="XRC memory 2" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/presentation1.jpg`} alt="XRC memory 3" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/presentation2.jpg`} alt="XRC memory 4" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/students.jpg`} alt="XRC memory 5" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/pic2.jpg`} alt="XRC memory 6" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/pic3.jpg`} alt="XRC memory 7" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/pic5.jpg`} alt="XRC memory 9" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/pic6.jpg`} alt="XRC memory 10" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/pic7.jpg`} alt="XRC memory 11" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/pic8.jpg`} alt="XRC memory 12" class="rounded-lg shadow" />
+        <img src={`${baseUrl}/images/xrc/pic9.jpg`} alt="XRC memory 13" class="rounded-lg shadow" />
       </div>
     </div>
   </section>
 
-  <!-- Bringing It To Life -->
-  <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <h2 class="text-3xl font-bold">⚡ Bringing Everything to Life</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <img src={`${baseUrl}/images/xrc/build1.jpg`} alt="Students building rovers" class="rounded-lg shadow" />
-      <img src={`${baseUrl}/images/xrc/build2.jpg`} alt="Teamwork" class="rounded-lg shadow" />
-    </div>
-  </section>
-
-  <!-- Presenting Work -->
-  <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <h2 class="text-3xl font-bold">🎤 Presenting Their Work</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <img src={`${baseUrl}/images/xrc/presentation1.jpg`} alt="Student Presentation" class="rounded-lg shadow" />
-      <img src={`${baseUrl}/images/xrc/presentation2.jpg`} alt="Project Presentation" class="rounded-lg shadow" />
-    </div>
-  </section>
-
-  <!-- Competition -->
-  <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <h2 class="text-3xl font-bold">🏁 The Grand Finale</h2>
-    <p class="text-muted-foreground">
-      After a year of learning, designing, and building, the teams compete in the Xplore Rover Challenge at EPFL.  
-      It’s the perfect stepping stone before joining the European Rover Challenge.
-    </p>
-    <img src={`${baseUrl}/images/xrc/finale.jpg`} alt="Competition Finale" class="rounded-lg shadow-lg w-full" />
-  </section>
 </MainLayout>
