@@ -2,34 +2,42 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import teamData from "../data/team.js";
 import TeamMember from "../components/ui/TeamMember.astro";
+import Menu from "@/components/Menu";
 
 const baseUrl = import.meta.env.BASE_URL;
 const defaultPhoto = `${baseUrl}/images/team/default.jpg`;
 ---
 
 <MainLayout title="Meet the Team | EPFL Xplore">
-  <h1>Meet the Team</h1>
-  <p class="font-light max-w-prose">
-    EPFL Xplore is a student-run organization composed each year of 100+ members
-    from diverse backgrounds. We are all volunteers contributing outside our
-    studies to make challenging technologies a reality.
-  </p>
 
-  {
-    teamData.map((pole) => (
-      <section class="my-10">
-        <h2>{pole.name}</h2>
+  <!-- Header -->
+  <div class="absolute top-0 left-0 w-full">
+    <Menu client:load />
+  </div>
+
+  <!-- Page content -->
+  <div class="px-6 md:px-12 lg:px-16 py-24 max-w-7xl mx-auto">
+    <h1 class="text-5xl font-bold mb-6 text-center">Meet the Team</h1>
+    <p class="font-light text-lg text-center max-w-3xl mx-auto mb-16">
+      EPFL Xplore is a student-run organization composed each year of 100+ members
+      from diverse backgrounds. We are all volunteers contributing outside our
+      studies to make challenging technologies a reality.
+    </p>
+
+    {teamData.map((pole) => (
+      <section class="my-16">
+        <h2 class="text-3xl font-semibold mb-10 text-center">{pole.name}</h2>
+
         {pole.teams.map((team) => (
-          <div class="my-6">
-            <h3 class="my-2">{team.name}</h3>
-            <ul class="flex flex-wrap gap-4">
+          <div class="my-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
               {team.members.map((member) => (
                 <TeamMember member={member} defaultPhoto={defaultPhoto} />
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </section>
-    ))
-  }
+    ))}
+  </div>
 </MainLayout>

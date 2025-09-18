@@ -1,4 +1,5 @@
 ---
+import Menu from "@/components/Menu";
 import MainLayout from "./MainLayout.astro"
 
 /**
@@ -29,8 +30,15 @@ const images = Array.from({ length: galleryCount }, (_, i) => `${i + 1}.jpg`);
 ---
 
 <MainLayout title={`ERC ${year} | EPFL Xplore`}>
+
+  <!-- Header -->
+  <div class="absolute top-0 left-0 w-full">
+    <Menu client:load />
+  </div>
+
+
   <!-- Hero Section -->
-  <section class="max-w-6xl mx-auto py-16 text-center">
+  <section class="max-w-6xl mx-auto py-26 text-center">
     <h1 class="text-5xl font-extrabold mb-4 text-primary">{title}</h1>
     <p class="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
       Follow the journey of EPFL Xplore at the <strong>ERC {year}</strong>: from the rover & drone design to the challenges, results, and memories from Poland.

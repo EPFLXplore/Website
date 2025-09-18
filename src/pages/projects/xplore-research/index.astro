@@ -10,13 +10,20 @@ import {
 } from "../../../components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Menu from "@/components/Menu";
 
 const baseUrl = import.meta.env.BASE_URL;
 
 ---
 
 <MainLayout title="Xplore Research | EPFL Xplore">
-  <section class="max-w-5xl mx-auto py-16 text-center">
+
+   <!-- Header -->
+  <div class="absolute top-0 left-0 w-full">
+    <Menu client:load />
+  </div>
+
+  <section class="max-w-5xl mx-auto py-26 text-center">
     <h1 class="text-5xl font-extrabold mb-4 text-primary">Xplore Research</h1>
     <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
       The third pole of EPFL Xplore, dedicated to the future of space robotics through innovation, experimentation, and student-led engineering.

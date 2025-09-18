@@ -1,13 +1,20 @@
 ---
+import Menu from "@/components/Menu";
 import MainLayout from "../../../layouts/MainLayout.astro";
 import { base } from "astro:config/server";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<MainLayout title="Xplore Rover Challenge | EPFL Xplore">
+<MainLayout title="Xplore Rover Challenge | EPFL Xplore">$
+
+   <!-- Header -->
+  <div class="absolute top-0 left-0 w-full">
+    <Menu client:load />
+  </div>
+
   <!-- Hero Section -->
-  <section class="max-w-5xl mx-auto py-16 text-center">
+  <section class="max-w-5xl mx-auto py-26 text-center">
     <h1 class="text-5xl font-extrabold mb-4 text-primary">Xplore Rover Challenge</h1>
     <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
       The <strong>Education Pole</strong> of EPFL Xplore.  
