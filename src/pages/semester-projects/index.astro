@@ -12,18 +12,19 @@ const base = import.meta.env.BASE_URL;
 
 <MainLayout title="Semester Projects | EPFL Xplore">
 
-    <!-- Header -->
-  <div class="absolute top-0 left-0 w-full">
+  <!-- Header -->
+  <div class="absolute top-0 left-0 w-full z-50">
     <Menu client:load />
   </div>
 
-  <section class="max-w-5xl mx-auto py-26 text-center">
-    <h1 class="text-5xl font-extrabold mb-4 text-primary">Semester Projects</h1>
-    <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
-      EPFL Xplore offers a unique opportunity for students to engage in semester projects that align with the vision of the association.
-      These projects allow students to work on either ongoing work, such as the European Rover Challenge (ERC) development, 
-      or to propose new ideas that can be integrated into the Xplore Research (XRE) pole.
+  <section class="relative bg-gradient-to-b from-blue-900 via-purple-900 to-black py-28 text-center text-white">
+    <h1 class="text-6xl font-extrabold mb-6">Semester Projects</h1>
+    <p class="text-xl max-w-3xl mx-auto opacity-90 leading-relaxed">
+      EPFL Xplore offers a unique opportunity for students to engage in semester projects that align with
+      the vision of the association. Work on ongoing challenges like the European Rover Challenge,
+      or propose your own ideas in the Xplore Research pole.
     </p>
+    <p class="mt-6 text-lg font-semibold text-blue-300">Explore. Propose. Build. Learn.</p>
   </section>
 
   <SemesterProjectsGrid
@@ -33,9 +34,17 @@ const base = import.meta.env.BASE_URL;
       major: project.data.major,
       pole: project.data.pole,
       contact: project.data.contact,
-      applyLink: project.data.applyLink,
+      applyLink: `${base}/${project.data.applyLink}`,
       slug: project.slug,
     }))}
   />
+
+  <section class="relative bg-gradient-to-r from-purple-700 to-blue-700 py-16 text-center text-white rounded-xl max-w-6xl mx-auto shadow-lg mt-20">
+    <h2 class="text-3xl font-extrabold mb-4">Have an idea for a project?</h2>
+    <p class="text-lg mb-8 opacity-90">Submit your proposal and make it part of EPFL Xplore Research.</p>
+    <a href={`${base}/projects/xplore-research`} class="px-6 py-3 bg-white text-black font-semibold rounded-lg shadow hover:bg-gray-200 transition">
+      Submit a Project Proposal
+    </a>
+  </section>
 
 </MainLayout>

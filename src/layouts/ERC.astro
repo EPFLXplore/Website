@@ -1,6 +1,7 @@
 ---
 import Menu from "@/components/Menu";
 import MainLayout from "./MainLayout.astro"
+import Rover from "@/components/Rover";
 
 /**
  * @typedef {Object} Result
@@ -52,7 +53,9 @@ const images = Array.from({ length: galleryCount }, (_, i) => `${i + 1}.jpg`);
 
   <!-- Rover Section -->
   <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <h2 class="text-3xl font-bold">🚀 Rover & Drone Development</h2>
+    <h2 class="text-4xl font-bold text-center">Rover & Drone Development</h2>
+    <Rover client:load />
+
     <p>
       We present <strong>{rover}</strong> and our aerial drone <strong>{drone}</strong>.
       {sentence_intro}
@@ -65,7 +68,7 @@ const images = Array.from({ length: galleryCount }, (_, i) => `${i + 1}.jpg`);
 
   <!-- Results -->
   <section class="max-w-6xl mx-auto py-20 space-y-12">
-    <h2 class="text-3xl font-bold text-center">🏆 Results</h2>
+    <h2 class="text-3xl font-bold text-center">Results</h2>
     <div class="grid md:grid-cols-2 gap-8">
       {results.map((res) => (
         <div class={`rounded-2xl p-1 shadow-lg bg-gradient-to-r ${res.gradient}`}>
@@ -81,7 +84,7 @@ const images = Array.from({ length: galleryCount }, (_, i) => `${i + 1}.jpg`);
   <!-- Video -->
   <section class="max-w-6xl mx-auto py-5 space-y-12">
     <div class="space-y-4">
-      <h2 class="text-2xl font-semibold">🌍 Video for Qualifications</h2>
+      <h2 class="text-2xl font-semibold">Video for Qualifications</h2>
       <iframe 
         class="w-full aspect-video rounded-lg shadow"
         src={`https://www.youtube.com/embed/${videoId}`}
@@ -95,13 +98,13 @@ const images = Array.from({ length: galleryCount }, (_, i) => `${i + 1}.jpg`);
 
   <!-- Team -->
   <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <h2 class="text-3xl font-bold">👥 The Team</h2>
+    <h2 class="text-3xl font-bold">The Team</h2>
     <img src={`${baseUrl}/images/${year}/${teamImage}`} alt={`Team ${year}`} class="rounded-lg shadow-lg w-full" />
   </section>
 
   <!-- Gallery -->
   <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <h2 class="text-3xl font-bold">📸 Gallery</h2>
+    <h2 class="text-3xl font-bold">Gallery</h2>
     <div class="grid md:grid-cols-3 gap-4">
       {images.map((file) => (
         <img

@@ -3,11 +3,18 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import MainLayout from "../layouts/MainLayout.astro";
 import { ArrowRight, MessageSquareWarning } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Menu from "@/components/Menu";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="Join Us | EPFL Xplore">
+
+  <!-- Header -->
+  <div class="absolute top-0 left-0 w-full z-50">
+    <Menu client:load />
+  </div>
+
   <h1>Join Us</h1>
   <Alert
     className="my-5 max-w-2xl mx-auto bg-amber-700 text-secondary-foreground"
