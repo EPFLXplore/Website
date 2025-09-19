@@ -17,7 +17,7 @@ const results = [
 // Glob import here, pass images as prop
 const baseUrl = import.meta.env.BASE_URL;
 const imagesGlob = import.meta.glob("/public/images/2024/*.jpg", { eager: true });
-const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2025/${path.split("/").pop()}`);
+const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2024/${path.split("/").pop()}`);
 
 ---
 
