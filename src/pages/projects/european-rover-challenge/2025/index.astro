@@ -13,6 +13,11 @@ const results = [
     gradient: "from-blue-500 via-indigo-500 to-purple-600",
   },
 ];
+
+// Glob import here, pass images as prop
+const baseUrl = import.meta.env.BASE_URL;
+const imagesGlob = import.meta.glob("/public/images/2025/*.jpg", { eager: true });
+const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2025/${path.split("/").pop()}`);
 ---
 
 <ERCPage
@@ -27,5 +32,5 @@ const results = [
   results={results}
   videoId="OPM6HM0tbqo"
   teamImage="Team_Photo.jpg"
-  galleryCount={22}
+  images={images}
 />

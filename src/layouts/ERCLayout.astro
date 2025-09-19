@@ -4,7 +4,6 @@ import MainLayout from "./MainLayout.astro"
 import Rover from "@/components/Rover";
 
 /**
- * @typedef {Object} Result
  * @property {string} title
  * @property {string} text
  * @property {string} gradient
@@ -23,11 +22,13 @@ const {
   results,
   videoId,
   teamImage,
-  galleryCount,
+  /** @type {string[]} */
+  images
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL;
-const images = Array.from({ length: galleryCount }, (_, i) => `${i + 1}.jpg`);
+
+
 ---
 
 <MainLayout title={`ERC ${year} | EPFL Xplore`}>
@@ -106,10 +107,10 @@ const images = Array.from({ length: galleryCount }, (_, i) => `${i + 1}.jpg`);
   <section class="max-w-6xl mx-auto py-20 space-y-8">
     <h2 class="text-3xl font-bold">Gallery</h2>
     <div class="grid md:grid-cols-3 gap-4">
-      {images.map((file) => (
+      {images.map((src, idx) => (
         <img
-          src={`${baseUrl}/images/${year}/${file}`}
-          alt={`ERC ${year} Gallery ${file}`}
+          src={src}
+          alt={`ERC ${year} Gallery ${idx + 1}`}
           class="rounded-lg shadow hover:scale-105 transition-transform"
           loading="lazy"
         />

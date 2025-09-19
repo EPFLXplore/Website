@@ -61,7 +61,7 @@ export default [
             name: "Badr El Berri",
             role: "Chief Communications Officer",
             studies: "BSc HEC",
-            photo: `https://epfl-xplore.ch/wp-content/uploads/2024/07/MG_0980-150x150.jpg`,
+            photo: `${baseUrl}/images/team/badr.png`,
             socials: {
               linkedin: "https://www.linkedin.com/in/badr-el-berri/",
               email: "badr.elberri@epfl-xplore.ch",
