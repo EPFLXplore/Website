@@ -1,6 +1,6 @@
 ---
 import Menu from "@/components/Menu";
-import MainLayout from "./MainLayout.astro"
+import MainLayout from "./MainLayout.astro";
 import Rover from "@/components/Rover";
 
 /**
@@ -23,31 +23,29 @@ const {
   videoId,
   teamImage,
   /** @type {string[]} */
-  images
+  images,
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL;
-
-
 ---
 
 <MainLayout title={`ERC ${year} | EPFL Xplore`}>
-
   <!-- Header -->
   <div class="absolute top-0 left-0 w-full">
     <Menu client:load />
   </div>
 
-
   <!-- Hero Section -->
   <section class="max-w-6xl mx-auto py-26 text-center">
     <h1 class="text-5xl font-extrabold mb-4 text-primary">{title}</h1>
     <p class="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
-      Follow the journey of EPFL Xplore at the <strong>ERC {year}</strong>: from the rover & drone design to the challenges, results, and memories from Poland.
+      Follow the journey of EPFL Xplore at the <strong>ERC {year}</strong>: from
+      the rover & drone design to the challenges, results, and memories from
+      Poland.
     </p>
-    <img 
-      src={`${baseUrl}/images/${year}/${heroImage}`} 
-      alt={`ERC ${year} Team`} 
+    <img
+      src={`${baseUrl}/images/${year}/${heroImage}`}
+      alt={`ERC ${year} Team`}
       class="rounded-xl shadow-lg w-full object-cover max-h-[750px] mx-auto"
     />
   </section>
@@ -58,12 +56,22 @@ const baseUrl = import.meta.env.BASE_URL;
     <Rover client:load />
 
     <p>
-      We present <strong>{rover}</strong> and our aerial drone <strong>{drone}</strong>.
+      We present <strong>{rover}</strong> and our aerial drone <strong
+        >{drone}</strong
+      >.
       {sentence_intro}
     </p>
     <div class="grid md:grid-cols-2 gap-6 mt-6">
-      <img src={`${baseUrl}/images/${year}/${roverImage}`} alt="Rover" class="rounded-lg shadow" />
-      <img src={`${baseUrl}/images/${year}/${droneImage}`} alt="Drone" class="rounded-lg shadow" />
+      <img
+        src={`${baseUrl}/images/${year}/${roverImage}`}
+        alt="Rover"
+        class="rounded-lg shadow"
+      />
+      <img
+        src={`${baseUrl}/images/${year}/${droneImage}`}
+        alt="Drone"
+        class="rounded-lg shadow"
+      />
     </div>
   </section>
 
@@ -71,14 +79,19 @@ const baseUrl = import.meta.env.BASE_URL;
   <section class="max-w-6xl mx-auto py-20 space-y-12">
     <h2 class="text-3xl font-bold text-center">Results</h2>
     <div class="grid md:grid-cols-2 gap-8">
-      {results.map((res) => (
-        <div class={`rounded-2xl p-1 shadow-lg bg-gradient-to-r ${res.gradient}`}>
-          <div class="rounded-xl bg-white p-6 text-center">
-            <h3 class="text-2xl font-bold text-gray-900">{res.title}</h3>
-            <p class="text-muted-foreground mt-2">{res.text}</p>
-          </div>
-        </div>
-      ))}
+      {
+        results &&
+          results.map((res) => (
+            <div
+              class={`rounded-2xl p-1 shadow-lg bg-gradient-to-r ${res.gradient}`}
+            >
+              <div class="rounded-xl bg-white p-6 text-center">
+                <h3 class="text-2xl font-bold text-gray-900">{res.title}</h3>
+                <p class="text-muted-foreground mt-2">{res.text}</p>
+              </div>
+            </div>
+          ))
+      }
     </div>
   </section>
 
@@ -86,36 +99,41 @@ const baseUrl = import.meta.env.BASE_URL;
   <section class="max-w-6xl mx-auto py-5 space-y-12">
     <div class="space-y-4">
       <h2 class="text-2xl font-semibold">Video for Qualifications</h2>
-      <iframe 
+      <iframe
         class="w-full aspect-video rounded-lg shadow"
         src={`https://www.youtube.com/embed/${videoId}`}
         title={`ERC ${year} Highlights`}
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+        allowfullscreen></iframe>
     </div>
   </section>
 
   <!-- Team -->
   <section class="max-w-6xl mx-auto py-20 space-y-8">
     <h2 class="text-3xl font-bold">The Team</h2>
-    <img src={`${baseUrl}/images/${year}/${teamImage}`} alt={`Team ${year}`} class="rounded-lg shadow-lg w-full" />
+    <img
+      src={`${baseUrl}/images/${year}/${teamImage}`}
+      alt={`Team ${year}`}
+      class="rounded-lg shadow-lg w-full"
+    />
   </section>
 
   <!-- Gallery -->
   <section class="max-w-6xl mx-auto py-20 space-y-8">
     <h2 class="text-3xl font-bold">Gallery</h2>
     <div class="grid md:grid-cols-3 gap-4">
-      {images.map((src, idx) => (
-        <img
-          src={src}
-          alt={`ERC ${year} Gallery ${idx + 1}`}
-          class="rounded-lg shadow hover:scale-105 transition-transform"
-          loading="lazy"
-        />
-      ))}
+      {
+        images &&
+          images.map((src, idx) => (
+            <img
+              src={src}
+              alt={`ERC ${year} Gallery ${idx + 1}`}
+              class="rounded-lg shadow hover:scale-105 transition-transform"
+              loading="lazy"
+            />
+          ))
+      }
     </div>
   </section>
 </MainLayout>
-
