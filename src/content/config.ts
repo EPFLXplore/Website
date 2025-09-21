@@ -4,9 +4,10 @@ const semesterProjects = defineCollection({
   schema: z.object({
     title: z.string(),
     major: z.string(),
+    image: z.string().optional(),
     pole: z.string(),
     contact: z.string(),
-    applyLink: z.string()
+    applyLink: z.string(),
   }),
 });
 
