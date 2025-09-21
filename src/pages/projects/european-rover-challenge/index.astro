@@ -1,7 +1,143 @@
 ---
+import Menu from "@/components/Menu";
 import MainLayout from "../../../layouts/MainLayout.astro";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { base } from "astro:config/server";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title="European Rover Challenge | EPFL Xplore">
-  <h1>European Rover Challenge</h1>
+
+  <!-- Header -->
+  <div class="absolute top-0 left-0 w-full">
+    <Menu client:load />
+  </div>
+
+
+  <section class="max-w-5xl mx-auto py-26 text-center">
+    <h1 class="text-5xl font-extrabold mb-4 text-primary">European Competition Pole</h1>
+    <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+      The flagship pole of EPFL Xplore, dedicated to build world-class Rovers & Drones to compete in the European Rover Challenge.
+    </p>
+
+    <img 
+      src={`${baseUrl}/images/rovers/erc.jpg`} 
+      alt="EPFL Xplore at the European Rover Challenge" 
+      class="rounded-xl mt-10 shadow-lg w-full object-cover max-h-[500px] mx-auto"
+    />
+
+  </section>
+
+  <section class="max-w-5xl mx-auto py-20 space-y-8 text-center">
+    <h2 class="text-4xl font-bold">Our Mission</h2>
+
+    <img 
+      src={`${baseUrl}/images/rovers/erc_logo.jpg`} 
+      alt="" 
+      class="rounded-xl mt-10 shadow-lg w-full object-cover max-h-[500px] mx-auto"
+    />
+
+    <p>
+      Since <strong>2020</strong>, EPFL Xplore has participated in <strong>5 consecutive</strong> editions of the European Rover Challenge, building a new Rover and Drone each year. 
+      This pole brings together students from across disciplines to design, build, and operate autonomous robots, tackling real-world tasks in engineering.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-20 space-y-8">
+    <h2 class="text-4xl font-bold tracking-tight text-white">Discover Each Edition</h2>
+    <p class="text-lg leading-relaxed text-gray-300">
+      Dive into the journey of each year's competition: from rover designs and subsystems to photos, videos, and final rankings.
+    </p>
+
+    <div class="flex flex-row gap-4 w-full justify-center mt-5 h-[450px] group flex-wrap">
+      {[
+        { year: "2025", title: "Phoenyx", image: "phoenyx.jpg" },
+        { year: "2024", title: "Onyx", image: "onyx.jpg" },
+        { year: "2023", title: "Kerby", image: `kerby.jpg` },
+        { year: "2022", title: "Astra", image: `astra.jpg` },
+        { year: "2021", title: "Argos", image: `argos_2.jpg` }
+      ].map(({ year, title, image }) => (
+        <a href={`${baseUrl}/projects/european-rover-challenge/${year}`} class="no-underline">
+          <Card
+            className="relative h-full w-80 cursor-pointer group/card overflow-hidden transition-all duration-500 ease-in-out group-hover:w-64 hover:!w-[500px] hover:z-20"
+          >
+            <img
+              src={`${baseUrl}/images/rovers/${image}`}
+              alt={`Rover ${title}`}
+              class="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-black/50 group-hover/card:bg-black/60 transition-colors duration-300" />
+            <div class="relative z-10 flex flex-col h-full justify-end p-6">
+              <CardHeader className="p-0">
+                <CardTitle className="text-white text-5xl group-hover/card:text-6xl transition-all duration-300">
+                  {title}
+                </CardTitle>
+                <CardDescription className="text-white/80 group-hover/card:text-white/90 transition-all duration-300">
+                  {year}
+                </CardDescription>
+              </CardHeader>
+            </div>
+          </Card>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-20 space-y-8">
+    <h2 class="text-4xl font-bold tracking-tight text-white">What is the European Rover Challenge?</h2>
+    <p class="text-lg leading-relaxed text-gray-300">
+      The <strong>European Rover Challenge (ERC)</strong> is a prestigious space robotics competition in Europe. Each year, university teams from around the world gather in Poland to compete with their Rovers & Drones in a series of challenging tasks that simulate real Martian exploration missions.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-10">
+      <div>
+        <h3 class="text-2xl font-semibold text-primary mb-2"><strong>Competition Format</strong></h3>
+        <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+          <li>The ERC is part of the <strong>European Space Foundation</strong></li>
+          <li>Held annually in <strong>Krakow, Poland</strong></li>
+          <li>Open to university teams worldwide</li>
+          <li>Teams must pass an extensive design & documentation phase before qualifying</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold text-primary mb-2"><strong>Main Phases</strong></h3>
+        <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+          <li><strong>Documentation Phase</strong> – Teams unveil Rovers & Drones by many reports</li>
+          <li><strong>On-site Phase</strong> – Around 20 teams compete in person at the ERC's Mars Yard</li>
+          <li>Technical reviews, interviews, and live demonstrations are held during the event</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold text-primary mb-2"><strong>Mission Tasks</strong></h3>
+        <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+          <li><strong>Navigation Task</strong> – Autonomous traversal across rocky terrain</li>
+          <li><strong>Drone Task</strong> – Autonomous Flights and Objects Detection</li>
+          <li><strong>Science Task</strong> – Soil analysis and geological hypothesis</li>
+          <li><strong>Maintenance Task</strong> – Operating switches and objects using a Robotic Arm</li>
+          <li><strong>Presentation Task</strong> – Explain engineering & management decisions to a jury</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold text-primary mb-2"><strong>Scoring & Awards</strong></h3>
+        <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
+          <li>Each task is scored independently</li>
+          <li>Top prizes for tasks</li>
+          <li><strong>Final rankings</strong> reflect overall performance across all categories</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-gray-800/70 rounded-xl p-6 backdrop-blur-md border border-gray-700">
+      <h3 class="text-2xl font-semibold mb-4 text-white">Why ERC Matters</h3>
+      <p class="text-white/90">
+        The ERC is more than a competition — it’s a proving ground for the next generation of space engineers. Teams are evaluated on both <strong>technical excellence</strong> and <strong>team dynamics</strong>, pushing students to solve real-world problems under pressure. 
+        It prepares participants for careers in space robotics.
+      </p>
+    </div>
+  </section>
+
 </MainLayout>

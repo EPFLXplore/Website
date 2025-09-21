@@ -1,11 +1,294 @@
 ---
+import Menu from "@/components/Menu";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="Statuses | EPFL Xplore">
-  <h1>Statuses</h1>
-  <iframe
-    src="https://drive.google.com/file/d/10l9gB5Jh5Zn8GBvWbEB6WTggNpsiCvXt/preview"
-    class="mx-auto mt-10 w-full h-screen"
-    allow="autoplay"></iframe>
+<MainLayout title="Statuts | EPFL Xplore">
+
+  <!-- Header -->
+  <div class="absolute top-0 left-0 w-full z-50">
+    <Menu client:load />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-r from-purple-700 via-blue-700 to-indigo-700 py-20 text-center text-white rounded-b-3xl shadow-lg">
+    <h1 class="text-5xl font-extrabold">Statuts de l’association</h1>
+    <p class="mt-4 text-xl font-light">EPFL Xplore – Adoptés le 22 septembre 2023</p>
+  </section>
+
+  <!-- Introduction -->
+  <section class="max-w-5xl mx-auto py-16 px-6 text-center">
+    <p class="text-lg text-gray-200 max-w-3xl mx-auto">
+      Les statuts définissent le fonctionnement, les règles et les objectifs de l’association EPFL Xplore.
+      Retrouvez ci-dessous le texte intégral, organisé par chapitres.
+    </p>
+  </section>
+
+  <!-- Statutes Content -->
+  <section class="max-w-5xl mx-auto px-6 space-y-10">
+
+    <!-- TITRE I -->
+    <div class="bg-white rounded-xl shadow border p-6 text-gray-800 leading-relaxed">
+      <h2 class="text-2xl font-bold mb-4 ">Titre I – Dénomination, siège et but</h2>
+
+      <p><strong>Article premier</strong><br/>
+        L’association EPFL Xplore (ci-après « l’association »), est une association à but idéal et non-lucratif
+        constituée conformément aux dispositions des articles 60 et suivants du Code civil suisse.
+      </p>
+
+      <p class="mt-4"><strong>Article 2</strong><br/>
+        Le siège de l’association est à Lausanne.
+      </p>
+
+      <div class="mt-4">
+        <p><strong>Article 3</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>
+            L’association a pour buts :
+            <ol class="list-[lower-alpha] pl-6 space-y-1">
+              <li>De rassembler des étudiants de diverses sections et de leur permettre d’approfondir et d’enrichir leurs connaissances, dans le cadre de projets interdisciplinaires de l’EPFL, en travaillant sur des aspects de robotique multidisciplinaires comme le design et l’assemblage d’un rover, en collaboration avec les laboratoires de l’EPFL.</li>
+              <li>De participer à une ou plusieurs compétition(s) internationale(s) par année (p.ex. le European Rover Challenge en Pologne.)</li>
+              <li>De travailler sur le concept d’un drone venant assister les rovers développés dans leur navigation.</li>
+            </ol>
+          </li>
+          <li>L’association est affranchie de toute orientation et rattachement de nature politique ou religieuse.</li>
+          <li>L’exercice comptable débute le 1er octobre et se termine le 30 septembre l’année suivante.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- TITRE II -->
+    <div class="bg-white rounded-xl shadow border p-6 text-gray-800 leading-relaxed">
+      <h2 class="text-2xl font-bold mb-4 ">Titre II – Sociétariat</h2>
+
+      <div>
+        <p><strong>Article 4</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>
+            Les étudiants de l’EPFL peuvent être admis comme membres de l’association. Un étudiant
+            s’étant engagé à travailler sur le projet pendant une durée minimale d’un semestre peut être membre pour l’exercice en cours.
+          </li>
+          <li>Le collaborateur de l’EPFL qui coordonne la participation des étudiants au projet interdisciplinaire (ci-après : le coordinateur de l’EPFL) est membre de l’association.</li>
+          <li>Peuvent être admis comme Advisor, tout membre qui désire apporter à l’association son soutien en s’engageant à participer de manière restreinte à son activité. Les Advisors peuvent participer aux AG et s’y exprimer à titre consultatif, mais ils n’ont pas le droit de vote.</li>
+          <li>Pour autant que l’association reste majoritairement constituée d’étudiants de l’EPFL, peuvent également être admis comme membre ou Advisor les diplômés et les collaborateurs de l’EPFL, les étudiants d’autres écoles, ainsi que, exceptionnellement, toute autre personne intéressée par les buts de l’association.</li>
+        </ol>
+      </div>
+
+      <div class="mt-6">
+        <p><strong>Article 5</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>L’admission d’un nouveau membre ou Advisor est de la compétence du comité, avec possibilité de recours à l’assemblée générale en cas de refus.</li>
+          <li>La demande d’admission est présentée par écrit au comité.</li>
+          <li>Pour conclure sa demande d’admission, le candidat doit fournir une version de ces statuts signés et datés au comité. Par une signature, le membre ou l’Advisor adhère sans réserve aux statuts de l’association et s’engage à respecter les décisions de l’assemblée générale et du comité.</li>
+        </ol>
+      </div>
+
+      <div class="mt-6">
+        <p><strong>Article 6</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>La qualité de membre ou d’Advisor se perd par la démission, l’exclusion ou lorsque les conditions d’admission ne sont plus remplies, notamment en cas d’exmatriculation de l’EPFL. Le membre ou l’Advisor exmatriculé de l’EPFL conserve néanmoins la qualité de membre ou d’Advisor jusqu’au terme de l’exercice comptable en cours.</li>
+          <li>Le membre ou l’Advisor peut démissionner en tout temps de l’association. L’annonce de la démission est présentée par écrit au comité.</li>
+          <li>Sur proposition du comité, l’assemblée générale peut exclure un membre ou un Advisor qui contrevient gravement aux buts ou aux intérêts de l’association.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- TITRE III -->
+    <div class="bg-white rounded-xl shadow border p-6 text-gray-800 leading-relaxed">
+      <h2 class="text-2xl font-bold mb-4 ">Titre III – Ressources</h2>
+      <p><strong>Article 7</strong><br/>
+        Les ressources de l’association sont constituées par les éventuelles cotisations des membres et Advisors,
+        les recettes des manifestations organisées par l’association, par les subventions, les parrainages, les dons
+        ou les legs, ainsi que par toute autre recette.
+      </p>
+    </div>
+
+    <!-- TITRE IV -->
+    <div class="bg-white rounded-xl shadow border p-6 text-gray-800 leading-relaxed">
+      <h2 class="text-2xl font-bold mb-4 ">Titre IV – Comptabilité et bilan</h2>
+      <div>
+        <p><strong>Article 8</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>L’association tient une comptabilité et un bilan.</li>
+          <li>Le trésorier présente à l’assemblée générale la comptabilité et le bilan annuel avec le rapport des vérificateurs aux comptes.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- TITRE V -->
+    <div class="bg-white rounded-xl shadow border p-6 text-gray-800 leading-relaxed">
+      <h2 class="text-2xl font-bold mb-4 ">Titre V – Organisation</h2>
+
+      <p><strong>Article 9</strong><br/>
+        Les organes de l’association sont l’assemblée générale (ci-après « AG »), le comité et les vérificateurs aux comptes.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6">L’assemblée générale</h3>
+
+      <div class="mt-2">
+        <p><strong>Article 10</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>L’AG réunit les membres de l’association. Les Advisors y sont invités.</li>
+          <li>
+            L’AG est le pouvoir suprême de l’association. Elle a pour tâches et compétences, celles qui ne sont pas attribuées à un autre organe, soit notamment :
+            <ul class="list-disc pl-6 mt-2 space-y-1">
+              <li>élire les membres du comité et les vérificateurs aux comptes ;</li>
+              <li>se prononcer sur l’admission des nouveaux membres et Advisors sur recours et sur l’exclusion des membres et Advisors ;</li>
+              <li>décider des activités de l’association en rapport avec ses buts ;</li>
+              <li>fixer le montant de l’éventuelle cotisation ;</li>
+              <li>approuver le budget, la comptabilité et le bilan annuel, ainsi que le rapport du comité de direction ;</li>
+              <li>déterminer le montant maximum à hauteur duquel le comité peut engager l’association ;</li>
+              <li>disposer des actifs sociaux ;</li>
+              <li>modifier les statuts ;</li>
+              <li>prononcer la dissolution de l’association ;</li>
+              <li>donner décharge au comité.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="mt-6">
+        <p><strong>Article 11</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>L’AG se réunit en séance ordinaire au moins deux fois par an (à la fin du semestre de printemps et dans les deux mois suivant la clôture du dernier exercice comptable).</li>
+          <li>L’AG ordinaire est convoquée par le comité, par avis donné trente jours à l’avance.</li>
+          <li>Une AG extraordinaire est convoquée à chaque fois que le comité l’estime opportun ou à la demande des vérificateurs aux comptes ou d’un cinquième des membres de l’association. Elle est convoquée au moins 10 jours à l’avance et organisée telle que les membres peuvent y assister et voter à distance.</li>
+          <li>La convocation à l’AG mentionne sa date, son lieu et son ordre du jour. L’AG peut se dérouler en présentiel, en ligne ou en format hybride.</li>
+          <li>La documentation relative à l’ordre du jour de l’AG doit être envoyée à tous les membres et Advisors au moins 10 jours avant l’AG.</li>
+          <li>Sauf disposition contraire des statuts, l’AG siège valablement quel que soit le nombre des membres présents.</li>
+          <li>L’AG est présidée par le président de l’association ou, s’il y a lieu, par le vice-président ou un autre membre du comité.</li>
+          <li>Les décisions de l’AG sont consignées dans son procès-verbal.</li>
+          <li>L’AG ordinaire doit avoir un cinquième des membres de l’association représentés afin de siéger valablement.</li>
+        </ol>
+      </div>
+
+      <div class="mt-6">
+        <p><strong>Article 12</strong></p>
+        <ol class="list-decimal pl-6 space-y-3" start="10">
+          <li>Chaque membre dispose d’une voix à l’AG.</li>
+          <li>L’AG décide à la majorité simple des voix exprimées sauf disposition contraire des présents statuts. Les votes blancs ne sont pas comptabilisés dans les voix exprimées. En cas d’égalité des voix, la voix du président est prépondérante.</li>
+          <li>
+            Un vote peut être organisé à bulletin secret si au moins 5 membres de l’association le demandent. Dans ce cas, la procédure est la suivante :
+            <ol class="list-[lower-alpha] pl-6 mt-2 space-y-1">
+              <li>La demande de vote à bulletin secret doit être formulée durant l’AG lorsque l’objet en question est soumis au vote.</li>
+              <li>Deux scrutateurs, qui ne sont ni membres du comité ni candidats à un tel poste durant cette AG, sont élus par l’AG afin de dépouiller les bulletins de vote.</li>
+              <li>Le décompte des bulletins de vote manuscrits est fait de manière transparente face aux membres de l’association qui peuvent tous consulter chacun des bulletins.</li>
+              <li>Le membre qui participe à l’AG en distanciel peut exprimer son vote aux scrutateurs via Zoom (ou autre logiciel).</li>
+            </ol>
+          </li>
+          <li>
+            L’AG valide chaque candidature au comité individuellement. S’il y a plus d’une candidature acceptée par poste, elles sont départagées en vote à N-1 tours (chaque membre peut exprimer une voix pour chaque candidat et à chaque tour, le candidat avec le moins de voix simple est éliminé, en cas d’égalité, la voix du président est prépondérante).
+            <ol class="list-[lower-alpha] pl-6 mt-2 space-y-1">
+              <li>Si aucune candidature pour les postes de président, vice-président, trésorier n’est acceptée, le membre actuellement en fonction est automatiquement reconduit.</li>
+            </ol>
+          </li>
+          <li>L’AG décide de l’admission sur recours et de l’exclusion de membres et Advisors à la majorité absolue des voix exprimées.</li>
+          <li>L’AG modifie les statuts à la majorité des deux tiers des voix exprimées.</li>
+          <li>
+            L’AG prononce la dissolution de l’association à la majorité des deux tiers des voix exprimées lors d’une AG extraordinaire convoquée spécialement à cet effet et réunissant au moins la moitié des membres.
+            Si ce quorum n’est pas atteint, une AG extraordinaire est convoquée à nouveau dans un délai de vingt jours. Elle siège alors quel que soit le nombre des membres présents.
+          </li>
+        </ol>
+      </div>
+
+      <h3 class="text-xl font-semibold mt-8">Le comité</h3>
+
+      <div class="mt-2">
+        <p><strong>Article 13</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>Le comité est l’organe exécutif de l’association. Il se compose de cinq à dix membres, dont le président, au moins un vice-président, le trésorier, le coordinateur EPFL et jusqu’à six ingénieurs systèmes et project managers.</li>
+          <li>Un membre ayant pris un poste au sein du comité l’année précédente ne peut que se représenter une seule fois pour ce même poste.</li>
+          <li>Mis à part le coordinateur de l’EPFL, les membres du comité sont élus par l’AG parmi les membres de l’association, pour une durée d’un an correspondant à l’exercice comptable, et peuvent se représenter à d’autres postes de comité sans restriction.</li>
+          <li>Mis à part le coordinateur de l’EPFL, au moins la moitié des membres du comité doivent être immatriculés à l’EPFL, le président y compris.</li>
+          <li>Un membre du comité peut démissionner sous préavis de trente jours. Le comité peut renoncer à cette période de préavis s’il juge les raisons valables. Le comité nomme un membre qui assume ad-interim les tâches du membre sortant jusqu’à la prochaine AG.</li>
+        </ol>
+      </div>
+
+      <div class="mt-6">
+        <p><strong>Article 14</strong></p>
+        <p>Le comité a les tâches suivantes :</p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>administrer l’association ;</li>
+          <li>exécuter les décisions de l’AG ;</li>
+          <li>diriger, coordonner et représenter l’association ;</li>
+          <li>gérer les ressources et le budget ;</li>
+          <li>tenir la caisse ;</li>
+          <li>tenir la comptabilité et le bilan ;</li>
+          <li>veiller au bon fonctionnement de l’association ;</li>
+          <li>sauvegarder les intérêts de l’association ;</li>
+          <li>rapporter son activité à l’AG.</li>
+        </ul>
+      </div>
+
+      <div class="mt-6">
+        <p><strong>Article 15</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>
+            Le comité engage l’association par la signature collective à deux parmi le président, un vice-président et le trésorier.
+            <ol class="list-[lower-alpha] pl-6 mt-2 space-y-1">
+              <li>Pour les dépenses inférieures à 500 CHF, le comité engage l’association par la signature collective à deux du président, d’un vice-président, ou du trésorier et d'un second membre du comité.</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+
+      <div class="mt-6">
+        <p><strong>Article 16</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>Le comité se réunit sur convocation du président aussi souvent que la conduite des affaires l’exige. Il doit être convoqué si au moins deux membres du comité le demandent.</li>
+          <li>Le comité ne peut délibérer qu’à la condition que le président ou un vice-président soit présent.</li>
+          <li>Les décisions du comité sont consignées dans son procès-verbal.</li>
+          <li>Le comité prend ses décisions à la majorité absolue des membres présents. En cas d’égalité des voix, la voix du président est prépondérante.</li>
+          <li>En cas d’urgence, le comité peut prendre des décisions par voie de circulation, pour autant qu’aucun de ses membres ne s’y oppose.</li>
+        </ol>
+      </div>
+
+      <h3 class="text-xl font-semibold mt-8">Les vérificateurs aux comptes</h3>
+
+      <div class="mt-2">
+        <p><strong>Article 17</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>Deux vérificateurs aux comptes sont élus par l’AG parmi les membres de l’association, pour une durée d’un an correspondant à l’exercice comptable, renouvelable.</li>
+          <li>Les vérificateurs sont chargés de soumettre à l’AG un rapport sur les comptes qui lui sont présentés. Ils peuvent en tout temps vérifier l’état de la caisse, obtenir la production des livres et pièces comptables, ainsi que convoquer une AG extraordinaire.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- TITRE VI -->
+    <div class="bg-white rounded-xl shadow border p-6 text-gray-800 leading-relaxed">
+      <h2 class="text-2xl font-bold mb-4 ">Titre VI – Dissolution</h2>
+
+      <div>
+        <p><strong>Article 18</strong></p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>En cas de dissolution de l’association, le mandat de liquidation revient au comité en fonction.</li>
+          <li>L’actif net disponible est entièrement versé à une association d’étudiants ayant des buts similaires à ceux de l’association, choisie en accord avec l’EPFL.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- TITRE VII -->
+    <div class="bg-white rounded-xl shadow border p-6 text-gray-800 leading-relaxed">
+      <h2 class="text-2xl font-bold mb-4 ">Titre VII – Dispositions finales</h2>
+
+      <div>
+        <p><strong>Article 19</strong></p>
+        <p>
+          Les présents statuts sont édictés en français et publiés sur le site internet de l’association.
+          Les présents statuts ont été adoptés par l’assemblée générale du 22 septembre 2023.
+        </p>
+      </div>
+
+      <div class="mt-8">
+        <p class="font-semibold">Pour EPFL Xplore,</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div>
+            <p><span class="font-semibold">La Présidente</span><br/>Nour Larbi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
 </MainLayout>

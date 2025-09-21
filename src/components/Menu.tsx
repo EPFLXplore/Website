@@ -59,8 +59,6 @@ const Menu: React.FC = () => (
         <NavigationMenuList className="flex items-center gap-3">
           <NavigationMenuItem>
             <NavigationMenuTrigger
-              onClick={() => (window.location.href = `${base}/projects`)}
-              className={`cursor-pointer ${isActive(`${base}/projects`) ? "text-secondary" : ""}`}
             >
               Projects
             </NavigationMenuTrigger>
@@ -85,6 +83,14 @@ const Menu: React.FC = () => (
                 ))}
               </ul>
             </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              href={`${base}/semester-projects`}
+              className={`px-4 rounded-md py-2 text-base font-medium ${isActive(`${base}/semester-projects`) ? "text-secondary" : ""}`}
+            >
+              Semester Projects
+            </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink

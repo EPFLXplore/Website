@@ -1,0 +1,37 @@
+---
+import ERCPage from "../../../../layouts/ERCLayout.astro"
+
+const results = [
+  {
+    title: "13st Place Overall",
+    text: "",
+    gradient: "from-yellow-400 via-orange-400 to-red-400",
+  },
+  {
+    title: "⭐ Presentation Excellency",
+    text: "Special award for the presentation of the association to the jury",
+    gradient: "from-blue-500 via-indigo-500 to-purple-600",
+  },
+];
+
+// Glob import here, pass images as prop
+const baseUrl = import.meta.env.BASE_URL;
+const imagesGlob = import.meta.glob("/public/images/2024/*.jpg", { eager: true });
+const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2024/${path.split("/").pop()}`);
+
+---
+
+<ERCPage
+  rover="Onyx"
+  drone="DragonFly"
+  sentence_intro=""
+  year="2024"
+  title="European Rover Challenge 2024"
+  heroImage="hero.jpg"
+  roverImage="onyx.jpg"
+  droneImage="7.jpg"
+  results={results}
+  videoId="5fp4Bc179I0"
+  teamImage="Team_Photo.jpg"
+  images={images}
+/>

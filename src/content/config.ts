@@ -4,9 +4,10 @@ const semesterProjects = defineCollection({
   schema: z.object({
     title: z.string(),
     major: z.string(),
+    image: z.string().optional(),
     pole: z.string(),
     contact: z.string(),
-    applyLink: z.string().url(),
+    applyLink: z.string(),
   }),
 });
 
@@ -14,7 +15,7 @@ const blogArticles = defineCollection({
   schema: z.object({
     title: z.string(),
     category: z.string(),
-    image: z.string().url(),
+    image: z.string(),
     author: z.string(),
     date: z.string(),
   }),

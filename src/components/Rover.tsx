@@ -1,24 +1,26 @@
 import { Canvas } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF, Bounds } from "@react-three/drei";
 
 const baseUrl = import.meta.env.BASE_URL;
 
-const Rover = () => {
-  const { nodes, materials } = useGLTF(
-    `${baseUrl}/models/rover/SpacialExplorerRoverT30-1.glb`,
-  );
+function Model() {
+  const { scene } = useGLTF(`${baseUrl}/models/rover/rover.glb`);
+  return <primitive object={scene} />;
+}
 
-  console.log(nodes);
-
+export default function RoverModel() {
   return (
-    <Canvas>
-      {/* <mesh
-        geometry={nodes.rover.geometry}
-        material={materials.rover}
-        position={[0, 0, 0]}
-      /> */}
-    </Canvas>
-  );
-};
+    <div className="w-full h-[500px] rounded-lg shadow overflow-hidden">
+      <Canvas>
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[5, 5, 5]} intensity={1} />
 
-export default Rover;
+        <Bounds fit clip observe margin={1.2}>
+          <Model />
+        </Bounds>
+
+        <OrbitControls makeDefault />
+      </Canvas>
+    </div>
+  );
+}

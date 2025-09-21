@@ -1,0 +1,31 @@
+---
+import ERCPage from "../../../../layouts/ERCLayout.astro"
+
+const results = [
+  {
+    title: "🥉 3rd Place Overall",
+    text: "EPFL Xplore 2023 ends its journey with a podium for the third time.",
+    gradient: "from-yellow-400 via-orange-400 to-red-400",
+  },
+  {
+    title: "⭐ Maintenance Excellency",
+    text: "Special award Maintenance Task, achieved with its new Robotic Arm.",
+    gradient: "from-blue-500 via-indigo-500 to-purple-600",
+  },
+];
+---
+
+<ERCPage
+  rover="Kerby"
+  drone="Brokkoly"
+  sentence_intro=""
+  year="2023"
+  title="European Rover Challenge 2023"
+  heroImage="11.jpg"
+  roverImage="kerby.jpg"
+  droneImage="7.jpg"
+  results={results}
+  videoId="IFt732b9MKc"
+  teamImage="Team_Photo.jpg"
+  galleryCount={22}
+/>

@@ -1,12 +1,4 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "./ui/card";
-import { Badge } from "./ui/badge";
 
 interface SemesterProjectCardProps {
   title: string;
@@ -17,51 +9,62 @@ interface SemesterProjectCardProps {
   slug: string;
 }
 
-const base = import.meta.env.BASE_URL;
-
 const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
   title,
   major,
   pole,
   contact,
   applyLink,
-  slug,
-}) => (
-  <a
-    href={`${base}/semester-projects/${slug}/`}
-    className="block group focus:outline-none focus:ring-primary/60 rounded-xl"
-    tabIndex={0}
-    aria-label={`View details for ${title}`}
-  >
-    <Card className="w-full max-w-md mx-auto transition-shadow group-hover:shadow-lg group-focus:shadow-lg cursor-pointer">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <Badge className="mt-2" variant="secondary">
-          {pole}
-        </Badge>
-      </CardHeader>
-      <CardContent>
-        <div className="mb-2">
+}) => {
+  return (
+    <div
+      className="
+        relative flex flex-col justify-between
+        bg-gray-900/80 backdrop-blur-md border border-gray-700 
+        rounded-xl p-6 pt-12 text-white shadow-md 
+        transition-transform hover:scale-[1.02] hover:shadow-xl 
+        h-[420px] /* fixed height for equal size */
+      "
+    >
+      {/* Pole Tag absolute, with extra padding to prevent overlap */}
+      <span
+        className="
+          absolute top-4 right-4 text-xs px-3 py-1 
+          bg-gradient-to-r from-pink-500 to-red-500 
+          rounded-full font-semibold
+        "
+      >
+        {pole}
+      </span>
+
+      {/* Title */}
+      <h3 className="text-xl font-bold mb-4">{title}</h3>
+
+      {/* Info */}
+      <div className="space-y-2 flex-1">
+        <p>
           <span className="font-semibold">Major:</span> {major}
-        </div>
-        <div className="mb-2">
+        </p>
+        <p>
           <span className="font-semibold">Contact:</span> {contact}
-        </div>
-      </CardContent>
-      <CardFooter>
-        <a
-          href={applyLink}
-          target="_blank"
-          rel="noopener"
-          className="bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium hover:bg-primary/90 transition"
-          onClick={(e) => e.stopPropagation()}
-          tabIndex={-1}
-        >
-          Apply
-        </a>
-      </CardFooter>
-    </Card>
-  </a>
-);
+        </p>
+      </div>
+
+      {/* Download Button */}
+      <a
+        href={applyLink}
+        download
+        className="
+          mt-4 inline-block px-4 py-2 rounded-lg 
+          bg-primary text-black font-semibold 
+          hover:bg-primary/80 transition
+          text-center
+        "
+      >
+        Download
+      </a>
+    </div>
+  );
+};
 
 export default SemesterProjectCard;
