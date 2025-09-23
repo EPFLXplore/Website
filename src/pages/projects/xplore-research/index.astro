@@ -36,7 +36,7 @@ const baseUrl = import.meta.env.BASE_URL;
     />
   </section>
 
-  <!-- Then & Now -->
+  <!-- THEN & NOW -->
   <section class="max-w-6xl mx-auto py-20 grid md:grid-cols-2 gap-12 items-start">
     <!-- THEN -->
     <div>
@@ -72,21 +72,38 @@ const baseUrl = import.meta.env.BASE_URL;
       </div>
     </div>
 
-    <!-- NOW -->
-    <div class="bg-gray-800/80 rounded-2xl p-8 border border-gray-700 shadow-xl">
-      <h2 class="text-3xl font-bold mb-4 text-white">Now: Call for Proposals</h2>
-      <p class="text-gray-300 mb-6">
-        Starting <strong>September 2025</strong>, Xplore Research is opening its doors to <strong>student-led projects</strong>.  
-        Any EPFL Bachelor’s or Master’s student can submit their idea, form a team, and compete for
-        access to labs, resources, and funding.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href={`${baseUrl}/docx/Xplore_Research_Proposal_Document.docx`} download>
-          <Button className="w-full sm:w-auto">📄 Download Template</Button>
-        </a>
-        <a href="https://forms.gle/MGoKjXAtmY9Cp8pF9" target="_blank">
-          <Button variant="secondary" className="w-full sm:w-auto">Submit Proposal</Button>
-        </a>
+    <!-- RIGHT COLUMN (Now + Strategic Objectives) -->
+    <div class="flex flex-col gap-8">
+      <!-- NOW -->
+      <div class="bg-gray-800/80 rounded-2xl p-8 border border-gray-700 shadow-xl">
+        <h2 class="text-3xl font-bold mb-4 text-white">Now: Call for Proposals</h2>
+        <p class="text-gray-300 mb-6">
+          Starting <strong>September 2025</strong>, Xplore Research is opening its doors to <strong>student-led projects</strong>.  
+          Any EPFL Bachelor’s or Master’s student can submit their idea, form a team, and compete for
+          access to labs, resources, and funding.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href={`${baseUrl}/docx/Xplore_Research_Proposal_Document.docx`} download>
+            <Button className="w-full sm:w-auto">📄 Download Template</Button>
+          </a>
+          <a href="https://forms.gle/MGoKjXAtmY9Cp8pF9" target="_blank">
+            <Button variant="secondary" className="w-full sm:w-auto">Submit Proposal</Button>
+          </a>
+        </div>
+      </div>
+
+      <!-- NEW BOX (Strategic Objectives) -->
+      <div class="bg-gray-800/80 rounded-2xl p-8 border border-gray-700 shadow-xl">
+        <h2 class="text-3xl font-bold mb-4 text-white">Strategic Objectives</h2>
+        <p class="text-gray-300 mb-6">
+          Discover the long-term vision and roadmap of Xplore Research.  
+          This document outlines our key objectives for the coming years.
+        </p>
+        <div class="flex justify-center">
+          <a href={`${baseUrl}/pdfs/plan_strategique_XRE.pdf`} download>
+            <Button className="w-full sm:w-auto">📑 Download Strategic Objectives</Button>
+          </a>
+        </div>
       </div>
     </div>
   </section>

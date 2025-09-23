@@ -71,7 +71,7 @@ export default [
             name: "Veronica Fakhri",
             role: "Chief Sponsoring Officer",
             studies: "BSc HEC",
-            photo: `https://epfl-xplore.ch/wp-content/uploads/2024/07/MG_0980-150x150.jpg`,
+            photo: `${baseUrl}/images/team/veronica.png`,
             socials: {
               linkedin: "https://www.linkedin.com/in/veronicafakhri2154/",
               email: "veronica.fakhri@epfl-xplore.ch",
