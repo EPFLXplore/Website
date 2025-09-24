@@ -19,6 +19,35 @@ const baseUrl = import.meta.env.BASE_URL;
 const imagesGlob = import.meta.glob("/public/images/2024/*.jpg", { eager: true });
 const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2024/${path.split("/").pop()}`);
 
+const technical = [
+  {
+    title: "Subsystems Control",
+    text: "",
+    image: "15.jpg",
+    design: "split",
+  },
+  {
+    title: "Robustness of Robotic Arm",
+    text: "",
+    image: "14.jpg",
+    design: "hero",
+  },
+  {
+    title: "Autonomy in Software Architecture",
+    text: "",
+    image: "13.jpg",
+    design: "wide",
+  },
+  {
+    title: "Drill System",
+    design: "features",
+    cards: [
+      { title: "", text: "", image: "16.jpg" },
+      { title: "", text: "", image: "17.jpg" },
+    ],
+  },
+];
+
 ---
 
 <ERCPage
@@ -27,11 +56,12 @@ const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2024/${p
   sentence_intro=""
   year="2024"
   title="European Rover Challenge 2024"
-  heroImage="hero.jpg"
+  heroImage="team.jpg"
   roverImage="onyx.jpg"
   droneImage="7.jpg"
   results={results}
   videoId="5fp4Bc179I0"
-  teamImage="Team_Photo.jpg"
+  teamImage="team_2.jpg"
   images={images}
+  technical={technical}
 />

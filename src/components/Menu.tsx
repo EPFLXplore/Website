@@ -100,14 +100,14 @@ const Menu: React.FC = () => (
               Team
             </NavigationMenuLink>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <NavigationMenuLink
               href={`${base}/blog`}
               className={`px-4 rounded-md py-2 text-base font-medium ${isActive(`${base}/blog`) ? "text-secondary" : ""}`}
             >
               Blog
             </NavigationMenuLink>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
           <NavigationMenuItem>
             <NavigationMenuLink
               href={`${base}/contact-us`}

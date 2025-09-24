@@ -4,6 +4,9 @@ import MainLayout from "../../../layouts/MainLayout.astro";
 import { base } from "astro:config/server";
 
 const baseUrl = import.meta.env.BASE_URL;
+const imagesGlob = import.meta.glob("/public/images/xrc/*.jpg", { eager: true });
+const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/xrc/${path.split("/").pop()}`);
+
 ---
 
 <MainLayout title="Xplore Rover Challenge | EPFL Xplore">
@@ -144,18 +147,17 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="bg-[#1b2540] rounded-xl p-8 shadow-lg">
       <h2 class="text-2xl font-bold text-center mb-6">📸 Memories from XRC</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        <img src={`${baseUrl}/images/xrc/build1.jpg`} alt="XRC memory 1" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/build2.jpg`} alt="XRC memory 2" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/presentation1.jpg`} alt="XRC memory 3" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/presentation2.jpg`} alt="XRC memory 4" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/students.jpg`} alt="XRC memory 5" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/pic2.jpg`} alt="XRC memory 6" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/pic3.jpg`} alt="XRC memory 7" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/pic5.jpg`} alt="XRC memory 9" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/pic6.jpg`} alt="XRC memory 10" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/pic7.jpg`} alt="XRC memory 11" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/pic8.jpg`} alt="XRC memory 12" class="rounded-lg shadow" />
-        <img src={`${baseUrl}/images/xrc/pic9.jpg`} alt="XRC memory 13" class="rounded-lg shadow" />
+        {
+        images &&
+          images.map((src, idx) => (
+            <img
+              src={src}
+              alt={`Gallery ${idx + 1}`}
+              class="rounded-lg shadow hover:scale-105 transition-transform"
+              loading="lazy"
+            />
+          ))
+      }
       </div>
     </div>
   </section>
