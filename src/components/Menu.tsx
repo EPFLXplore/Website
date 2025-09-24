@@ -129,7 +129,7 @@ const Menu: React.FC = () => (
           <LinkedinIcon className="size-5 align-baseline" />
         </a>
         <a
-          href="https://www.instagram.com/epfl_xplore/"
+          href="https://www.instagram.com/epfl_xplore/?hl=en"
           target="_blank"
           rel="noopener"
           aria-label="Instagram"
