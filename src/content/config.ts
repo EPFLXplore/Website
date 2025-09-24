@@ -8,6 +8,7 @@ const semesterProjects = defineCollection({
     pole: z.string(),
     contact: z.string(),
     applyLink: z.string(),
+    taken: z.boolean().optional(),
   }),
 });
 

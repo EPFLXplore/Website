@@ -8,6 +8,7 @@ interface Project {
   contact: string;
   applyLink: string;
   slug: string;
+  taken?: boolean;
 }
 
 interface SemesterProjectsGridProps {

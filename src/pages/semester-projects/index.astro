@@ -24,7 +24,6 @@ const base = import.meta.env.BASE_URL;
       the vision of the association. Work on ongoing challenges like the European Rover Challenge,
       or propose your own ideas in the Xplore Research pole.
     </p>
-    <p class="mt-6 text-lg font-semibold text-blue-300">Explore. Propose. Build. Learn.</p>
   </section>
 
   <SemesterProjectsGrid
@@ -36,6 +35,7 @@ const base = import.meta.env.BASE_URL;
       contact: project.data.contact,
       applyLink: `${base}/${project.data.applyLink}`,
       slug: project.slug,
+      taken: project.data.taken ?? false
     }))}
   />
 
