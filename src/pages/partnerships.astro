@@ -11,32 +11,38 @@ import MainLayout from "../layouts/MainLayout.astro";
   </div>
 
   <!-- Hero -->
-  <section class="relative bg-gradient-to-b from-blue-900 via-purple-900 to-black py-28 text-center text-white">
-    <h1 class="text-6xl font-extrabold mb-6">Become a Sponsor</h1>
-    <p class="text-xl max-w-3xl mx-auto opacity-90 leading-relaxed">
+  <section class="relative bg-gradient-to-b from-blue-900 via-purple-900 to-black py-16 sm:py-20 md:py-28 text-center text-white px-4">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 sm:mb-6">
+      Become a Sponsor
+    </h1>
+    <p class="text-sm sm:text-base md:text-xl max-w-3xl mx-auto opacity-90 leading-relaxed">
       Partner with us to support the next generation of ambitious engineers. By sponsoring EPFL Xplore, you contribute to the development of cutting-edge projects and help students gain invaluable hands-on experience.
     </p>
   </section>
 
   <!-- Sponsoring Dossier -->
-  <section class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold mb-6 text-center text-primary">Our Sponsorship Dossier</h2>
-    <p class="text-center text-muted-foreground mb-8">
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center text-primary">
+      Our Sponsorship Dossier
+    </h2>
+    <p class="text-center text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8">
       Discover our sponsorship tiers, benefits, and how you can help shape the future of student-led space robotics.
     </p>
     <iframe
       src="https://docs.google.com/presentation/d/e/2PACX-1vRFC0MiqG19mlOrQCTQu5b516XWM6-7Dw_K2bphy6YwcLF8Igv4f1V11tJTEXJK_H38We78BYnTacy0/pubembed?start=false&loop=false"
       frameborder="0"
       allowfullscreen="true"
-      class="mx-auto w-full h-[600px] md:h-[800px] rounded-xl shadow-lg"
+      class="mx-auto w-full max-w-4xl h-[400px] sm:h-[500px] md:h-[600px] lg:h-[800px] rounded-xl shadow-lg"
     ></iframe>
   </section>
 
   <!-- Legal Guidelines -->
-  <section class="bg-gray-100 py-16">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6 text-center text-black">Important Legal Framework</h2>
-      <p class="text-center text-gray-700 mb-10">
+  <section class="bg-gray-100 py-12 sm:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center text-black">
+        Important Legal Framework
+      </h2>
+      <p class="text-center text-sm sm:text-base text-gray-700 mb-6 sm:mb-10">
         Sponsorship at EPFL must comply with MAKE guidelines. Below is the official document required for any partnership agreement:
       </p>
 
@@ -45,10 +51,12 @@ import MainLayout from "../layouts/MainLayout.astro";
         <a
           href="https://make.epfl.ch/wiki/public/admin/important_legal_guidelines_for_make_interdisciplinary_projects#useful_documents_to_download"
           target="_blank"
-          class="p-6 bg-white rounded-xl shadow hover:shadow-md transition w-full max-w-md text-center"
+          class="p-4 sm:p-6 bg-white rounded-xl shadow hover:shadow-md transition w-full max-w-md text-center"
         >
-          <h3 class="font-semibold text-lg text-black mb-2">📑 Three-Parties Contract (EN)</h3>
-          <p class="text-gray-600">
+          <h3 class="font-semibold text-base sm:text-lg text-black mb-2">
+            📑 Three-Parties Contract (EN)
+          </h3>
+          <p class="text-sm sm:text-base text-gray-600">
             Official template for EPFL sponsoring agreements.
           </p>
         </a>
@@ -56,17 +64,19 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
   </section>
 
-    <!-- Sponsorship Opportunities -->
-  <section class="py-20 text-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-extrabold mb-8">Why Partner With Us?</h2>
+  <!-- Sponsorship Opportunities -->
+  <section class="py-16 sm:py-20 text-white px-4">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6 sm:mb-8">
+        Why Partner With Us?
+      </h2>
 
       <!-- Two columns -->
-      <div class="grid md:grid-cols-2 gap-12 text-left">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 text-left">
         <!-- What we seek -->
-        <div class="bg-white/10 p-8 rounded-xl shadow-lg backdrop-blur text-center">
-          <h3 class="text-2xl font-bold mb-4">What We Look For</h3>
-          <ul class="space-y-3 text-gray-200">
+        <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg backdrop-blur text-center">
+          <h3 class="text-lg sm:text-2xl font-bold mb-3 sm:mb-4">What We Look For</h3>
+          <ul class="space-y-2 sm:space-y-3 text-gray-200 text-sm sm:text-base">
             <li>Financial support</li>
             <li>Material contributions</li>
             <li>Partnerships with industry leaders</li>
@@ -75,9 +85,9 @@ import MainLayout from "../layouts/MainLayout.astro";
         </div>
 
         <!-- What we offer -->
-        <div class="bg-white/10 p-8 rounded-xl shadow-lg backdrop-blur text-center">
-          <h3 class="text-2xl font-bold mb-4">What We Offer Sponsors</h3>
-          <ul class="space-y-3 text-gray-200">
+        <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg backdrop-blur text-center">
+          <h3 class="text-lg sm:text-2xl font-bold mb-3 sm:mb-4">What We Offer Sponsors</h3>
+          <ul class="space-y-2 sm:space-y-3 text-gray-200 text-sm sm:text-base">
             <li>Visibility at international competitions</li>
             <li>Access to next EPFL engineering talent</li>
             <li>Social media mentions</li>
@@ -86,6 +96,5 @@ import MainLayout from "../layouts/MainLayout.astro";
       </div>
     </div>
   </section>
-
 
 </MainLayout>

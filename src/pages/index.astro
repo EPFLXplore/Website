@@ -14,6 +14,7 @@ const heroStyle =
 
 <Layout>
   <main class="px-0 py-0">
+    <!-- Hero -->
     <section
       class="relative flex flex-col items-center justify-center min-h-screen w-full text-center text-white"
       style={heroStyle}
@@ -24,34 +25,37 @@ const heroStyle =
         <Menu client:load />
       </div>
 
-      <div class="relative z-10 px-6 mt-20">
-        <h1 class="text-6xl md:text-7xl font-extrabold mb-6">
+      <div class="relative z-10 px-4 sm:px-6 mt-24">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
           Welcome to EPFL Xplore
         </h1>
-        <p class="text-xl md:text-2xl max-w-3xl font-light mb-10 mx-auto">
+        <p class="text-base sm:text-lg md:text-2xl max-w-2xl sm:max-w-3xl font-light mb-10 mx-auto px-2">
           A student-led association designing <strong>Mars rovers</strong>,
           competing at the <strong>European Rover Challenge</strong>, and
           building the future of <strong>space robotics</strong>
         </p>
-        <div class="flex flex-wrap justify-center gap-6">
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
           <a
             href={base + "/join-us"}
-            class="px-8 py-3 bg-secondary text-white rounded-lg text-lg font-semibold shadow hover:bg-secondary/80 transition"
-            >Join Us</a
+            class="px-6 sm:px-8 py-3 bg-secondary text-white rounded-lg text-base sm:text-lg font-semibold shadow hover:bg-secondary/80 transition w-full sm:w-auto"
           >
+            Join Us
+          </a>
           <a
             href={base + "/semester-projects"}
-            class="px-8 py-3 border border-white text-white rounded-lg text-lg font-semibold shadow hover:bg-white/20 transition"
-            >Discover Projects</a
+            class="px-6 sm:px-8 py-3 border border-white text-white rounded-lg text-base sm:text-lg font-semibold shadow hover:bg-white/20 transition w-full sm:w-auto"
           >
+            Discover Projects
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <section class="max-w-6xl mx-auto py-40 space-y-8 text-center">
-    <h2 class="text-4xl font-bold">🚀 About EPFL Xplore</h2>
-    <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+  <!-- About -->
+  <section class="max-w-6xl mx-auto py-20 sm:py-40 space-y-6 sm:space-y-8 text-center px-4">
+    <h2 class="text-3xl sm:text-4xl font-bold">🚀 About EPFL Xplore</h2>
+    <p class="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
       Founded in 2020, EPFL Xplore unites passionate students from mechanics,
       electronics, software, and space sciences. We design cutting-edge Rovers &
       Drones, experiment with research projects, and train the next generation
@@ -59,206 +63,227 @@ const heroStyle =
     </p>
   </section>
 
+  <!-- Team Photo -->
   <section>
     <img
       src={base + "/images/main/Team_Photo.jpg"}
       alt="All 3 poles team"
-      class="w-full object-cover max-h-[900px]"
+      class="w-full object-cover max-h-[400px] sm:max-h-[900px]"
     />
   </section>
 
-  <section class="max-w-6xl mx-auto py-20">
-    <h2 class="text-4xl font-bold text-center mb-12">Our Three Poles</h2>
-    <div class="grid md:grid-cols-3 gap-8">
+  <!-- Three Poles -->
+  <section class="max-w-6xl mx-auto py-16 sm:py-20 px-4">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12">
+      Our Three Poles
+    </h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
       <div class="p-6 border rounded-xl shadow bg-card text-center">
-        <h3 class="text-2xl font-semibold mb-3">Competition</h3>
-        <p class="text-muted-foreground mb-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Competition</h3>
+        <p class="text-sm sm:text-base text-muted-foreground mb-4">
           Our flagship pole: building Mars-style Rovers and Drones to compete in
           the European Rover Challenge.
         </p>
         <a
           href={base + "/projects/european-rover-challenge"}
           class="rounded-md bg-slate-800 py-2 px-4 text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700"
-          >Learn More</a
         >
+          Learn More
+        </a>
       </div>
       <div class="p-6 border rounded-xl shadow bg-card text-center">
-        <h3 class="text-2xl font-semibold mb-3">Research</h3>
-        <p class="text-muted-foreground mb-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Research</h3>
+        <p class="text-sm sm:text-base text-muted-foreground mb-4">
           A space for innovation and proof-of-concept projects, exploring the
           future of space robotics.
         </p>
         <a
           href={base + "/projects/xplore-research"}
           class="rounded-md bg-slate-800 py-2 px-4 text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700"
-          >Learn More</a
         >
+          Learn More
+        </a>
       </div>
       <div class="p-6 border rounded-xl shadow bg-card text-center">
-        <h3 class="text-2xl font-semibold mb-3">Xplore Challenge</h3>
-        <p class="text-muted-foreground mb-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Xplore Challenge</h3>
+        <p class="text-sm sm:text-base text-muted-foreground mb-4">
           Our educational program where Bachelor students learn robotics by
           building mini-rovers at EPFL.
         </p>
         <a
           href={base + "/projects/xplore-rover-challenge"}
           class="rounded-md bg-slate-800 py-2 px-4 text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700"
-          >Learn More</a
         >
+          Learn More
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-slate-900 text-white">
-    <div class="max-w-6xl mx-auto text-center px-6">
-      <h2 class="text-5xl font-bold mb-16">Achievements</h2>
+  <!-- Achievements -->
+  <section class="py-16 sm:py-24 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto text-center px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-5xl font-bold mb-10 sm:mb-16">
+        Achievements
+      </h2>
 
       <!-- Podium -->
-      <div class="flex justify-center items-end gap-8 mb-20">
+      <div class="flex flex-col sm:flex-row justify-center items-center sm:items-end gap-8 mb-16">
         <!-- 2nd -->
-        <div class="flex flex-col items-center">
-          <div class="bg-gray-700 w-40 h-48 flex items-center justify-center rounded-t-xl shadow-lg">
-            <Medal className="w-12 h-12 text-yellow-300" />
+        <div class="flex flex-col items-center order-2 sm:order-1">
+          <div class="bg-gray-700 w-32 sm:w-40 h-40 sm:h-48 flex items-center justify-center rounded-t-xl shadow-lg">
+            <Medal className="w-10 sm:w-12 h-10 sm:h-12 text-yellow-300" />
           </div>
-          <p class="mt-4 font-semibold">2nd Place (2022)</p>
+          <p class="mt-4 font-semibold text-sm sm:text-base">
+            2nd Place (2022)
+          </p>
         </div>
 
         <!-- 1st -->
-        <div class="flex flex-col items-center">
-          <div class="bg-gradient-to-b from-yellow-400 to-orange-500 w-48 h-64 flex items-center justify-center rounded-t-xl shadow-xl">
-            <Trophy className="w-14 h-14 text-white" />
+        <div class="flex flex-col items-center order-1 sm:order-2">
+          <div class="bg-gradient-to-b from-yellow-400 to-orange-500 w-40 sm:w-48 h-52 sm:h-64 flex items-center justify-center rounded-t-xl shadow-xl">
+            <Trophy className="w-12 sm:w-14 h-12 sm:h-14 text-white" />
           </div>
-          <p class="mt-4 font-bold text-xl">1st Place – ERC Champions 2025</p>
+          <p class="mt-4 font-bold text-lg sm:text-xl">
+            1st Place – ERC Champions 2025
+          </p>
         </div>
 
         <!-- 3rd -->
-        <div class="flex flex-col items-center">
-          <div class="bg-gray-600 w-40 h-40 flex items-center justify-center rounded-t-xl shadow-lg">
-            <Star className="w-12 h-12 text-blue-300" />
+        <div class="flex flex-col items-center order-3">
+          <div class="bg-gray-600 w-28 sm:w-40 h-32 sm:h-40 flex items-center justify-center rounded-t-xl shadow-lg">
+            <Star className="w-10 sm:w-12 h-10 sm:h-12 text-blue-300" />
           </div>
-          <p class="mt-4 font-semibold">3rd Place (2021, 2023)</p>
+          <p class="mt-4 font-semibold text-sm sm:text-base">
+            3rd Place (2021, 2023)
+          </p>
         </div>
       </div>
 
       <!-- Awards -->
-      <h3 class="text-3xl font-bold mb-10">Excellency Awards</h3>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10">
+        Excellency Awards
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-10 h-10 mb-3 text-yellow-300 mx-auto" />
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
           <p class="font-semibold">Science Prize – 2021</p>
-          <p class="text-sm text-gray-400">Planetary analysis excellence</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            Planetary analysis excellence
+          </p>
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-10 h-10 mb-3 text-yellow-300 mx-auto" />
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
           <p class="font-semibold">Probing Prize – 2021</p>
-          <p class="text-sm text-gray-400">Optimized and Fast methodology</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            Optimized and Fast methodology
+          </p>
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-10 h-10 mb-3 text-yellow-300 mx-auto" />
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
           <p class="font-semibold">Navigation Prize – 2022</p>
-          <p class="text-sm text-gray-400">High performance in unknown terrains</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            High performance in unknown terrains
+          </p>
         </div>
-
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-10 h-10 mb-3 text-yellow-300 mx-auto" />
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
           <p class="font-semibold">Maintenance Prize – 2023</p>
-          <p class="text-sm text-gray-400">Fluidity in manipulations</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            Fluidity in manipulations
+          </p>
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-10 h-10 mb-3 text-yellow-300 mx-auto" />
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
           <p class="font-semibold">Presentation Prize – 2024</p>
-          <p class="text-sm text-gray-400">Creative robotics solutions</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            Creative robotics solutions
+          </p>
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-10 h-10 mb-3 text-yellow-300 mx-auto" />
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
           <p class="font-semibold">Droning Award – 2025</p>
-          <p class="text-sm text-gray-400">Novel drone navigation</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            Novel drone navigation
+          </p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- Sponsors -->
-  <section class="bg-white py-20">
-    <div class="max-w-7xl mx-auto text-center px-6">
-      <h2 class="text-4xl font-bold mb-16 text-gray-900">Our Sponsors</h2>
+  <section class="bg-white py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto text-center px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-16 text-gray-900">
+        Our Sponsors
+      </h2>
 
       <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 items-center"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-10 items-center"
       >
-        <!-- Sponsor 1 -->
         <a
           href="https://www.epfl.ch"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center h-32 p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
+          class="flex items-center justify-center h-24 sm:h-32 p-4 sm:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
         >
           <img
             src={`${base}/images/sponsors/epfl.jpg`}
             alt="EPFL"
-            class="max-h-20 max-w-full object-contain"
+            class="max-h-14 sm:max-h-20 max-w-full object-contain"
           />
         </a>
-
-        <!-- Sponsor 2 -->
         <a
           href="https://www.maxongroup.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center h-32 p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
+          class="flex items-center justify-center h-24 sm:h-32 p-4 sm:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
         >
           <img
             src={`${base}/images/sponsors/maxon.jpg`}
             alt="Maxon"
-            class="max-h-20 max-w-full object-contain"
+            class="max-h-14 sm:max-h-20 max-w-full object-contain"
           />
         </a>
-
-        <!-- Sponsor 3 -->
         <a
           href="https://www.apco.ch"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center h-32 p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
+          class="flex items-center justify-center h-24 sm:h-32 p-4 sm:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
         >
           <img
             src={`${base}/images/sponsors/apco.jpg`}
             alt="APCO"
-            class="max-h-20 max-w-full object-contain"
+            class="max-h-14 sm:max-h-20 max-w-full object-contain"
           />
         </a>
-
-        <!-- Sponsor 4 -->
         <a
           href="https://www.logitech.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center h-32 p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
+          class="flex items-center justify-center h-24 sm:h-32 p-4 sm:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
         >
           <img
             src={`${base}/images/sponsors/logitech.jpg`}
             alt="Logitech"
-            class="max-h-20 max-w-full object-contain"
+            class="max-h-14 sm:max-h-20 max-w-full object-contain"
           />
         </a>
-
-        <!-- Sponsor 5 -->
         <a
           href="https://www.rls.si"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center h-32 p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
+          class="flex items-center justify-center h-24 sm:h-32 p-4 sm:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
         >
           <img
             src={`${base}/images/sponsors/rls.jpg`}
             alt="RLS"
-            class="max-h-20 max-w-full object-contain"
+            class="max-h-14 sm:max-h-20 max-w-full object-contain"
           />
         </a>
       </div>
 
-      <p class="mt-16 text-gray-600 text-lg max-w-3xl mx-auto">
+      <p class="mt-10 sm:mt-16 text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
         We thank all our partners for supporting the future of space robotics 🚀
       </p>
     </div>

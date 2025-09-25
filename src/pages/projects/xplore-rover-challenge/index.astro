@@ -6,149 +6,98 @@ import { base } from "astro:config/server";
 const baseUrl = import.meta.env.BASE_URL;
 const imagesGlob = import.meta.glob("/public/images/xrc/*.jpg", { eager: true });
 const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/xrc/${path.split("/").pop()}`);
-
 ---
 
 <MainLayout title="Xplore Rover Challenge | EPFL Xplore">
 
-   <!-- Header -->
+  <!-- Header -->
   <div class="absolute top-0 left-0 w-full">
     <Menu client:load />
   </div>
 
-  <!-- Hero Section -->
-  <section class="max-w-5xl mx-auto py-26 text-center">
-    <h1 class="text-5xl font-extrabold mb-4 text-primary">Xplore Rover Challenge</h1>
-    <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto py-16 sm:py-26 text-center px-4">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-primary">
+      Xplore Rover Challenge
+    </h1>
+    <p class="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
       The <strong>Education Pole</strong> of EPFL Xplore.  
       Our main goal: turning students into <strong>ERC engineers</strong> — from no prior knowledge to makers.
     </p>
     <img 
       src={`${baseUrl}/images/xrc/hero.jpg`} 
       alt="Xplore Rover Challenge Students" 
-      class="rounded-xl shadow-lg w-full object-cover max-h-[500px] mt-10"
+      class="rounded-xl shadow-lg w-full object-cover max-h-[250px] sm:max-h-[400px] md:max-h-[500px] mt-8 sm:mt-10"
     />
   </section>
 
-  <!-- A New Start -->
-  <section class="max-w-6xl mx-auto py-20 space-y-8">
-    <div class="p-8 text-center">
-      <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
-      <p class="text-lg text-gray-300">
+  <!-- Mission -->
+  <section class="max-w-6xl mx-auto py-16 sm:py-20 space-y-6 sm:space-y-8 px-4">
+    <div class="p-4 sm:p-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Our Mission</h2>
+      <p class="text-sm sm:text-base md:text-lg text-gray-300">
         The Xplore Rover Challenge (XRC) is a student-centered robotics competition designed to introduce bachelor-level students to the world of robotics, teamwork, and engineering through the creation of a mini-rover.
-        Organized Xplore, XRC challenges participants to design, build, and program a rover capable of completing a variety of technical tasks in a collaborative and competitive environment.
+        Organized by Xplore, XRC challenges participants to design, build, and program a rover capable of completing a variety of technical tasks in a collaborative and competitive environment.
       </p>
       <img 
         src={`${baseUrl}/images/xrc/finale.jpg`} 
         alt="Students building mini rovers" 
-        class="rounded-lg shadow-lg mx-auto max-h-[600px] object-cover mt-8"
+        class="rounded-lg shadow-lg mx-auto max-h-[250px] sm:max-h-[400px] md:max-h-[600px] object-cover mt-6 sm:mt-8"
       />
     </div>
   </section>
 
-    <!-- Timeline -->
-  <section class="max-w-6xl mx-auto py-20 space-y-12">
-    <h2 class="text-3xl font-bold text-center">The Road to XRC</h2>
+  <!-- Timeline -->
+  <section class="max-w-6xl mx-auto py-16 sm:py-20 space-y-8 px-4">
+    <h2 class="text-2xl sm:text-3xl font-bold text-center">The Road to XRC</h2>
 
-    <div class="relative border-l border-gray-600 dark:border-gray-500 ml-4">
-      
-      <!-- Kick-off -->
-      <div class="mb-10 ml-6">
-        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
-        </span>
-        <time class="mb-1 text-sm font-medium text-gray-400">Early Oct</time>
-        <h3 class="text-lg font-semibold text-white">Kick-off & Workshops</h3>
-        <p class="text-gray-300">
-          Intro to mechanical construction, soldering, Linux, and robotics concepts like differentials, PCB, and ROS2 with Docker
-        </p>
-      </div>
-
-      <!-- IDR -->
-      <div class="mb-10 ml-6">
-        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
-        </span>
-        <time class="mb-1 text-sm font-medium text-gray-400">Late Oct</time>
-        <h3 class="text-lg font-semibold text-white">IDR (Initial Design Review)</h3>
-        <p class="text-gray-300">
-          Early project planning, team role distribution, and validation of concept understanding
-        </p>
-      </div>
-
-      <!-- PDR -->
-      <div class="mb-10 ml-6">
-        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
-        </span>
-        <time class="mb-1 text-sm font-medium text-gray-400">Nov</time>
-        <h3 class="text-lg font-semibold text-white">PDR (Preliminary Design Review)</h3>
-        <p class="text-gray-300"> robotics concepts like dif
-          Mechanical design progress, component choices, and first prototypes of a test bench
-        </p>
-      </div>
-
-      <!-- CDR -->
-      <div class="mb-10 ml-6">
-        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
-        </span>
-        <time class="mb-1 text-sm font-medium text-gray-400">Early Dec</time>
-        <h3 class="text-lg font-semibold text-white">CDR (Critical Design Review)</h3>
-        <p class="text-gray-300">
-          Full rover architecture validation, integration planning, risk analysis ⚠️, and prototype test bench demo.
-        </p>
-      </div>
-
-      <!-- Final Sprint -->
-      <div class="mb-10 ml-6">
-        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
-        </span>
-        <time class="mb-1 text-sm font-medium text-gray-400">2nd Sem</time>
-        <h3 class="text-lg font-semibold text-white">Final Sprint</h3>
-        <p class="text-gray-300">
-          Debugging, testing, and refining. Getting ready for the big day
-        </p>
-      </div>
-
-      <!-- Final Event -->
-      <div class="ml-6">
-        <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-foreground rounded-full -left-3 ring-8 ring-background">
-        </span>
-        <time class="mb-1 text-sm font-medium text-gray-400">May</time>
-        <h3 class="text-lg font-semibold text-white">🚀 XRC Final Event</h3>
-        <p class="text-gray-300">
-          Competition day: the ultimate test of your rover!
-        </p>
-      </div>
-
+    <div class="relative border-l border-gray-600 dark:border-gray-500 ml-3 sm:ml-4">
+      {[
+        { date: "Early Oct", title: "Kick-off & Workshops", text: "Intro to mechanical construction, soldering, Linux, and robotics concepts like differentials, PCB, and ROS2 with Docker" },
+        { date: "Late Oct", title: "IDR (Initial Design Review)", text: "Early project planning, team role distribution, and validation of concept understanding" },
+        { date: "Nov", title: "PDR (Preliminary Design Review)", text: "Mechanical design progress, component choices, and first prototypes of a test bench" },
+        { date: "Early Dec", title: "CDR (Critical Design Review)", text: "Full rover architecture validation, integration planning, risk analysis ⚠️, and prototype test bench demo." },
+        { date: "2nd Sem", title: "Final Sprint", text: "Debugging, testing, and refining. Getting ready for the big day" },
+        { date: "May", title: "🚀 XRC Final Event", text: "Competition day: the ultimate test of your rover!" },
+      ].map(({ date, title, text }) => (
+        <div class="mb-8 sm:mb-10 ml-6 relative">
+          <span class="absolute flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 bg-primary-foreground rounded-full -left-3 ring-6 ring-background"></span>
+          <time class="mb-1 block text-xs sm:text-sm font-medium text-gray-400">{date}</time>
+          <h3 class="text-base sm:text-lg font-semibold text-white">{title}</h3>
+          <p class="text-xs sm:text-sm md:text-base text-gray-300">{text}</p>
+        </div>
+      ))}
     </div>
   </section>
 
   <!-- Where It Happens -->
-  <section class="max-w-5xl mx-auto py-16">
-    <div class="bg-[#1b2540] rounded-xl p-8 text-center shadow-lg">
-      <h2 class="text-2xl font-bold mb-4">📍 Where It Happens</h2>
-      <p class="text-muted-foreground mb-6">
+  <section class="max-w-5xl mx-auto py-12 sm:py-16 px-4">
+    <div class="bg-[#1b2540] rounded-xl p-6 sm:p-8 text-center shadow-lg">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">📍 Where It Happens</h2>
+      <p class="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
         The XRC final takes place across various iconic EPFL venues such as:
       </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-        <button class="px-6 py-2 bg-primary-foreground text-white rounded-md shadow hover:opacity-90">
+      <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+        <button class="px-5 sm:px-6 py-2 bg-primary-foreground text-white rounded-md shadow hover:opacity-90">
           Voutes Rolex
         </button>
-        <button class="px-6 py-2 bg-primary-foreground text-white rounded-md shadow hover:opacity-90">
+        <button class="px-5 sm:px-6 py-2 bg-primary-foreground text-white rounded-md shadow hover:opacity-90">
           Agora
         </button>
       </div>
-      <p class="text-muted-foreground">
+      <p class="text-sm sm:text-base text-muted-foreground">
         This event is open to students, families, and the public, aiming to spark curiosity in robotics.
       </p>
     </div>
   </section>
 
   <!-- Memories -->
-  <section class="max-w-6xl mx-auto py-16">
-    <div class="bg-[#1b2540] rounded-xl p-8 shadow-lg">
-      <h2 class="text-2xl font-bold text-center mb-6">📸 Memories from XRC</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+  <section class="max-w-6xl mx-auto py-12 sm:py-16 px-4">
+    <div class="bg-[#1b2540] rounded-xl p-6 sm:p-8 shadow-lg">
+      <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6">📸 Memories from XRC</h2>
+      <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
         {
-        images &&
+          images &&
           images.map((src, idx) => (
             <img
               src={src}
@@ -157,7 +106,7 @@ const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/xrc/${pa
               loading="lazy"
             />
           ))
-      }
+        }
       </div>
     </div>
   </section>

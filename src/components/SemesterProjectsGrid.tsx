@@ -26,29 +26,32 @@ const groupByPole = (projects: Project[]) => {
   );
 };
 
-const SemesterProjectsGrid: React.FC<SemesterProjectsGridProps> = ({
-  projects,
-}) => {
+const SemesterProjectsGrid: React.FC<SemesterProjectsGridProps> = ({ projects }) => {
   const grouped = groupByPole(projects);
+
   return (
-    <section className="max-w-6xl mx-auto py-26">
+    <section className="max-w-6xl mx-auto py-20 px-4">
       <div className="flex flex-col gap-12">
-      {Object.entries(grouped).map(([pole, poleProjects]) => (
-        <section key={pole}>
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <span className="w-2 h-2 bg-primary rounded-full"></span>
-            {pole}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {poleProjects.map((project, idx) => (
-              <div key={project.slug} className="animate-fadeIn" style={{ animationDelay: `${idx * 100}ms` }}>
-                <SemesterProjectCard {...project} />
-              </div>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
+        {Object.entries(grouped).map(([pole, poleProjects]) => (
+          <section key={pole}>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-8 flex items-center gap-3">
+              <span className="w-2 h-2 bg-primary rounded-full"></span>
+              {pole}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+              {poleProjects.map((project, idx) => (
+                <div
+                  key={project.slug}
+                  className="animate-fadeIn"
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  <SemesterProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
     </section>
   );
 };

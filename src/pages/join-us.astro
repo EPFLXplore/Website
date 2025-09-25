@@ -15,9 +15,12 @@ const baseUrl = import.meta.env.BASE_URL;
     <Menu client:load />
   </div>
 
-  <div class="px-6 md:px-12 lg:px-16 py-24 max-w-7xl mx-auto">
-    <h1 class="text-5xl font-bold mb-6 text-center">Join Us</h1>
-    <p class="font-light text-lg text-center max-w-3xl mx-auto mb-16">
+  <!-- Hero -->
+  <div class="px-4 sm:px-6 md:px-12 lg:px-16 py-16 sm:py-24 max-w-7xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center">
+      Join Us
+    </h1>
+    <p class="font-light text-sm sm:text-base md:text-lg text-center max-w-3xl mx-auto mb-10 sm:mb-16">
       EPFL Xplore is always looking for motivated students to join our team.
       Whether you're interested in robotics, software development, marketing, or
       event organization, there's a place for you here. Join us to work on
@@ -26,14 +29,14 @@ const baseUrl = import.meta.env.BASE_URL;
     </p>
   </div>
 
-  <div class="w-full flex justify-center">
+  <!-- Google Form -->
+  <div class="w-full flex justify-center px-4 sm:px-6 md:px-0">
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSed4U8FYSrjUYA6L38pA3EAhHXEUW-YM9NOSwpodN6W3x8tVQ/viewform?embedded=true"
-      width="1000"
-      height="1900"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0">Loading…</iframe
+      class="w-full max-w-4xl h-[1500px] sm:h-[1800px] md:h-[1900px] border-0 rounded-lg shadow-lg"
+      loading="lazy"
     >
+      Loading…
+    </iframe>
   </div>
 </MainLayout>

@@ -7,7 +7,7 @@ interface SemesterProjectCardProps {
   contact: string;
   applyLink: string;
   slug: string;
-  taken?: boolean; // new optional prop
+  taken?: boolean;
 }
 
 const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
@@ -16,23 +16,24 @@ const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
   pole,
   contact,
   applyLink,
-  taken = false, // default false
+  taken = false,
 }) => {
   return (
     <div
       className={`
         relative flex flex-col justify-between
         bg-gray-900/80 backdrop-blur-md border border-gray-700 
-        rounded-xl p-6 pt-12 text-white shadow-md 
+        rounded-xl p-4 sm:p-6 pt-12 text-white shadow-md 
         transition-transform hover:scale-[1.02] hover:shadow-xl 
-        h-[420px]
-        ${taken ? "opacity-70" : ""} /* faded if taken */
+        h-auto min-h-[360px] sm:min-h-[420px]
+        ${taken ? "opacity-70" : ""}
       `}
     >
-      {/* Pole Tag absolute */}
+      {/* Pole Tag */}
       <span
         className="
-          absolute top-4 right-4 text-xs px-3 py-1 
+          absolute top-3 sm:top-4 right-3 sm:right-4 
+          text-[10px] sm:text-xs px-2 sm:px-3 py-1 
           bg-gradient-to-r from-pink-500 to-red-500 
           rounded-full font-semibold
         "
@@ -44,7 +45,8 @@ const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
       {taken && (
         <span
           className="
-            absolute top-4 left-4 text-xs px-3 py-1 
+            absolute top-3 sm:top-4 left-3 sm:left-4 
+            text-[10px] sm:text-xs px-2 sm:px-3 py-1 
             bg-yellow-500 text-black rounded-full font-bold shadow
           "
         >
@@ -53,25 +55,21 @@ const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
       )}
 
       {/* Title */}
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
+      <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">{title}</h3>
 
       {/* Info */}
-      <div className="space-y-2 flex-1">
-        <p>
-          <span className="font-semibold">Major:</span> {major}
-        </p>
-        <p>
-          <span className="font-semibold">Contact:</span> {contact}
-        </p>
+      <div className="space-y-1 sm:space-y-2 flex-1 text-sm sm:text-base">
+        <p><span className="font-semibold">Major:</span> {major}</p>
+        <p><span className="font-semibold">Contact:</span> {contact}</p>
       </div>
 
-      {/* Download Button (disabled if taken) */}
+      {/* Download Button */}
       <a
         href={taken ? undefined : applyLink}
         download={!taken}
         className={`
-          mt-4 inline-block px-4 py-2 rounded-lg 
-          font-semibold text-center transition
+          mt-4 inline-block px-3 sm:px-4 py-2 rounded-lg 
+          font-semibold text-center transition text-sm sm:text-base
           ${taken 
             ? "bg-gray-600 text-gray-300 cursor-not-allowed" 
             : "bg-primary text-black hover:bg-primary/80"}
