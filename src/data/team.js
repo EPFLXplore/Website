@@ -51,7 +51,7 @@ export default [
             name: "Ariela Kasidi",
             role: "Chief Financial Officer",
             studies: "BSc HEC",
-            photo: `https://epfl-xplore.ch/wp-content/uploads/2024/09/MG_0917-scaled-e1725458393468-150x150.jpg`,
+            photo: `${baseUrl}/images/team/ariela.png`,
             socials: {
               linkedin: "https://www.linkedin.com/in/ariela-kasidi-2b370b339/",
               email: "ariela.kasidi@epfl-xplore.ch",
@@ -142,28 +142,7 @@ export default [
   {
     name: "Xplore Rover Challenge",
     teams: [
-      {
-        members: [
-          {
-            name: "Nour Larbi",
-            role: "Coach",
-            photo: null,
-            socials: {
-              github: "https://github.com/charliekim",
-              email: "nour.larbi@epfl-xplore.ch",
-            },
-          },
-          {
-            name: "Tifaine Mezencev",
-            role: "Coach",
-            photo: null,
-            socials: {
-              github: "https://github.com/charliekim",
-              email: "tifaine.mezencev@epfl-xplore.ch",
-            },
-          },
-        ],
-      },
+      
     ],
   }
 ];
