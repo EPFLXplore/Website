@@ -4,28 +4,31 @@ import Layout from "../layouts/MainLayout.astro";
 import { Award, Medal, Star, Trophy } from "lucide-react";
 
 const base = import.meta.env.BASE_URL;
-
-const heroStyle =
-  "background-image: url(" +
-  base +
-  "/images/main/team_erc.jpg); " +
-  "background-size: cover; background-position: center;";
 ---
 
 <Layout>
   <main class="px-0 py-0">
     <!-- Hero -->
-    <section
-      class="relative flex flex-col items-center justify-center min-h-screen w-full text-center text-white"
-      style={heroStyle}
+    <section 
+      class="relative flex flex-col items-center justify-center w-full text-center text-white 
+            h-[60vh] sm:min-h-screen overflow-hidden"
     >
+      <!-- Hero Image -->
+      <img
+        src={base + "/images/main/team_erc.jpg"}
+        alt="EPFL Xplore Team"
+        class="absolute inset-0 w-full h-full object-cover object-top"
+      />
+      <!-- Dark overlay -->
       <div class="absolute inset-0 bg-black/40"></div>
 
+      <!-- Menu -->
       <div class="absolute top-0 left-0 w-full">
         <Menu client:load />
       </div>
 
-      <div class="relative z-10 px-4 sm:px-6 mt-24">
+      <!-- Hero Content -->
+      <div class="relative z-10 px-4 sm:px-6 mt-24 max-w-4xl">
         <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
           Welcome to EPFL Xplore
         </h1>
@@ -50,6 +53,7 @@ const heroStyle =
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- About -->
@@ -218,9 +222,7 @@ const heroStyle =
         Our Sponsors
       </h2>
 
-      <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-10 items-center"
-      >
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-10 items-center">
         <a
           href="https://www.epfl.ch"
           target="_blank"
