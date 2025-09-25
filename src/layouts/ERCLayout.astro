@@ -16,7 +16,9 @@ const {
   videoId,
   teamImage,
   images,
-  technical
+  technical,
+  show_rover_model,
+  show_techincal_section,
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -46,11 +48,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
       Rover & Drone Development
     </h2>
-    <RoverModel name={rover.toLowerCase()} baseUrl={baseUrl} client:load />
-
-    <p class="mt-10 sm:mt-20 text-sm sm:text-base md:text-lg leading-relaxed">
-      We present <strong>{rover}</strong> and our aerial drone <strong>{drone}</strong>. {sentence_intro}
-    </p>
+    {show_rover_model ? <RoverModel name={rover.toLowerCase()} baseUrl={baseUrl} client:load /> : null}
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-6">
       <img
@@ -67,12 +65,13 @@ const baseUrl = import.meta.env.BASE_URL;
   </section>
 
   <!-- Technical Section -->
-  {technical && technical.length > 0 && (
+  {show_techincal_section && technical && technical.length > 0 && (
     <section class="w-full py-16 sm:py-28 px-4">
       <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center mb-12 sm:mb-24 text-primary">
         Rover Technical Overview
       </h2>
 
+      { show_techincal_section &&
       <div class="space-y-20 sm:space-y-40">
         {technical.map((item, idx) => (
           <>
@@ -159,7 +158,7 @@ const baseUrl = import.meta.env.BASE_URL;
             )}
           </>
         ))}
-      </div>
+      </div> }
     </section>
   )}
 
