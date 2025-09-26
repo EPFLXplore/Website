@@ -55,7 +55,7 @@ const SemesterProjectCard: React.FC<SemesterProjectCardProps> = ({
       )}
 
       {/* Title */}
-      <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">{title}</h3>
+      <h3 className="text-lg sm:text-xl mt-6 font-bold mb-3 sm:mb-4">{title}</h3>
 
       {/* Info */}
       <div className="space-y-1 sm:space-y-2 flex-1 text-sm sm:text-base">

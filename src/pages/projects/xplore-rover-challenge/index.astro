@@ -61,10 +61,14 @@ const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/xrc/${pa
         { date: "May", title: "🚀 XRC Final Event", text: "Competition day: the ultimate test of your rover!" },
       ].map(({ date, title, text }) => (
         <div class="mb-8 sm:mb-10 ml-6 relative">
-          <span class="absolute flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 bg-primary-foreground rounded-full -left-3 ring-6 ring-background"></span>
-          <time class="mb-1 block text-xs sm:text-sm font-medium text-gray-400">{date}</time>
-          <h3 class="text-base sm:text-lg font-semibold text-white">{title}</h3>
-          <p class="text-xs sm:text-sm md:text-base text-gray-300">{text}</p>
+          <span class="absolute flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 
+                      bg-primary-foreground rounded-full -left-3 ring-6 ring-background"></span>
+          
+          <div class="pl-4">
+            <time class="mb-1 block text-xs sm:text-sm font-medium text-gray-400">{date}</time>
+            <h3 class="text-base sm:text-lg font-semibold text-white">{title}</h3>
+            <p class="text-xs sm:text-sm md:text-base text-gray-300">{text}</p>
+          </div>
         </div>
       ))}
     </div>
