@@ -81,7 +81,7 @@ export default [
             name: "Tifaine Mezencev",
             role: "Chief Logistics Officer",
             studies: "MSc Robotics",
-            photo: `https://media.licdn.com/dms/image/v2/D4E03AQEX_lH-Hi0oUQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1672606350883?e=2147483647&v=beta&t=nSh5WXrQEVKvC9pu5PZ5lBmAiciP-jf03AU_PSHjkyw`,
+            photo: `${baseUrl}/images/team/tifaine.png`,
             socials: {
               email: "tifaine.mezencev@epfl-xplore.ch",
             },
@@ -112,7 +112,7 @@ export default [
             photo: `${baseUrl}/images/team/malachy.png`,
             socials: {
               linkedin: "https://www.linkedin.com/in/malachy-osim-3b1979247/",
-              email: "manachy.osim@epfl-xplore.ch",
+              email: "malachy.osim@epfl-xplore.ch",
             },
           },
           {
