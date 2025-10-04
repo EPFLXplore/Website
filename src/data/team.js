@@ -90,7 +90,7 @@ export default [
             name: "Maxime Rombach",
             role: "Coordinator eSpace",
             studies: "",
-            photo: `https://media.licdn.com/dms/image/v2/D4E03AQF8A1haRSIffg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1666080047634?e=2147483647&v=beta&t=ZRK2CFYZZqV_uEKBjcQWMDyRlpgNa1Uyn51h9oPxpZY`,
+            photo: `${baseUrl}/images/team/maxime.png`,
             socials: {
               linkedin: "https://www.linkedin.com/in/maxime-rombach-815924135/",
               email: "maxime.rombach@epfl.ch",

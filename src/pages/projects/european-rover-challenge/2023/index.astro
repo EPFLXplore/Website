@@ -21,31 +21,17 @@ const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2023/${p
 
 const technical = [
   {
-    title: "Subsystems Control",
-    text: "",
-    image: "15.jpg",
+    title: "Upgrading from ROS1 to ROS12",
+    text: "During its first 2 years, the rovers’ code stack was entirely built over ROS. However, with increasing reminders of ROS reaching its end-of-life in 2025, the association made the decision to start to transition to ROS 2 as soon as possible. This was done to avoid building more unmaintainable legacy code, and ensure we stay on top of new technologies. After a complicated year upgrading our stack, finding ROS 2 equivalents of previous packages, and even upgrading certain open source packages manually without waiting for original authors’ updates, we built the ROS 2 foundation which contributed to our 3rd place and on which future Xplore teams continue developing.",
+    image: "ros2.jpg",
     design: "split",
   },
   {
-    title: "Robustness of Robotic Arm",
-    text: "",
-    image: "14.jpg",
-    design: "hero",
-  },
-  {
-    title: "Autonomy in Software Architecture",
-    text: "",
-    image: "13.jpg",
-    design: "wide",
-  },
-  {
-    title: "Drill System",
-    design: "features",
-    cards: [
-      { title: "", text: "", image: "16.jpg" },
-      { title: "", text: "", image: "17.jpg" },
-    ],
-  },
+    title: "Modular and redundant Electronics System",
+    text: "Kerby's electronics uses multiple nodes, all of which can communicate in a plug-and-play manner with multiple sensors. All nodes share the same firmware and automatically detect and configure a sensor when connected and up to 3 sensor can be connected to a single node. A redundant CAN-FD bus is used for all sensors (which is also often used in real space missions) to ensure no single point of failure. A custom CLI (Command Line Interface) has also been developed for monitoring, calibration, profiling and debugging. All sensor parameters (e.g. calibration) can also be changed on the fly and are saved on the OBC (Jetson Xavier). Additionally, the board is powered by a custom module providing over/undervoltage, short-circuit and reverse-input protection.",
+    image: "orion_2.jpg",
+    design: "hero"
+  }
 ];
 
 ---

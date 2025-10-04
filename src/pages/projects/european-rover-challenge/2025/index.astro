@@ -21,30 +21,16 @@ const images = Object.keys(imagesGlob).map((path) => `${baseUrl}/images/2025/${p
 
 const technical = [
   {
-    title: "Subsystems Control",
-    text: "",
-    image: "15.jpg",
-    design: "split",
-  },
-  {
-    title: "Robustness of Robotic Arm",
-    text: "",
-    image: "14.jpg",
-    design: "hero",
-  },
-  {
-    title: "Autonomy in Software Architecture",
-    text: "",
-    image: "13.jpg",
+    title: "Control Station",
+    text: "This year, the Control Station was redesigned into a streamlined, web-based platform that centralizes activation, shutdown, and monitoring of all rover subsystems. Hosted on a Raspberry Pi at the Ground Station rather than onboard the rover, the system is easier to restart in case of errors and avoids duplicating heavy data streams across the wireless link. Multiple operators can connect simultaneously, and we successfully displayed eight camera feeds on three stations at under 60 Mbit/s. The architecture was simplified by removing Django and custom websockets: all communication now runs through rosbridge_suite and roslibjs, ensuring maintainability and performance. The interface was restructured into focused tabs—control, cameras, simulation, and logs—balancing visibility with usability. Gamepad support was made robust through a flexible binding system that normalizes inputs across hardware and browsers. Finally, a major new feature was added: direct Docker container control from the Control Station, enabling operators to start and stop rover subsystems dynamically, replacing fragile systemd boot scripts.",
+    image: "cs.jpg",
     design: "wide",
   },
   {
-    title: "Drill System",
-    design: "features",
-    cards: [
-      { title: "", text: "", image: "16.jpg" },
-      { title: "", text: "", image: "17.jpg" },
-    ],
+    title: "Autonomy in Navigation",
+    text: "Over the past year, the Navigation Subsystem of our rover has undergone major improvements that brought it to a new level of reliability and precision. At the core of the system, we now fuse three complementary localization sources through a custom Extended Kalman Filter: wheel odometry from a double-Ackermann kinematic model, a new high-grade 9-axis OlixSense X1 IMU, and LiDAR-inertial odometry computed with the GPU-accelerated GLIM package. This combination greatly reduced drift and offloaded CPU resources, enabling smoother autonomous navigation. We also significantly reinforced our vision-based global localization. The system was expanded from two to seven synchronized cameras, increasing the likelihood of detecting ArUco tags distributed across the Mars Yard. A refined triangulation pipeline filters unstable measurements based on geometric dilution of precision, ensuring that only consistent corrections are integrated into the global pose estimate. Together with the improved IMU and LiDAR odometry, this allowed us to reach a remarkable accuracy of about 10 cm for each waypoint reached during testing. Manual and autonomous control modes were unified under a multiplexing system that dynamically switches between manual driving, double-Ackermann, and “Omni-Drive” motion strategies. Deadzone filtering and dynamic speed scaling increased safety and driver comfort. On the autonomous side, the Nav2 stack was optimized with terrain-aware costmaps, GPU-accelerated path planning (Smac Hybrid A*), and a Regulated Pure Pursuit controller that adapts speed and lookahead to obstacles in real time. Looking ahead, we are preparing further enhancements: integrating visual-inertial odometry sources such as NVIDIA Isaac ROS VSLAM, unifying the motion model, rewriting critical nodes in C++ for efficiency, adopting more robust triangulation algorithms, and increasing sensor update rates. These upgrades will make the rover’s navigation even more precise, efficient, and competition-ready.",
+    image: "nav_phoenyx.jpg",
+    design: "hero"
   },
 ];
 
