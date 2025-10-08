@@ -9,6 +9,7 @@ export default defineConfig({
   base: "/Website",
   integrations: [react()],
   vite: {
+    assetsInclude: ['**/*.pdf'],
     plugins: [tailwindcss()],
   },
 });
