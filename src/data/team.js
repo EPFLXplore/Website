@@ -58,13 +58,13 @@ export default [
             },
           },
           {
-            name: "Badr El Berri",
+            name: "Adem Derbali",
             role: "Chief Communications Officer",
-            studies: "BSc HEC",
-            photo: `${baseUrl}/images/team/badr.png`,
+            studies: "BSc Micro Engineering",
+            photo: `${baseUrl}/images/team/adem.png`,
             socials: {
-              linkedin: "https://www.linkedin.com/in/badr-el-berri/",
-              email: "badr.elberri@epfl-xplore.ch",
+              linkedin: "https://www.linkedin.com/in/adem-derbali/",
+              email: "adem.derbali@epfl-xplore.ch",
             },
           },
           {
@@ -139,10 +139,4 @@ export default [
       },
     ],
   },
-  {
-    name: "Xplore Rover Challenge",
-    teams: [
-      
-    ],
-  }
 ];

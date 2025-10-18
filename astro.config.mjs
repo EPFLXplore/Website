@@ -4,11 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 
-// https://astro.build/config
 export default defineConfig({
-  base: "/Website",
+  site: "https://epflxplore.github.io/Website/", // ✅ optional but helps Astro generate correct URLs
+  base: "/Website",                              // ✅ this is the crucial part
   integrations: [react()],
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  vite: { plugins: [tailwindcss()] },
 });
