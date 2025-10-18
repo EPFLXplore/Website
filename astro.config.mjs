@@ -8,5 +8,8 @@ export default defineConfig({
   site: "https://epflxplore.github.io/Website/", // ✅ optional but helps Astro generate correct URLs
   base: "/Website",                              // ✅ this is the crucial part
   integrations: [react()],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    assetsInclude: ['**/*.pdf'],
+    plugins: [tailwindcss()],
+  },
 });
