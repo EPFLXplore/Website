@@ -1,0 +1,61 @@
+---
+import StudentResearchLayout from "@/layouts/StudentResearchLayout.astro";
+import { getCollection } from "astro:content";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+  const projects = await getCollection("student_led_research");
+
+  return projects.map((p) => ({
+    params: { key: p.data.key ?? p.slug },
+    props: { project: p },
+  }));
+}
+
+const { key } = Astro.params;
+
+// Find the matching entry by frontmatter key (or use slug approach, see note below)
+const projects = await getCollection("student_led_research");
+const entry = projects.find((p) => p.data.key === key);
+
+if (!entry) {
+  throw new Error(`Project not found: ${key}`);
+}
+
+const data = entry.data;
+
+// Helper to prefix paths
+const imgBase = `${baseUrl}/images/xre/student_led/`;
+const resolveImg = (p) => (p?.startsWith("http") ? p : `${imgBase}${key}/${p}`);
+const resolveHref = (h) => (h?.startsWith("http") ? h : `${baseUrl}${h}`);
+
+// Build layout props from collection data
+const project = {
+  title: data.title,
+  status: data.status,
+  year: data.year,
+  tagline: data.tagline,
+  heroImage: resolveImg(data.heroImage),
+  team: data.team ?? [],
+  links: (data.links ?? []).map((l) => ({ ...l, href: resolveHref(l.href) })),
+  sections: (data.sections ?? []).map((s) => ({
+    ...s,
+    media: (s.media ?? []).map((m) => ({
+      ...m,
+      src: resolveImg(m.src),
+    })),
+  })),
+};
+---
+
+<StudentResearchLayout
+  title={project.title}
+  status={project.status}
+  year={project.year}
+  tagline={project.tagline}
+  heroImage={project.heroImage}
+  team={project.team}
+  links={project.links}
+  sections={project.sections}
+/>

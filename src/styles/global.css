@@ -179,4 +179,12 @@
   textarea {
     font-size: var(--font-size-base);
   }
+    /* Hide scrollbars but keep scrolling */
+  .no-scrollbar {
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE/Edge */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;                /* Chrome/Safari */
+  }
 }

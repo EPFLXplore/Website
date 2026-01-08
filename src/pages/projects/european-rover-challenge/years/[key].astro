@@ -1,0 +1,89 @@
+---
+import ERCPage from "../../../../layouts/ERCLayout.astro"
+import { getCollection } from "astro:content";
+import { ShowerHead } from "lucide-react";
+import fs from "node:fs";
+import path from "node:path";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+  const projects = await getCollection("erc_years");
+
+  return projects.map((p) => ({
+    params: { key: p.data.rover ?? p.slug },
+    props: { project: p },
+  }));
+}
+
+const { key } = Astro.params;
+
+// Find the matching entry by frontmatter key (or use slug approach, see note below)
+const projects = await getCollection("erc_years");
+const entry = projects.find((p) => p.data.rover === key);
+
+if (!entry) {
+  throw new Error(`Project not found: ${key}`);
+}
+
+const data = entry.data;
+const yearDir = path.join(process.cwd(), "public", "images", data.year);
+const year = String(data.year).replace(/^\/+|\/+$/g, "");
+const imgBase = `${baseUrl}/images/${year}/`;
+
+const resolveImg = (p) => {
+  if (!p) return "";
+  if (p.startsWith("http")) return p;
+  const clean = String(p).replace(/^\/+/, "");
+  return `${imgBase}${clean}`;
+};
+
+let images: string[] = [];
+if (fs.existsSync(yearDir)) {
+    images = fs
+    .readdirSync(yearDir)
+    .filter((f) => /\.(png|jpe?g|webp|gif)$/i.test(f))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .map((f) => resolveImg(f));   // ✅ use the same resolver
+}
+
+// Build layout props from collection data
+const project = {
+  rover: data.rover,
+  drone: data.drone,
+  year: data.year,
+  heroImage: resolveImg(data.heroImage),
+  roverImage: resolveImg(data.roverImage),
+  droneImage: resolveImg(data.droneImage),
+  results: (data.results ?? []).map((s) => ({
+    ...s,
+  })),
+  videoId: data.videoId,
+  teamImage: resolveImg(data.teamImage),
+  images: images,
+  show_drone: data.show_drone,
+  show_rover_model: data.show_rover_model,
+  show_techincal_section: data.show_techincal_section,
+  technical: (data.technical ?? []).map((s) => ({
+    ...s,
+    image: resolveImg(s.image)
+  })),
+};
+---
+
+<ERCPage
+  rover={project.rover}
+  drone={project.drone}
+  year={project.year}
+  heroImage={project.heroImage}
+  roverImage={project.roverImage}
+  droneImage={project.droneImage}
+  results={project.results}
+  videoId={project.videoId}
+  teamImage={project.teamImage}
+  images={images}
+  technical={project.technical}
+  show_drone={project.show_drone}
+  show_rover_model={project.show_rover_model}
+  show_techincal_section={project.show_techincal_section}
+/>

@@ -7,9 +7,7 @@ import GalleryImage from "@/components/GalleryImage.tsx";
 const {
   rover,
   drone,
-  sentence_intro,
   year,
-  title,
   heroImage,
   roverImage,
   droneImage,
@@ -18,6 +16,7 @@ const {
   teamImage,
   images,
   technical,
+  show_drone,
   show_rover_model,
   show_techincal_section,
 } = Astro.props;
@@ -35,11 +34,11 @@ const baseUrl = import.meta.env.BASE_URL;
   <!-- Hero -->
   <section class="max-w-6xl mx-auto py-16 sm:py-20 md:py-26 text-center px-4">
     <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-10 text-primary">
-      {title}
+      European Rover Challenge {year}
     </h1>
     <div class="overflow-hidden rounded-xl shadow-lg">
       <img
-        src={`${baseUrl}/images/${year}/${heroImage}`}
+        src={`${heroImage}`}
         alt={`ERC ${year} Team`}
         class="w-full h-auto object-cover aspect-[16/9]"
       />
@@ -49,27 +48,45 @@ const baseUrl = import.meta.env.BASE_URL;
   <!-- Rover Section -->
   <section class="max-w-6xl mx-auto py-12 sm:py-20 space-y-6 sm:space-y-8 px-4">
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
-      Rover & Drone Development
+      Rover {show_drone ? "and Drone" : ""} Development
     </h2>
     {show_rover_model ? <RoverModel name={rover.toLowerCase()} baseUrl={baseUrl} client:load /> : null}
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-6">
-      <div class="overflow-hidden rounded-lg shadow bg-white flex items-center justify-center">
+    {show_drone ? (
+    <!-- TWO-COLUMN MODE -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+      <div class="overflow-hidden rounded-lg shadow bg-white aspect-[4/3]">
         <img
-          src={`${baseUrl}/images/${year}/${roverImage}`}
-          alt="Rover"
-          class="w-full h-auto object-contain"
+          src={roverImage}
+          alt={rover}
+          class="w-full h-full object-cover"
         />
       </div>
-      <div class="overflow-hidden rounded-lg shadow bg-white flex items-center justify-center">
+
+      <div class="overflow-hidden rounded-lg shadow bg-white aspect-[4/3]">
         <img
-          src={`${baseUrl}/images/${year}/${droneImage}`}
-          alt="Drone"
-          class="w-full h-auto object-contain"
+          src={droneImage}
+          alt={drone}
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+    </div>
+  ) : (
+    <!-- SINGLE ROVER MODE -->
+    <div class="mt-6 flex justify-center">
+      <div class="overflow-hidden rounded-xl shadow bg-white max-w-3xl w-full aspect-[16/9]">
+        <img
+          src={roverImage}
+          alt={rover}
+          class="w-full h-full object-cover"
         />
       </div>
     </div>
-  </section>
+  )}
+
+  </div>
 
   <!-- Technical Section -->
   {show_techincal_section && technical && technical.length > 0 && (
@@ -88,7 +105,7 @@ const baseUrl = import.meta.env.BASE_URL;
                 {item.image && (
                   <div class="overflow-hidden rounded-2xl bg-white flex justify-center">
                     <img
-                      src={`${baseUrl}/images/${year}/technics/${item.image}`}
+                      src={`${item.image}`}
                       alt={item.title}
                       class="w-full h-auto object-contain max-w-full mx-auto"
                     />
@@ -110,7 +127,7 @@ const baseUrl = import.meta.env.BASE_URL;
                 {item.image && (
                   <div class="flex-1 flex items-center justify-center bg-white rounded-2xl overflow-hidden p-2">
                     <img
-                      src={`${baseUrl}/images/${year}/technics/${item.image}`}
+                      src={`${item.image}`}
                       alt={item.title}
                       class="w-full h-auto max-w-[600px] object-contain"
                     />
@@ -128,7 +145,7 @@ const baseUrl = import.meta.env.BASE_URL;
                 {item.image && (
                   <div class="overflow-hidden rounded-xl">
                     <img
-                      src={`${baseUrl}/images/${year}/technics/${item.image}`}
+                      src={`${item.image}`}
                       alt={item.title}
                       class="w-full h-auto object-contain"
                     />
@@ -151,7 +168,7 @@ const baseUrl = import.meta.env.BASE_URL;
                         {c.image && (
                           <div class="w-full md:w-1/2 flex justify-center bg-white">
                             <img
-                              src={`${baseUrl}/images/${year}/technics/${c.image}`}
+                              src={`${c.image}`}
                               alt={c.title}
                               class="w-full h-auto object-contain max-h-[400px]"
                             />
@@ -208,7 +225,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <h2 class="text-2xl sm:text-3xl font-bold">The Team</h2>
     <div class="overflow-hidden rounded-lg shadow-lg bg-white">
       <img
-        src={`${baseUrl}/images/${year}/${teamImage}`}
+        src={`${teamImage}`}
         alt={`Team ${year}`}
         class="w-full h-auto object-cover"
       />
