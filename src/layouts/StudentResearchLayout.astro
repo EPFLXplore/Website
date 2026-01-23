@@ -54,7 +54,7 @@ const baseUrl = import.meta.env.BASE_URL;
         </div>
 
         <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-          <div class="bg-gray-800/70 border border-gray-700 rounded-xl p-4">
+          <div class="bg-gray-800/70 border border-gray-700 rounded-xl p-4 w-fit max-w-full">
             <p class="text-gray-300 font-semibold mb-2">Team</p>
             <div class="flex flex-wrap gap-2">
               {team.map((m) => (
@@ -70,6 +70,7 @@ const baseUrl = import.meta.env.BASE_URL;
             </div>
           </div>
         </div>
+
       </div>
 
       <div class="relative rounded-2xl overflow-hidden shadow-[0_40px_100px_-30px_rgba(0,0,0,0.9)]">
