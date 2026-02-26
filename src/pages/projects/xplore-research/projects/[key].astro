@@ -37,6 +37,7 @@ const project = {
   year: data.year,
   tagline: data.tagline,
   heroImage: resolveImg(data.heroImage),
+  visible: data.visible,
   team: data.team ?? [],
   links: (data.links ?? []).map((l) => ({ ...l, href: resolveHref(l.href) })),
   sections: (data.sections ?? []).map((s) => ({

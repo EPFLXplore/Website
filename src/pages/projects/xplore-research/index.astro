@@ -121,6 +121,9 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
       {student_led_projects.map((project) => (
+
+        project.data.visible === true ? (
+        
         <a
           href={`${baseUrl}/projects/xplore-research/projects/${project.data.key}`}
           class={`group ${
@@ -129,25 +132,73 @@ const baseUrl = import.meta.env.BASE_URL;
               : ""
           }`}
         >
-          <Card className="overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl max-w-md w-full">
-            <div class="relative">
+          <Card className={`${project.data.visible ? "" : "opacity-40"} overflow-hidden max-w-md w-full h-[350px] flex flex-col transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl`}>
+
+            {/* Image */}
+            <div class="relative h-[140px] w-full flex-shrink-0">
               <img
                 src={`${baseUrl}/images/xre/student_led/${project.data.key}/${project.data.heroImage}`}
                 alt={project.data.title}
-                class="w-full h-40 object-cover"
+                class="w-full h-full object-cover"
               />
               <span class="absolute top-3 left-3 bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
                 {project.data.year}
               </span>
             </div>
-            <CardHeader>
-              <CardTitle>{project.data.title}</CardTitle>
-              <CardDescription>
+
+            {/* Header */}
+            <CardHeader className="flex flex-col flex-grow gap-2">
+
+              <CardTitle className="text-base leading-snug h-[44px] overflow-hidden">
+                {project.data.title}
+              </CardTitle>
+
+              <CardDescription className="leading-snug h-[60px] overflow-hidden">
                 {project.data.subtitle}
               </CardDescription>
+
             </CardHeader>
+
           </Card>
-        </a>
+        </a> ) : ( 
+          <div
+            class={`group ${
+              student_led_projects.length === 1
+                ? "md:col-span-3 flex justify-center"
+                : ""
+            }`}
+          >
+
+          <Card className={`${project.data.visible ? "" : "opacity-40"} overflow-hidden max-w-md w-full h-[350px] flex flex-col transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl`}>
+             {/* Image */}
+            <div class="relative h-[140px] w-full flex-shrink-0">
+              <img
+                src={`${baseUrl}/images/xre/student_led/${project.data.key}/${project.data.heroImage}`}
+                alt={project.data.title}
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-3 left-3 bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                {project.data.year}
+              </span>
+            </div>
+
+            {/* Header */}
+            <CardHeader className="flex flex-col flex-grow gap-2">
+
+              <CardTitle className="text-base leading-snug h-[44px] overflow-hidden">
+                {project.data.title}
+              </CardTitle>
+
+              <CardDescription className="leading-snug h-[60px] overflow-hidden">
+                {project.data.subtitle}
+              </CardDescription>
+
+            </CardHeader>
+            </Card>
+
+          </div>
+
+        )
       ))}
 
     </div>

@@ -33,6 +33,7 @@ const student_led_research = defineCollection({
     year: z.string(),
     tagline: z.string().optional(),
     heroImage: z.string(),
+    visible: z.boolean(),
     team: z.array(z.object({
       name: z.string(),
       role: z.string().optional(),
