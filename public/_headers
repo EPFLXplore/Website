@@ -1,0 +1,4 @@
+# Fingerprinted build assets (Astro adds a content hash to the filename) —
+# the URL changes whenever the content changes, so these are safe to cache forever.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

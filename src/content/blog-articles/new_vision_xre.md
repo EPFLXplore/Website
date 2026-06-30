@@ -1,7 +1,7 @@
 ---
 title: "New Strategic Objectives for Xplore Research"
 category: "News"
-image: "/Website/images/xre/xre.jpg"
+image: "/images/xre/xre.jpg"
 author: "Giovanni Ranieri - VP Research"
 date: "2025-07-28"
 ---

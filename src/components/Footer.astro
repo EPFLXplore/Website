@@ -9,7 +9,7 @@ import {
   YoutubeIcon,
 } from "lucide-react";
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <footer class="w-full pt-10 pb-4 text-foreground text-center mt-10">

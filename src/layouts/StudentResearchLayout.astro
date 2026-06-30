@@ -15,7 +15,7 @@ const {
     sections
 } = Astro.props;
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <MainLayout title={`${title} | Xplore Research | EPFL Xplore`}>

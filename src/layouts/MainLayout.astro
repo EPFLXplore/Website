@@ -12,7 +12,7 @@ const {
   theme = "dark",
 } = Astro.props;
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>

@@ -2,7 +2,7 @@
 import StudentResearchLayout from "@/layouts/StudentResearchLayout.astro";
 import { getCollection } from "astro:content";
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export async function getStaticPaths() {
   const projects = await getCollection("student_led_research");

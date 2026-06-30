@@ -10,7 +10,7 @@ import {
 import { XploreFullIcon } from "./icons/xplore-full";
 import { LinkedinIcon, InstagramIcon, GithubIcon, Menu as MenuIcon, X } from "lucide-react";
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const projectFolders = [
   {

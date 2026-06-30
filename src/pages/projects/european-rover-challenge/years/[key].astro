@@ -5,7 +5,7 @@ import { ShowerHead } from "lucide-react";
 import fs from "node:fs";
 import path from "node:path";
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export async function getStaticPaths() {
   const projects = await getCollection("erc_years");
