@@ -54,7 +54,7 @@ const Menu: React.FC = () => {
   return (
     <header className="flex items-center justify-between w-full py-4 px-6 bg-transparent relative z-50">
       {/* Logo */}
-      <a href={base} className="flex items-center">
+      <a href={`${base}/`} className="flex items-center">
         <XploreFullIcon className="h-10 w-auto" />
       </a>
 
