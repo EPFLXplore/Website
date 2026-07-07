@@ -2,6 +2,9 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection, render } from "astro:content";
 import BlogArticleLayout from "../../layouts/BlogArticleLayout.astro";
+import { blogImage } from "@/lib/utils";
+import fs from "node:fs";
+import path from "node:path";
 
 export async function getStaticPaths() {
   const articles = await getCollection("blog-articles");
@@ -13,15 +16,28 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
+
+// Auto-build a gallery from every image in the article's folder, excluding the hero image.
+const galleryDir = path.join(process.cwd(), "public", "images", "blogs", article.slug);
+let gallery: string[] = [];
+if (fs.existsSync(galleryDir)) {
+  gallery = fs
+    .readdirSync(galleryDir)
+    .filter((f) => /\.(png|jpe?g|webp|gif|avif)$/i.test(f))
+    .filter((f) => f !== article.data.image)
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .map((f) => blogImage(article.slug, f));
+}
 ---
 
 <MainLayout title={article.data.title + " | EPFL Xplore"} theme="light">
   <BlogArticleLayout
     title={article.data.title}
     category={article.data.category}
-    image={article.data.image}
+    image={blogImage(article.slug, article.data.image)}
     author={article.data.author}
     date={article.data.date}
+    gallery={gallery}
   >
     <Content />
   </BlogArticleLayout>

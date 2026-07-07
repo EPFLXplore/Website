@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function GalleryLightbox({ images, year }: { images: string[]; year: number }) {
+export default function GalleryLightbox({ images, label }: { images: string[]; label?: string }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -10,7 +10,7 @@ export default function GalleryLightbox({ images, year }: { images: string[]; ye
           <img
             key={idx}
             src={src}
-            alt={`ERC ${year} Gallery ${idx + 1}`}
+            alt={`${label ?? "Gallery"} ${idx + 1}`}
             className="rounded-lg shadow hover:scale-105 transition-transform cursor-pointer"
             loading="lazy"
             onClick={() => setSelectedImage(src)}

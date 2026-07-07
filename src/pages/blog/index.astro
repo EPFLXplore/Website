@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { BlogListItem } from "../../components/ui/BlogListItem";
+import { blogImage } from "@/lib/utils";
 import Menu from "@/components/Menu";
 
 const articles = await getCollection("blog-articles");
@@ -39,7 +40,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           >
             <div class="block w-full overflow-hidden rounded-xl bg-gray-100">
               <img
-                src={typedArticles[0].data.image}
+                src={blogImage(typedArticles[0].slug, typedArticles[0].data.image)}
                 alt={typedArticles[0].data.title}
                 class="object-cover w-full h-64 md:h-96 transition-transform duration-200 group-hover:scale-105"
               />
@@ -66,7 +67,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           .slice(1)
           .map((article) => (
             <BlogListItem
-              image={article.data.image}
+              image={blogImage(article.slug, article.data.image)}
               title={article.data.title}
               category={article.data.category}
               author={article.data.author}

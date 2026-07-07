@@ -1,5 +1,6 @@
 ---
-const { title, category, image, author, date } = Astro.props;
+import GalleryImage from "@/components/GalleryImage.tsx";
+const { title, category, image, author, date, gallery = [] } = Astro.props;
 ---
 
 <article class="max-w-4xl mx-auto">
@@ -28,4 +29,11 @@ const { title, category, image, author, date } = Astro.props;
   <div class="prose prose-lg max-w-prose mx-auto">
     <slot />
   </div>
+
+  {gallery.length > 0 && (
+    <section class="mt-16 sm:mt-20">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-6">Gallery</h2>
+      <GalleryImage images={gallery} label={title} client:load />
+    </section>
+  )}
 </article>

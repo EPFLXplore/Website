@@ -100,6 +100,16 @@ const Menu: React.FC = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink
+                href={`${base}/blog`}
+                className={`px-4 rounded-md py-2 text-base font-medium ${
+                  isActive(`${base}/blog`) ? "text-secondary" : ""
+                }`}
+              >
+                Blog
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
                 href={`${base}/team`}
                 className={`px-4 rounded-md py-2 text-base font-medium ${
                   isActive(`${base}/team`) ? "text-secondary" : ""
@@ -149,6 +159,7 @@ const Menu: React.FC = () => {
           <a href={`${base}/projects/european-rover-challenge`} className="hover:text-secondary">European Rover Challenge</a>
           <a href={`${base}/projects/xplore-research`} className="hover:text-secondary">Xplore Research</a>
           <a href={`${base}/semester-projects`} className="hover:text-secondary">Semester Projects</a>
+          <a href={`${base}/blog`} className="hover:text-secondary">Blog</a>
           <a href={`${base}/team`} className="hover:text-secondary">Team</a>
           <a href={`${base}/contact-us`} className="bg-secondary text-white px-3 py-2 rounded-md text-center">Contact Us</a>
           <div className="flex gap-4 justify-center mt-3">
