@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     >
       <!-- Hero Image -->
       <img
-        src={base + "/images/main/team_erc.jpg"}
+        src={base + "/images/main/team_above.jpg"}
         alt="EPFL Xplore Team"
         class="absolute inset-0 w-full h-full object-cover object-top"
       />
@@ -136,7 +136,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <!-- 2nd -->
         <div class="flex flex-col items-center order-2 sm:order-1">
           <div class="bg-gray-700 w-32 sm:w-40 h-40 sm:h-48 flex items-center justify-center rounded-t-xl shadow-lg">
-            <Medal className="w-10 sm:w-12 h-10 sm:h-12 text-yellow-300" />
+            <Medal className="w-10 sm:w-12 h-10 sm:h-12 text-gray-300" />
           </div>
           <p class="mt-4 font-semibold text-sm sm:text-base">
             2nd Place (2022)
@@ -149,7 +149,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             <Trophy className="w-12 sm:w-14 h-12 sm:h-14 text-white" />
           </div>
           <p class="mt-4 font-bold text-lg sm:text-xl">
-            1st Place – ERC Champions 2025
+            1st Place – ERC Champions 2026, 2025
           </p>
         </div>
 
@@ -170,31 +170,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
-          <p class="font-semibold">Science Prize – 2021</p>
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-gray-300 mx-auto" />
+          <p class="font-semibold">Honda Innovation Award - 2026</p>
           <p class="text-xs sm:text-sm text-gray-400">
-            Planetary analysis excellence
+            Innovative and practical design
           </p>
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
           <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
-          <p class="font-semibold">Probing Prize – 2021</p>
+          <p class="font-semibold">Droning Award – 2026</p>
           <p class="text-xs sm:text-sm text-gray-400">
-            Optimized and Fast methodology
+            Novel drone navigation
           </p>
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
           <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
-          <p class="font-semibold">Navigation Prize – 2022</p>
+          <p class="font-semibold">Droning Award – 2025</p>
           <p class="text-xs sm:text-sm text-gray-400">
-            High performance in unknown terrains
-          </p>
-        </div>
-        <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
-          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
-          <p class="font-semibold">Maintenance Prize – 2023</p>
-          <p class="text-xs sm:text-sm text-gray-400">
-            Fluidity in manipulations
+            Novel drone navigation
           </p>
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
@@ -206,9 +199,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         </div>
         <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
           <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
-          <p class="font-semibold">Droning Award – 2025</p>
+          <p class="font-semibold">Maintenance Prize – 2023</p>
           <p class="text-xs sm:text-sm text-gray-400">
-            Novel drone navigation
+            Fluidity in manipulations
+          </p>
+        </div>
+        <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
+          <p class="font-semibold">Navigation Prize – 2022</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            High performance in unknown terrains
+          </p>
+        </div>
+        <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
+          <p class="font-semibold">Probing Prize – 2021</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            Optimized and Fast methodology
+          </p>
+        </div>
+        <div class="p-6 bg-slate-800 rounded-xl shadow-lg">
+          <Award className="w-8 sm:w-10 h-8 sm:h-10 mb-3 text-yellow-300 mx-auto" />
+          <p class="font-semibold">Science Prize – 2021</p>
+          <p class="text-xs sm:text-sm text-gray-400">
+            Planetary analysis excellence
           </p>
         </div>
       </div>
@@ -216,6 +230,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   </section>
 
   <!-- Sponsors -->
+  <!-- TODO: Check ts -->
   <section class="bg-white py-16 sm:py-20">
     <div class="max-w-7xl mx-auto text-center px-4 sm:px-6">
       <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-16 text-gray-900">
@@ -319,18 +334,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             class="max-h-24 sm:max-h-32 max-w-full object-contain"
           />
         </a>
-        <a
-          href="https://forum-epfl.ch/2025/en/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center justify-center h-24 sm:h-32 p-4 sm:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
-        >
-          <img
-            src={`${base}/images/sponsors/forum.jpg`}
-            alt="luxonis"
-            class="max-h-24 sm:max-h-32 max-w-full object-contain"
-          />
-        </a>
          <a
           href="https://www.enclustra.com/en/home/"
           target="_blank"
@@ -340,18 +343,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           <img
             src={`${base}/images/sponsors/enclustra.jpg`}
             alt="enclustra"
-            class="max-h-24 sm:max-h-32 max-w-full object-contain"
-          />
-        </a>
-         <a
-          href="https://www.lemo.com/en/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center justify-center h-24 sm:h-32 p-4 sm:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
-        >
-          <img
-            src={`${base}/images/sponsors/lemo.jpg`}
-            alt="Lemo"
             class="max-h-24 sm:max-h-32 max-w-full object-contain"
           />
         </a>

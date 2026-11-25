@@ -6,6 +6,7 @@ export interface Props {
     name: string;
     role: string;
     photo?: string | null;
+    bgPhoto?: string | null;
     socials?: Record<string, string | undefined> | null;
     studies?: string | null;
   };
@@ -19,7 +20,7 @@ const { member, defaultPhoto } = Astro.props;
   <!-- Background banner -->
   <div
     class="relative h-28 bg-gray-800"
-    style={`background-image: url('${member.photo || defaultPhoto}'); background-size: cover; background-position: center;`}
+    style={`background-image: url('${member.bgPhoto || member.photo || defaultPhoto}'); background-size: cover; background-position: center;`}
   >
     <div class="absolute inset-0 bg-black/40"></div>
   </div>
@@ -47,7 +48,7 @@ const { member, defaultPhoto } = Astro.props;
         </a>
       )}
       {member.socials?.github && (
-        <a href={member.socials.github} target="_blank" aria-label="GitHub" class="hover:text-gray-200 transition">
+        <a href={member.socials.github} target="_blank" aria-label="GitHub" class="hover:text-orange-200 transition">
           <Github size={22} />
         </a>
       )}
